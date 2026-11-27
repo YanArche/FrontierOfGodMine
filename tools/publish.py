@@ -38,4 +38,6 @@ def upload(name):
 assets=['woidwatch.jar'] if app_only else (['woidwatch.jar','WoidWatch-Migration.zip','WoidWatch-Windows.zip','WoidWatch-macOS.zip'] if launcher else ['Frontier-Server.zip','WoidWatch-Windows.zip','WoidWatch-macOS.zip'])
 if '--accounts' in sys.argv:assets.extend(['WoidWatch-Accounts.zip','Frontier-Server.zip'])
 with concurrent.futures.ThreadPoolExecutor(3) as pool:list(pool.map(upload,assets))
-print(api('/releases/'+str(release['id']),{'draft':False,'make_latest':'false' if launcher else 'true'},'PATCH')['html_url'])
+publication={'draft':False,'make_latest':'false' if launcher else 'true'}
+if launcher:publication['body']=details['body']
+print(api('/releases/'+str(release['id']),publication,'PATCH')['html_url'])

@@ -20,7 +20,7 @@ if launcher:
 else:
     details=None
 if '--accounts' in sys.argv:
-    details['body']+=' Серверная версия включает папку accounts с инструкцией по постоянному запуску и настройке отдельного маршрута Cloudflare. Адрес игрового сервера задаётся из лаунчера.'
+    details['body']+=' Регистрация по приглашению, вход по паролю и возобновление сессии находятся в окне «Аккаунт». Тест: распакуйте WoidWatch-Accounts.zip и запустите Test-accounts.cmd. В Frontier-Server.zip рабочая служба поднимается через Start-server.cmd; приглашения выдаёт accounts/Create-invite.cmd.'
 if not release:release=api('/releases',details or {'tag_name':tag,'target_commitish':'main','name':'Frontier of God · '+tag,'draft':True,'body':'Распакуйте один архив для вашей платформы. Windows — WoidWatch.exe, macOS — WoidWatch Launcher.app, выделенный сервер Windows — Prepare-server.cmd для подготовки и Start-server.cmd для запуска.'})
 def upload(name):
     f=Path('dist')/name

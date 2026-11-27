@@ -19,6 +19,8 @@ if launcher:
     if app_only:details['body']='Подписанное обновление WoidWatch. Установленный лаунчер получает новую версию автоматически. Для первой установки используйте полный клиентский архив из выпуска launcher-v1.1.0.'
 else:
     details=None
+if '--accounts' in sys.argv:
+    details['body']+=' Серверная версия включает папку accounts с инструкцией по постоянному запуску и настройке отдельного маршрута Cloudflare. Адрес игрового сервера задаётся из лаунчера.'
 if not release:release=api('/releases',details or {'tag_name':tag,'target_commitish':'main','name':'Frontier of God · '+tag,'draft':True,'body':'Распакуйте один архив для вашей платформы. Windows — WoidWatch.exe, macOS — WoidWatch Launcher.app, выделенный сервер Windows — Prepare-server.cmd для подготовки и Start-server.cmd для запуска.'})
 def upload(name):
     f=Path('dist')/name
@@ -33,5 +35,7 @@ def upload(name):
         r=conn.getresponse();a=json.load(r)
     if r.status!=201 or a.get('digest')!=sha:raise RuntimeError((r.status,a.get('message'),f.name))
     print('Verified',f.name,flush=True)
-with concurrent.futures.ThreadPoolExecutor(3) as pool:list(pool.map(upload,(['woidwatch.jar'] if app_only else ['woidwatch.jar','WoidWatch-Migration.zip','WoidWatch-Windows.zip','WoidWatch-macOS.zip'] if launcher else ['Frontier-Server.zip','WoidWatch-Windows.zip','WoidWatch-macOS.zip'])))
+assets=['woidwatch.jar'] if app_only else (['woidwatch.jar','WoidWatch-Migration.zip','WoidWatch-Windows.zip','WoidWatch-macOS.zip'] if launcher else ['Frontier-Server.zip','WoidWatch-Windows.zip','WoidWatch-macOS.zip'])
+if '--accounts' in sys.argv:assets.extend(['WoidWatch-Accounts.zip','Frontier-Server.zip'])
+with concurrent.futures.ThreadPoolExecutor(3) as pool:list(pool.map(upload,assets))
 print(api('/releases/'+str(release['id']),{'draft':False,'make_latest':'false' if launcher else 'true'},'PATCH')['html_url'])

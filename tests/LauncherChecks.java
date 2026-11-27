@@ -27,19 +27,19 @@ public class LauncherChecks {
         var key=(PrivateKey)keys.getKey("test","testing".toCharArray());
         Path good=Frontier.resources.resolve("frontier.jar"),bad=temp.resolve("broken.jar");
         Files.writeString(bad,"broken application");
-        JsonObject trusted=signed(good,key,2),broken=signed(bad,key,3);
+        JsonObject trusted=signed(good,key,LauncherUpdates.BUILD+1),broken=signed(bad,key,LauncherUpdates.BUILD+2);
         var forged=trusted.deepCopy();forged.add("manifest",broken.get("manifest"));
         try{LauncherUpdates.verify(forged);throw new AssertionError("forgery accepted");}catch(java.io.IOException expected){}
         JsonObject state=new JsonObject();
         for(var item:List.of(trusted,broken)){
             var r=LauncherUpdates.verify(item);var f=LauncherUpdates.jar(root,r);
-            Files.copy(r.build()==2?good:bad,f);Pack.write(root.resolve("pending.json"),item.toString());LauncherUpdates.promote(root,state);
+            Files.copy(r.build()==LauncherUpdates.BUILD+1?good:bad,f);Pack.write(root.resolve("pending.json"),item.toString());LauncherUpdates.promote(root,state);
         }
         LauncherUpdates.run();state=Pack.read(root.resolve("active.json"));
-        require(state.get("highest").getAsInt()==3&&LauncherUpdates.verify(state.getAsJsonObject("active")).build()==2,"rollback failed");
+        require(state.get("highest").getAsInt()==LauncherUpdates.BUILD+2&&LauncherUpdates.verify(state.getAsJsonObject("active")).build()==LauncherUpdates.BUILD+1,"rollback failed");
         require(Files.exists(root.resolve("fallback-ran")),"healthy child did not start");
         Pack.write(root.resolve("pending.json"),trusted.toString());LauncherUpdates.promote(root,state);
-        require(state.get("highest").getAsInt()==3,"accepted downgrade");
+        require(state.get("highest").getAsInt()==LauncherUpdates.BUILD+2,"accepted downgrade");
         Files.writeString(LauncherUpdates.jar(root,LauncherUpdates.verify(trusted)),"tampered");
         try{LauncherUpdates.select(root,trusted);throw new AssertionError("modified binary accepted");}catch(java.io.IOException expected){}
         System.out.println("PASS: import, signature, hash, staged activation, startup rollback, working child, downgrade rejection");

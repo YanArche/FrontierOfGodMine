@@ -38,6 +38,11 @@ final class Library {
             refresh.run();Path rollback=LauncherUpdates.home().resolve("rollback.txt");if(Files.isRegularFile(rollback)){status.setText(Files.readString(rollback));Files.deleteIfExists(rollback);}
             JPanel actions=new JPanel(new FlowLayout(FlowLayout.LEFT));actions.setOpaque(false);actions.setAlignmentX(Component.LEFT_ALIGNMENT);panel.add(actions);
             JButton play=new JButton("Играть"),imp=new JButton("Импортировать сборку");actions.add(play);actions.add(imp);
+            JButton account=new JButton("Мой аккаунт");actions.add(account);account.addActionListener(e->WoidAccount.login(frame,account,status));
+            JButton admin=new JButton("Администрирование");actions.add(admin);admin.addActionListener(e->Community.admin(frame,admin,status));
+            new Thread(()->{try{String a=Community.refresh();Path selected=location();
+                boolean playing=ProcessHandle.allProcesses().anyMatch(p->p.info().arguments().map(args->java.util.Arrays.asList(args).contains("--gameDir")).orElse(false));
+                if(!playing&&Files.isDirectory(selected))ServerListFile.sync(selected,a);SwingUtilities.invokeLater(()->status.setText(a.isEmpty()?"Сервер сообщества пока не открыт":"Сервер сообщества: "+a));}catch(Exception ignored){}}).start();
             imp.addActionListener(e->{JFileChooser picker=new JFileChooser();picker.setDialogTitle("Папка Frontier of God с mods, saves и options.txt");picker.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 if(picker.showOpenDialog(frame)==JFileChooser.APPROVE_OPTION)try{link(picker.getSelectedFile().toPath());refresh.run();status.setText("Подключена существующая папка с мирами и настройками.");}catch(Exception ex){JOptionPane.showMessageDialog(frame,ex.getMessage());}});
             play.addActionListener(e->{play.setEnabled(false);imp.setEnabled(false);frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);

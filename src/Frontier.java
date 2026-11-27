@@ -71,13 +71,15 @@ public class Frontier {
         Files.createDirectories(target.resolve(".frontier"));
         try(var ch=FileChannel.open(target.resolve(".frontier/run.lock"),StandardOpenOption.CREATE,StandardOpenOption.WRITE);var lock=ch.tryLock()){
             if(lock==null)throw new IOException("Фронтир уже запущен.");
-            if(!server&&!prepare&&launcherOpen())throw new IOException("Закройте официальный лаунчер, чтобы применить профиль Java Edition.");
-            if(!server&&!prepare&&!Files.exists(mc().resolve("launcher_profiles.json"))&&!Files.exists(mc().resolve("launcher_profiles_microsoft_store.json"))){
+            boolean direct=!server&&!prepare&&!MinecraftAccount.clientId().isEmpty();
+            if(!direct&&!server&&!prepare&&launcherOpen())throw new IOException("Закройте официальный лаунчер, чтобы применить профиль Java Edition.");
+            if(!direct&&!server&&!prepare&&!Files.exists(mc().resolve("launcher_profiles.json"))&&!Files.exists(mc().resolve("launcher_profiles_microsoft_store.json"))){
                 openLauncher();throw new IOException("Войдите в официальный лаунчер, откройте Java Edition, закройте лаунчер и повторите запуск.");
             }
+            String member=null;if(direct){var me=WoidAccount.current();if(me==null)throw new IOException("Войдите через «Мой аккаунт».");member=me.get("name").getAsString();}
             new Pack(target,resources,server,log).update(offline);
             if(prepare)return;
-            loader(server?target:mc(),server,log);
+            if(!direct)loader(server?target:mc(),server,log);
             if(server){
                 Path eula=target.resolve("eula.txt");
                 if(!Files.exists(eula))Pack.write(eula,"# https://aka.ms/MinecraftEULA\neula=false\n");
@@ -85,7 +87,8 @@ public class Frontier {
                 String argfile="@libraries/net/neoforged/neoforge/21.1.267/win_args.txt";
                 int code=new ProcessBuilder(java().toString(),"@user_jvm_args.txt",argfile,"nogui").directory(target.toFile()).inheritIO().start().waitFor();
                 if(code!=0)throw new IOException("Сервер завершился с кодом "+code);
-            }else{profiles(mc(),target);openLauncher();log.accept("В Java Edition нажмите «Играть».");}
+            }else{String communityAddress=null;try{communityAddress=Community.refresh();}catch(Exception e){log.accept("Адрес сервера временно недоступен.");}
+                if(communityAddress!=null)ServerListFile.sync(target,communityAddress);if(direct){DirectGame.run(target,member,log);return;}profiles(mc(),target);openLauncher();log.accept("В Java Edition нажмите «Играть».");}
         }
     }
     public static void main(String[] args)throws Exception{

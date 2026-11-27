@@ -38,6 +38,8 @@ def build(name):
                 for entry in runtime.infolist():
                     if not entry.is_dir():z.writestr(res+'runtime/'+entry.filename.split('/',1)[1],runtime.read(entry),zipfile.ZIP_DEFLATED,1)
             if server:
+                for file in Path('accounts').iterdir():
+                    if file.is_file():z.write(file,'accounts/'+file.name)
                 z.write('platform/frontier.ps1','frontier.ps1')
                 for action,flags in [('Prepare-server',' -PrepareOnly'),('Start-server','')]:
                     z.writestr(action+'.cmd','@echo off\r\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0frontier.ps1" -Server'+flags+'\r\n')
@@ -49,3 +51,7 @@ for platform in ('Server','Windows','macOS'):build(platform)
 with zipfile.ZipFile(dist/'WoidWatch-Migration.zip','w') as patch:
     patch.write(dist/'woidwatch.jar','frontier.jar')
     patch.write('launcher/MIGRATION.md','README.md')
+
+with zipfile.ZipFile(dist/'WoidWatch-Accounts.zip','w',zipfile.ZIP_DEFLATED) as z:
+    for f in Path('accounts').iterdir():
+        if f.is_file():z.write(f,f.name)

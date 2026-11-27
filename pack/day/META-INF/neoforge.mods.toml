@@ -1,0 +1,7 @@
+modLoader="lowcodefml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="frontier_days"
+version="1.0.0"
+displayName="Фронтир • Дни мира"

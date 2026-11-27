@@ -1,0 +1,18 @@
+#!/bin/bash
+set -eu
+res="$(cd "$(dirname "$0")/../Resources" && pwd)"
+case "$(uname -m)" in
+ arm64) arch=aarch64 ;;
+ x86_64) arch=x64 ;;
+ *) exit 1 ;;
+esac
+runtime="$HOME/Library/Application Support/Frontier of God/runtime21-$arch-13-1"
+if [[ ! -x "$runtime/Contents/Home/bin/java" ]]; then
+ mkdir -p "$(dirname "$runtime")"
+ stage="$(mktemp -d "${runtime}.XXXXXX")"
+ trap 'rm -rf "$stage"' EXIT
+ tar -xzf "$res/runtime-$arch.tar.gz" --strip-components=1 -C "$stage"
+ [[ -x "$stage/Contents/Home/bin/java" ]]
+ if [[ ! -d "$runtime" ]]; then mv "$stage" "$runtime"; fi
+fi
+exec "$runtime/Contents/Home/bin/java" "-Dfrontier.resources=$res" -cp "$res/frontier.jar:$res/gson.jar" Frontier

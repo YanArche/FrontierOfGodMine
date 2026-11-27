@@ -1,0 +1,3346 @@
+{
+  "format": 1,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.267",
+  "overrides": "2bf24374f33c192f437902b2f00e6851ae9a57c6f6534d7404f7b71155bf72bc",
+  "files": {
+    "CustomSkinLoader/CustomSkinLoader.json": {
+      "sha256": "0ef19e13211b3557ec052186f57bd210822507a5e0e6a679ffd62b266c9f9e98",
+      "server": false
+    },
+    "config/CoroUtil/General.toml": {
+      "sha256": "6d46bdc090d4bb9bdfb660be4ca94075dc08e09d5fed84108eba92a422a23c49",
+      "server": false
+    },
+    "config/DistantHorizons.toml": {
+      "sha256": "05174ce44b15f3445ff70ab02f3acd083bb7bd899dbcd9b48b1bbd279a7787cb",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/black_eye.json": {
+      "sha256": "0ce694b7842011f30705cbadc1140a105e15eabe5983dd62605d82e57fefd201",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/cold_eye.json": {
+      "sha256": "c4c4ab0d7606039bd261d43dd2f1800ba846e61dc8e9961b8ac4358cfabea768",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/corrupted_eye.json": {
+      "sha256": "121aeee0689da901f5f79589ef7382b94c04bdefc0a87ea0ffebeac467dfbdf2",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/cryptic_eye.json": {
+      "sha256": "ef23863e4d876d0aa07af8d57f5d561b90ca72ef47441321fee2afdcf6202624",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/cursed_eye.json": {
+      "sha256": "25b39227a4ef5f485544a0824baa72a8f676bd7ded445769bb538c6adc901ebd",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/evil_eye.json": {
+      "sha256": "f5c592ff7652da20f93acc2137675a1cee29b4ecb905f56e9b35dadebd396e65",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/exotic_eye.json": {
+      "sha256": "b2bc84a480810af68e8c555b366fff36ecb67e6eeda2782210eb38d15c957353",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/guardian_eye.json": {
+      "sha256": "a1c9380a91f328df917aad9bb1e4e605f2ca5695be7b8207cf581b8e03d63a63",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/lost_eye.json": {
+      "sha256": "791e725cce8319f03a71d7f6e534145dd698c4c0faea56a80d6be8090b1c7d76",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/magical_eye.json": {
+      "sha256": "1249d8322568693f552dc08271969dd24a357f53368820bc620f49abdc22dcf0",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/nether_eye.json": {
+      "sha256": "87e971a20021e5d64bc210f452979d6a0b61475b3304d327a2a6f1410d3d8aaf",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/old_eye.json": {
+      "sha256": "9a8869b45d8c8ad5bd39de49351dee6b035670e3bf09ddf2573d6960d449b05e",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/rogue_eye.json": {
+      "sha256": "9bee3caeca1603cf33a8e1cbaee2ea9f0b422e1ce7ac0a3126c8647b2a8e24e8",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/undead_eye.json": {
+      "sha256": "a9a571a279c7c20672d48aa7fb2546c461868cf1b80962e1367409f104c63ee8",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/witch_eye.json": {
+      "sha256": "41de53ad16ce01009a92b3d9f96e35aeac8a68a3de588d8fd9374b33f343a088",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/Eyes/wither_eye.json": {
+      "sha256": "86499d5affe90f36aac3df626303ac797e44fd1f08719d3041f5be4174e458c7",
+      "server": false
+    },
+    "config/EndRemastered-NeoForge/endrem.json": {
+      "sha256": "5a8e5f5fa575402b8c9d415833a7acc1858e124729ae81fdfa305a602cb4c180",
+      "server": false
+    },
+    "config/MouseTweaks.cfg": {
+      "sha256": "4069ce1a439d8c37453c1b1e9f2037e0942674c7e48723a39b37eab245792ad4",
+      "server": false
+    },
+    "config/SpiderOverhaul.json": {
+      "sha256": "977d761dc879ffdf88dba4b26e50d850b7def3d55ff0ef0d1aec9247e09a875b",
+      "server": false
+    },
+    "config/accessories.json5": {
+      "sha256": "b9f6a56acdb02a286de9aa06578dac5485656fb476adc819fb3c63dd49ad0785",
+      "server": false
+    },
+    "config/aeroblender-common.toml": {
+      "sha256": "c34c0ac1f978b1c80b99fe3b78b8fb29a633392c33b05495e8804d04be6d5449",
+      "server": true
+    },
+    "config/aeronautics-server.toml": {
+      "sha256": "a9302b0253e494e7d80f0a2785bf4514b0b67da85796437ca032482db62be514",
+      "server": true
+    },
+    "config/aether-client.toml": {
+      "sha256": "1eb44b8a4ebc37ceee3bcf09a55f0a4757328df30c8be3eacab5162709be54c9",
+      "server": false
+    },
+    "config/aether-common.toml": {
+      "sha256": "87cff44fd6dcadcbe15ed346faba65afe90a4a0b948e4758a805753ae2475340",
+      "server": true
+    },
+    "config/aether-server.toml": {
+      "sha256": "054dabc1c3d2765309fd589127800f61ef04f6368bc5a98b9e4a9efdd35c36ba",
+      "server": true
+    },
+    "config/aether-startup.toml": {
+      "sha256": "7540bee0eb77cd177eb6b550563709ca123b0b9ed77f9198d127340dcc528799",
+      "server": true
+    },
+    "config/aether/aether_customizations.txt": {
+      "sha256": "113f7dfc56b7b2efdc782e45356c87c47174bb76dc34dcef24ca2ec32c7908e1",
+      "server": false
+    },
+    "config/aether/sun_altar_whitelist.json": {
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "server": false
+    },
+    "config/apotheosis/apothic_attributes.cfg": {
+      "sha256": "336a1dcfde783fb49e7f5ae3f5905179e2e7800c0cd41cee8fc6bd210edb2e06",
+      "server": false
+    },
+    "config/appleskin-client.toml": {
+      "sha256": "7127a276c7305371397053cd8d0833e6825c828850626e4067b9fed1430ed217",
+      "server": false
+    },
+    "config/ars_creo-common.toml": {
+      "sha256": "873292e97e63271db486fae155def041c722c1eed96c9c5cba718763040f33f7",
+      "server": true
+    },
+    "config/ars_nouveau-client.toml": {
+      "sha256": "442e7d4aa8f85dc37e8bfa29a71126b1757056a82cb825e606fae4470a814a56",
+      "server": false
+    },
+    "config/ars_nouveau-common.toml": {
+      "sha256": "027bdab2329e2e71cc2546871f3eca724cd97a0667a623c9de7fc7c4e9dfd9b4",
+      "server": true
+    },
+    "config/ars_nouveau-server.toml": {
+      "sha256": "50d87126cc3863dba54f9cbf1fa7161c4293ce4dc056275a23510a4a846df9e1",
+      "server": true
+    },
+    "config/ars_nouveau-startup.toml": {
+      "sha256": "0d44fbcf1c1b361b833e1e0da847d5c5d1ca38f927a55b057e14e13e30ae85fb",
+      "server": true
+    },
+    "config/ars_nouveau/doc_data.json": {
+      "sha256": "081b1b98b191d81c4ff5b49760b51f491bb330a6ac45dfac831a3a6313cb072f",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_accelerate.toml": {
+      "sha256": "a31f5889f63fe0dbf691ee7dd7206899a57deef186b3b2b46d7efa628c4c9d80",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_amplify.toml": {
+      "sha256": "1f08cedc144ec201d890842b5073d9c5f7a9b061274a472b29ca564b4ba819cf",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_animate_block.toml": {
+      "sha256": "0fb48deefa414eb5b2df9f519ae8e8df8253f8d26565a41c275b9b8a54254fc4",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_aoe.toml": {
+      "sha256": "6067cc16ce094c79c33841a718a5b9af9ecfaddb56f186b0901df50e76b7c0ab",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_blink.toml": {
+      "sha256": "b1be9bd915365b3abbe81b327dab17f7f26bb43f3ad11ea6bb4bfea35d091b28",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_bounce.toml": {
+      "sha256": "62447efc5276f8069a2ea44a1627c59a92e260fea86cf3ba8b617cca3509e1d2",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_break.toml": {
+      "sha256": "ad9edccc148cb07d3134acb4a4ece9a77c38cad6e5ef2ca9bb11ca25ae5ef05e",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_bubble.toml": {
+      "sha256": "92fc53b20e893fcf59264d4804f875936ba78e4e593591fef16e095e094fb70a",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_burst.toml": {
+      "sha256": "78ab4ac2f8e4b1509226075249774feb048851007aa5b6bd1dde6132f68bfed1",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_cold_snap.toml": {
+      "sha256": "228b1ac24a26b16c65ea1e40d7cb6adc912e17e319f741ceb6fe025cbcd988c6",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_conjure_water.toml": {
+      "sha256": "8c09b754d12127b13e3b5c4b1ca02f833480e5b17ea5c30407fff2bf2437bbc6",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_craft.toml": {
+      "sha256": "a816b622f7f5f854eab26acc5482df2b3899ac5347552bbfa4fd9d9c0463c85c",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_crush.toml": {
+      "sha256": "14eb1329449f03ac7941a6eea6e74fd1fea8b47e42a250ce2099e00e3ee4988d",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_cut.toml": {
+      "sha256": "b8415cea74a8a393207ff5246ddb8e1834eff5f6bd23c7bc410c60c1611e9d83",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_dampen.toml": {
+      "sha256": "dd21ec3899d06bff70793eeefbdc372e0b93b3842bf1e1c8a15f7e0b0f8e5f7f",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_decelerate.toml": {
+      "sha256": "b5990e67e62d60837508ef900955ba274ed580aa865cd377379ddf69762cdc85",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_delay.toml": {
+      "sha256": "64b39a22cd33e19c245dbec70e14da76da09368a16e346e42bd95cce5fd91e54",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_dispel.toml": {
+      "sha256": "0526dbfce1d8351539200857e343455871cc811a025f43568217d360e335413a",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_duration_down.toml": {
+      "sha256": "102d57868ed836487c5e9d1060027211f86eea12cc95db7c8650fe8c4bf1239b",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_ender_inventory.toml": {
+      "sha256": "2a1fcb27cfcdf2ae95bafe7b485977cd22b64ff593a9a0034827858e47bd935b",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_evaporate.toml": {
+      "sha256": "a816b622f7f5f854eab26acc5482df2b3899ac5347552bbfa4fd9d9c0463c85c",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_exchange.toml": {
+      "sha256": "2a1fcb27cfcdf2ae95bafe7b485977cd22b64ff593a9a0034827858e47bd935b",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_explosion.toml": {
+      "sha256": "beacf60540f77b97b4bc12e4aa722c425893bf6d22745c8e6c935b8d85d90aba",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_extend_time.toml": {
+      "sha256": "a31f5889f63fe0dbf691ee7dd7206899a57deef186b3b2b46d7efa628c4c9d80",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_extract.toml": {
+      "sha256": "558434e11f6a82855a8e43c6bf4896bcc86677aed0f6a06827295c0c1d33fbe7",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_fangs.toml": {
+      "sha256": "4cc4c94639da07abb843d2f0e213c7e00e6f97ac25f4d9bd47ec592f25f4a022",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_fell.toml": {
+      "sha256": "2d63e4dab44c445888035153f016535a471b45a5b63cb5060727dbcdd4eb4e41",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_firework.toml": {
+      "sha256": "8e7fbe8d06d9e7fdfe4e191f9a1ad699813eee2e41e1ba3ecec22392925591e7",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_flare.toml": {
+      "sha256": "61e5c27ed697fb87fb693aaf0f1dd0e7d40081a589c59c00bb2b004aa2a743ea",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_fortune.toml": {
+      "sha256": "a1b14281c77dc0588771af4e235d03912b17b73090d68a2f4106b6a0d3ff4fd5",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_freeze.toml": {
+      "sha256": "cd7351df30eadfd4a5583dee4882fac2f76fef2e0d1f7e3cd7a9b9a354d61e65",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_glide.toml": {
+      "sha256": "ea07f2419ded616ff01c33cb04c81cdc1eff77ca681eb16b2351e0a7aa41fbb1",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_gravity.toml": {
+      "sha256": "db83e5fb8ce9e8fb19e25655a233c3a6800f8437f8e776c9e3cca78875cda12c",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_grow.toml": {
+      "sha256": "8cb26465bdad2ecee54319f83445a41ba2bbf26a7071eac93131812ea0af3e53",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_gust.toml": {
+      "sha256": "9f60447a11660f62afafcf56c295faa78208fc83df991a4ccde07ce9cd9f28d0",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_harm.toml": {
+      "sha256": "e132dad7db10594ae4c4f421300194e66d242b3c12017b5bd878cc6d17c0c781",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_harvest.toml": {
+      "sha256": "63274ce775cae15a45124a0e8cb84021aa4e3f228a48cc3e88157c90f3aaf84b",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_heal.toml": {
+      "sha256": "8973781972472014a1b81e4107734c482ef9cc268ddb08d73901838503b776a7",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_hex.toml": {
+      "sha256": "4169a17c968a70aed11b64fab82f61c19d9d07f0fcc569365ff212008da64c12",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_ignite.toml": {
+      "sha256": "a8063898d4c718297aa4862f68d4174a6f0d384e05e7b7b55f48fbc01de4c8e2",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_infuse.toml": {
+      "sha256": "06aa8cd35dea1dd11468c882d121365ef4f786eba6a3cd3eb6687e7715fc1449",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_intangible.toml": {
+      "sha256": "be5aca1382603d2de080205417d063e09602018ce910ec789cdb47da87f8e46f",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_interact.toml": {
+      "sha256": "07b250690cc61289a015440fd7b3e97764157b12625ce69f857bc57bc131373f",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_invisibility.toml": {
+      "sha256": "cad5a54db1c8515614c12f0aae81de81db83a52d4803463f46a998adaaf1c533",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_launch.toml": {
+      "sha256": "3982b1d34b2ca9665699e3c14bf9919c9e82da79e27cbe0b084b9b578f7ab125",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_leap.toml": {
+      "sha256": "3f2a6124981a7a360867e319cfd3731c493d449083239a02560ae8ffaa3d284f",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_light.toml": {
+      "sha256": "bd0bc89ccb0ba38c181596a4378a323e578805bd89e1ba980b2fb3781e2d1d64",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_lightning.toml": {
+      "sha256": "0177b63a5fcb9e0b50523bb39c5babfd8a6fdf1c6d11b736d337254d5fa4e57a",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_linger.toml": {
+      "sha256": "a7c281c535969659ba1578598eeaa0d7751c94081acf09f6953bff5b76cf4756",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_name.toml": {
+      "sha256": "bb76094a2602e94a1b04703879c154b9c7e785e028c06bc48f3c5c377d664070",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_orbit.toml": {
+      "sha256": "2c62e6e7d96d7bbe5cb9e67af0d0f2003c6021c0a18bfff0de65e2371cf8fae2",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_pantomime.toml": {
+      "sha256": "59279368035dd965e62431da2d189d417ae78371668b49f8bd6b1c1e325047bd",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_phantom_block.toml": {
+      "sha256": "595b43d01cdd6aa3b878f032f3e4c240559fba498f0c135ea6e2bdb2e05349cc",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_pickup.toml": {
+      "sha256": "63274ce775cae15a45124a0e8cb84021aa4e3f228a48cc3e88157c90f3aaf84b",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_pierce.toml": {
+      "sha256": "a514cd3b7a903a483ae2dacc7ed00cfeb9b2e0663997d4821acb6343a2a19958",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_place_block.toml": {
+      "sha256": "53883e24d2ec0a7a86d0246ec373e74b252476d3a8aed44a9697b5d61eeb9b62",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_prestidigitation.toml": {
+      "sha256": "dce9b819f6078583fe575c1f465b0c1bcda44e64edb02d367728512adf65fafe",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_projectile.toml": {
+      "sha256": "75e67c910beb7a4ac4a20d929fa0075ff3430642b337bd0e59a472b6921e0424",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_pull.toml": {
+      "sha256": "94f4318b159b004eb17817aa60a0d25fa38e6994e48704ec4e82582010480de9",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_randomize.toml": {
+      "sha256": "1fbef113921700cb95768f8c25cd28c03ef3814c146592cac08567319169cc4c",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_redstone_signal.toml": {
+      "sha256": "fcc34d8f285896bb7bdacbd05a7ead8f70ce95b0b11834ac75eb9d267c526b63",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_rotate.toml": {
+      "sha256": "ab29558b612a2aae5770be84688c7a363874fe3a97662fda1558328b72afd595",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_rune.toml": {
+      "sha256": "d97f22e6a2dda9ad91f1dab25b2a700ed87a4d91a9420e576e9516c8476603f4",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_self.toml": {
+      "sha256": "1e88e21e1251b0ec88e73df02fa317ce62b744eaaebc42b1d17349e2b716df73",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_sense_magic.toml": {
+      "sha256": "944f91fb6ea9d469f2ab8ec81d908af0ff86a2d1d93098d3bcd3fd517046cab7",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_sensitive.toml": {
+      "sha256": "3bfc7fe9767892cf8d9e8d9622eaa0885e19813bb286c8ce65c18be244a7755a",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_slowfall.toml": {
+      "sha256": "cad5a54db1c8515614c12f0aae81de81db83a52d4803463f46a998adaaf1c533",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_smelt.toml": {
+      "sha256": "b3319285867d0e5cf609e171e9d0d1c8a2b3a8706bb26c798ca8a10cbe273cea",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_snare.toml": {
+      "sha256": "bcc530d2c08046256cd0ceadca6369826157b6dd9d571f7661e60e5e16ce3a79",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_split.toml": {
+      "sha256": "084c274c075eca508a74685b21c066eea0b14d816652152cd3cc75e6b4f692e8",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_summon_decoy.toml": {
+      "sha256": "1bdadb76d582d01fb61ece1415abcc684cd37502c759e153c39af3768536a014",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_summon_steed.toml": {
+      "sha256": "14d04da5fa4e1230b4a0ec76bb55cc5d39d1d7d6ecfbec806add2b5eef2b1d7d",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_summon_undead.toml": {
+      "sha256": "15786295b7aa1295bff15d52139baefbb0ba532ffa67a9b5a265e664ad7c4d98",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_summon_vex.toml": {
+      "sha256": "15786295b7aa1295bff15d52139baefbb0ba532ffa67a9b5a265e664ad7c4d98",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_summon_wolves.toml": {
+      "sha256": "afc91de685aa8e4a619443ff158a55392fc6f300c45aaa83c46cf097c26cd6fa",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_toss.toml": {
+      "sha256": "63274ce775cae15a45124a0e8cb84021aa4e3f228a48cc3e88157c90f3aaf84b",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_touch.toml": {
+      "sha256": "a1f827f53981ec72d2f356b6e92ef32d40caf0aeb26c8ee5130d20f51b6c3ca4",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_underfoot.toml": {
+      "sha256": "6a92f02f8b006e0053d10f27dbc80da9bfa36d0203f52d364b736033c0eaad14",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_wall.toml": {
+      "sha256": "da7512f154f9718e3c431a095b10bc87da01196897e4c70d85988794e680f2aa",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_wind_burst.toml": {
+      "sha256": "bba5f0fcca3ed14efcc274b040d300419c6055f0773ead64ef2e56a3b536dc5f",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_wind_shear.toml": {
+      "sha256": "7aa97b266a9a8af07db4803bd61aeba15e8f6e3e059b562faa3c40bc8da31dd4",
+      "server": false
+    },
+    "config/ars_nouveau/glyph_wither.toml": {
+      "sha256": "4169a17c968a70aed11b64fab82f61c19d9d07f0fcc569365ff212008da64c12",
+      "server": false
+    },
+    "config/ars_nouveau/reset.toml": {
+      "sha256": "dce9b819f6078583fe575c1f465b0c1bcda44e64edb02d367728512adf65fafe",
+      "server": false
+    },
+    "config/ars_nouveau/rewind.toml": {
+      "sha256": "927983e00266b0b3af2d78c1d5c10e791ed052e3cd8e525cc1bdb773845e921e",
+      "server": false
+    },
+    "config/ars_nouveau/search_index/_4.cfe": {
+      "sha256": "cc731afdffad2ae7c659e66745abfc76c0a641d1987217da96b154735844f7b6",
+      "server": false
+    },
+    "config/ars_nouveau/search_index/_4.cfs": {
+      "sha256": "82f49429288ab04ca1e08a16a3392caf618a398e825fd8fb98f7bb67db2666c2",
+      "server": false
+    },
+    "config/ars_nouveau/search_index/_4.si": {
+      "sha256": "f3634a02d43d8dd95dac7ee54b36b089126368fcd582af109e67d7cee703fa40",
+      "server": false
+    },
+    "config/ars_nouveau/search_index/segments_5": {
+      "sha256": "2e41f842ea40cc87e7e258431a232ae2298d7ba11e28a3109526cd190a9783dd",
+      "server": false
+    },
+    "config/ars_nouveau/search_index/write.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "server": false
+    },
+    "config/ars_nouveau/wololo.toml": {
+      "sha256": "d97f22e6a2dda9ad91f1dab25b2a700ed87a4d91a9420e576e9516c8476603f4",
+      "server": false
+    },
+    "config/ars_ocultas/base-server.toml": {
+      "sha256": "cd85630b4f7e3387557b3288d1e102deb8a7dd030e36a22696835ee9f4bd293b",
+      "server": true
+    },
+    "config/ars_technica-common.toml": {
+      "sha256": "6109120567b4f26d042b0b1ae271dcd1f8186269fbf4828964b961308bf0b9ee",
+      "server": true
+    },
+    "config/ars_technica/glyph_apply.toml": {
+      "sha256": "23dbd0eb52dcd4c530b2628784515d671f606625d0fd1ec2d892b079a81b08fc",
+      "server": false
+    },
+    "config/ars_technica/glyph_carve.toml": {
+      "sha256": "3955b84b0b5021af2ad6626fd1eca8640f447fdaa5fd4e77cdca0eea40f4eeaf",
+      "server": false
+    },
+    "config/ars_technica/glyph_fuse.toml": {
+      "sha256": "d6257b8e07f3158a15bac2342d293b1038f928d96f5696f04780e20645de59d9",
+      "server": false
+    },
+    "config/ars_technica/glyph_insert.toml": {
+      "sha256": "9274b2a00ffff9dc989b769ec50c4c03e49d0ddaa1c501f2762218272ad36e8f",
+      "server": false
+    },
+    "config/ars_technica/glyph_obliterate.toml": {
+      "sha256": "4dde41a6850b7e02519f5c157ab5e9e26eed91775724d0d8a1b0fa611bb513d6",
+      "server": false
+    },
+    "config/ars_technica/glyph_pack.toml": {
+      "sha256": "3955b84b0b5021af2ad6626fd1eca8640f447fdaa5fd4e77cdca0eea40f4eeaf",
+      "server": false
+    },
+    "config/ars_technica/glyph_polish.toml": {
+      "sha256": "ade40898832d2c05e3860985d035fe2b1838283e952d6b0fbcc8ca7a91ea11c4",
+      "server": false
+    },
+    "config/ars_technica/glyph_press.toml": {
+      "sha256": "3361f6c40df5e05259c752265458ed7bee8d7d9c8d19a74d3ef61783c90e42b0",
+      "server": false
+    },
+    "config/ars_technica/glyph_superheat.toml": {
+      "sha256": "3a59fe063ae97059dc3d009db30cbd03fa64e12ea2e2016eccfb902e19f8bd21",
+      "server": false
+    },
+    "config/ars_technica/glyph_telefeast.toml": {
+      "sha256": "11d533c7506ff21a7f1b7e0e63d6f8e182abf9d1b09fa9ea3dae628498bcfbc2",
+      "server": false
+    },
+    "config/ars_technica/glyph_whirl.toml": {
+      "sha256": "4083c64c5d4a9cd458442f7baef9c93713c76a386fc892c1033192291e0f67bd",
+      "server": false
+    },
+    "config/bettercaves/README.txt": {
+      "sha256": "e6f25132180339d5b7f53c1f5473f28cdf743f76292bc8f87142e4b0300e0f2c",
+      "server": false
+    },
+    "config/bettercaves/neoforge-1_21_1/README.txt": {
+      "sha256": "1dc29f3ad9f62887f2667aeaed28c3fd3a2520055382ecb3636e3cb9ea563baa",
+      "server": false
+    },
+    "config/bettercaves/neoforge-1_21_1/liquidregions.json": {
+      "sha256": "ad0e43cd1d8fff16d76ff6036699bd67598ff8bc18220b7e8e951245c92cf139",
+      "server": false
+    },
+    "config/bettercombat/client.json5": {
+      "sha256": "2d853633deff976b16e7e973c168134886fe8c06ec5108a077d835db97b5ff18",
+      "server": false
+    },
+    "config/bettercombat/fallback_compatibility.json": {
+      "sha256": "754feb4474a3f4d9fe6bd08f38c248fd5a796ed51f38d7d5704680250f3a34ca",
+      "server": false
+    },
+    "config/bettercombat/server.json5": {
+      "sha256": "3f50d34e55861d3ca4d9557bf21c154d297abe01f37d11c6a84d70a2255b5e83",
+      "server": false
+    },
+    "config/bettercombat/weapon_trails.json": {
+      "sha256": "fd14cc025b6d6c54bc2ddff136f0298c0ba132dbe98c2c9c845b47b8286fc45c",
+      "server": false
+    },
+    "config/betterdeserttemples-neoforge-1_21.toml": {
+      "sha256": "c7355a13f2f7c4eeb3332ab67a2315e0662c7e5b434dc33d4624fccb9e815240",
+      "server": false
+    },
+    "config/betterdeserttemples/README.txt": {
+      "sha256": "a8248503b691a780ba45cf033a8d74f1f878d27f119f1d8b4b80b2b8745f62db",
+      "server": false
+    },
+    "config/betterdeserttemples/neoforge-1_21/README.txt": {
+      "sha256": "80ba474fdd1912739a1dc3326de6539ccfceb9d5c97f540131b567e295a7b112",
+      "server": false
+    },
+    "config/betterdeserttemples/neoforge-1_21/armorstands.json": {
+      "sha256": "60e9ace8a7626abdb35190b64805171a8c9a24eff4d7f65a7b4f40e262c85ffd",
+      "server": false
+    },
+    "config/betterdeserttemples/neoforge-1_21/itemframes.json": {
+      "sha256": "fed82e9e4d3f6ad73cfafa7553685ede1f9251d6a84721150607974a4c98f3c6",
+      "server": false
+    },
+    "config/betterdungeons-neoforge-1_21.toml": {
+      "sha256": "b03069c030f940550b4436d2f7c3dab582efa2fcc32b221ac30dbcb0617eab7f",
+      "server": false
+    },
+    "config/betterendisland-neoforge-1_21.toml": {
+      "sha256": "ffe069fd52a22a7967f4d012382dca670f585635cb721c2190f0595969b662af",
+      "server": false
+    },
+    "config/betterfortresses-neoforge-1_21.toml": {
+      "sha256": "0bef433c8253f63704694528c33dc854f2b28da084d420a61c43fd62d6e5301b",
+      "server": false
+    },
+    "config/betterfortresses/README.txt": {
+      "sha256": "5643f5af88b445a96f2c6ea167b97cc640059eda5c849ed3c7b8d5023ab51a86",
+      "server": false
+    },
+    "config/betterfortresses/neoforge-1_21/README.txt": {
+      "sha256": "1175dbf9cd2e7c91b1c852a51e3c0203c68484917e877465b283e2370ad62864",
+      "server": false
+    },
+    "config/betterfortresses/neoforge-1_21/itemframes.json": {
+      "sha256": "3acc2e33071f1d53d89ef5ebe1f7e2f1250211928c49a3844fd5eb517b4b2aa5",
+      "server": false
+    },
+    "config/betterjungletemples-neoforge-1_21.toml": {
+      "sha256": "77ef014bd34c9f66bf40b3e6ae7a67bf7ec2a618b76eafff9f0921577d3ab1b9",
+      "server": false
+    },
+    "config/bettermineshafts-neoforge-1_21.toml": {
+      "sha256": "37ee9275b9680c2d07d395cf41769c456c9b93adbf85ddf6514ee601977fa099",
+      "server": false
+    },
+    "config/betteroceanmonuments-neoforge-1_21.toml": {
+      "sha256": "6c09d2a75810e76c719b355c3480d1dc14b135f944f4a85d2118a395efc916c5",
+      "server": false
+    },
+    "config/betterstrongholds-neoforge-1_21.toml": {
+      "sha256": "3f2ae4edfb2c45137f14dc6a1a4f02958735b9831c0762d19d9e57fe4ff72346",
+      "server": false
+    },
+    "config/betterstrongholds/README.txt": {
+      "sha256": "cd97289ac49b09b032d9c69a2f893b8fa9f73849b4adb9f63f8486a83bf2fd5a",
+      "server": false
+    },
+    "config/betterstrongholds/neoforge-1_21/README.txt": {
+      "sha256": "5aad271e60a03218eb5207dd78df8d1d36c676f212bf823701e33646010d2f19",
+      "server": false
+    },
+    "config/betterstrongholds/neoforge-1_21/armorstands.json": {
+      "sha256": "5cca0df5ce473d0e3e316de897f4bf5064a05936f400a58f9ed8dcb81918c911",
+      "server": false
+    },
+    "config/betterstrongholds/neoforge-1_21/itemframes.json": {
+      "sha256": "572621782913615fe307c7abcdb4a88cd210ca28d56d85768dd6a5ed2034171b",
+      "server": false
+    },
+    "config/betterstrongholds/neoforge-1_21/ores.json": {
+      "sha256": "1315e8894dead1c1ee3888dddcd8e0a0bf8d8c8b661760d9c025282ebc8e95cc",
+      "server": false
+    },
+    "config/betterstrongholds/neoforge-1_21/rareblocks.json": {
+      "sha256": "9ddc626d65c34343128e5d5faa50931e11bd0c45324f77888c4a47424ec92a8f",
+      "server": false
+    },
+    "config/betterwitchhuts-neoforge-1_21.toml": {
+      "sha256": "0fa4f192f54dc1fc4f7ac7ab8be7cba88e324fe21571777cb8a6d404f6ce49a9",
+      "server": false
+    },
+    "config/bhc-server.toml": {
+      "sha256": "ca33dd6a2e50bb24e9e3483d2e30843c264a5f5e842ec20ee8bf7b4528029382",
+      "server": true
+    },
+    "config/bhc-startup.toml": {
+      "sha256": "fd05d85070853bdd0e8635417e3e0856462118b04c144bf8bc59160f341209a7",
+      "server": true
+    },
+    "config/bhc/drops.json": {
+      "sha256": "107911a70c40b725dbe83d58538e75c5feddf1d4e4439a269d922edee936286b",
+      "server": false
+    },
+    "config/chatanimation.json": {
+      "sha256": "b0fa9ec5d41f666fa2c770bb2bde4753cbeeef76909f4765d6ebbf5683c4ae58",
+      "server": false
+    },
+    "config/cirrus-client.json": {
+      "sha256": "dc5aef871703c67f4df05ccaf0eaa6d06f006e37b599bf6bedc9a9531b440408",
+      "server": false
+    },
+    "config/connector.json": {
+      "sha256": "67bee06b2b321ed25e0d4e9b5bac7ab76c8ae76442de6caf11f463ce2ae1ac5e",
+      "server": false
+    },
+    "config/continuity.json": {
+      "sha256": "00267a602028cbb037dcb0b5f803db31bed284235ca9c1ea189ad4179311a2f4",
+      "server": false
+    },
+    "config/cosmeticarmorreworked-client.toml": {
+      "sha256": "4f9577e9c8002872f5f3382f9892a38cbeefb6e2772b2ca248beab44859068fc",
+      "server": false
+    },
+    "config/cosmeticarmorreworked-common.toml": {
+      "sha256": "687143b4844094f166ff875447d139941970649475924d47ce8982e04ef1cf5d",
+      "server": true
+    },
+    "config/create-client.toml": {
+      "sha256": "cce3eab1a290cc1f0eada00031f0577f661f883aee3438cf1139283c65d1f319",
+      "server": false
+    },
+    "config/create-common.toml": {
+      "sha256": "2e77b1d93b40ce3f381ad7eb2a9e6d7148de917518be5c2616939a4369c4b140",
+      "server": true
+    },
+    "config/create-server.toml": {
+      "sha256": "36216a05f3ed63106ba587c8c24ed6315385829e7f3dae695dcf545aba41a270",
+      "server": true
+    },
+    "config/createtree-server.toml": {
+      "sha256": "652de2eb2a53c45f13586383171033d38fc024dc50a349dd42538d8f1a4690f3",
+      "server": true
+    },
+    "config/createtree/skill_tree.json": {
+      "sha256": "02622733e9f90e6c88ae6cce9105fc154f797d89c6d16f2113fe5d19a0bda1c5",
+      "server": false
+    },
+    "config/creeperoverhaul.jsonc": {
+      "sha256": "d8088bd461dd7666552c4174bac6549e55112728e07aa3addd0e32a805c230fc",
+      "server": false
+    },
+    "config/crepperoverhaul-client.jsonc": {
+      "sha256": "8ebd8ce17fd98dc18dde0d3271b9237fbc98d9664647940308c9a4d7804dc200",
+      "server": false
+    },
+    "config/crittersandcompanions-common.json5": {
+      "sha256": "6c71ae8e49bbd1da8e98d86e218db5479e62a540cf44c4df49426e4d2b690209",
+      "server": false
+    },
+    "config/cumulus_menus-client.toml": {
+      "sha256": "99a2c92b352b9f14776f5d4319a2677e0ac941c482f489427890c582dbc9e2f4",
+      "server": false
+    },
+    "config/curios-client.toml": {
+      "sha256": "8af475d222d452c40b548db89c8956f3e4d1e2aaf729464e3065f029936b3e0d",
+      "server": false
+    },
+    "config/curios-common.toml": {
+      "sha256": "9f00a6b9904cf63a36c0c72f8346642962d538aaa78b59943b9de60dda82e6d0",
+      "server": true
+    },
+    "config/curios-server.toml": {
+      "sha256": "1a3bee95a96f082b8e97cccbce30c1efe1352b616c78e06d5884fd4475668add",
+      "server": true
+    },
+    "config/deep_aether-client.toml": {
+      "sha256": "01e33dc4e16dcdfcc6f7ed4231a57bcf38d1c268c219585af1c75480acc67a33",
+      "server": false
+    },
+    "config/deep_aether-common.toml": {
+      "sha256": "5adc0a58ec189437851b47a668c937645d2fe1cf17e760472f052cd20276725a",
+      "server": true
+    },
+    "config/deep_aether-server.toml": {
+      "sha256": "6863697a9b7c6e47acffd1fb36674cf57520473399889d1133d84e415f0a50f7",
+      "server": true
+    },
+    "config/despawntweaks-common.toml": {
+      "sha256": "e031348aeb851c4f83c8601e7db0643974930d2b9c9b9850f270c79ffc46fe8c",
+      "server": true
+    },
+    "config/drippyloadingscreen/early_window_reference.properties": {
+      "sha256": "905eb9f365b4fbb4c3510f6531b3da6988e040e7badc86c71a1785a923a5dd12",
+      "server": false
+    },
+    "config/drippyloadingscreen/options.txt": {
+      "sha256": "5fe78d0e26863961f33a5431f162d1aa3c9b6b3a483ab3e1859991372b44627a",
+      "server": false
+    },
+    "config/easyanvils-client.toml": {
+      "sha256": "e7f75aee2a53eee492917c12e6ee3f7f69808877e59e6b2e8024408e961d8754",
+      "server": false
+    },
+    "config/easyanvils-common.toml": {
+      "sha256": "f447750708cb0c1773477734490a287ec21161610edac38cf7551ce486702b83",
+      "server": true
+    },
+    "config/easyanvils-server.toml": {
+      "sha256": "a5ccc7c1080a0f8a33d45ebb941b38dc607597ade1d128cba504a9cc1a873766",
+      "server": true
+    },
+    "config/easymagic-client.toml": {
+      "sha256": "2ad457c78882a34057f2fb5748398e9614a7fb5e491e8a868534de40cd2c1c6d",
+      "server": false
+    },
+    "config/easymagic-common.toml": {
+      "sha256": "7a98b95d82e470d071fd0f51d97f4fceb59f7de4af3129e9447f7241f8cac700",
+      "server": true
+    },
+    "config/easymagic-server.toml": {
+      "sha256": "b2860a71cdc35a6f3cee847622a7085c35d3691f26ca7b4c84098e14bc4369dc",
+      "server": true
+    },
+    "config/effectual.json": {
+      "sha256": "8792984e714a0a60d8e18b3da0d7879b78ba096e55142ed8354945587647bc91",
+      "server": false
+    },
+    "config/enchdesc.json": {
+      "sha256": "7116b95a9b6797af8db84e410a2ca2fdf6f813461e37cd04bff5af933f31567b",
+      "server": false
+    },
+    "config/endermanoverhaul-client.jsonc": {
+      "sha256": "7fcc9808465cc6ac8f57426b568516f7ad9ba3197be8f3692ead91253f8bef7a",
+      "server": false
+    },
+    "config/endermanoverhaul.jsonc": {
+      "sha256": "94d584e93f86976673fc36fd3834f407444a452199fc4bb9adff6ba320c3e881",
+      "server": false
+    },
+    "config/enhancedcelestials2core/mixins.properties": {
+      "sha256": "36b0d118a1924aa3f2436fa16cc46a366c9a7f138765ae86caec05977be98bd5",
+      "server": false
+    },
+    "config/enhancedcelestials2core/translations-cache/ru_ru.json": {
+      "sha256": "8cf6fa94adb51155093eb2327ab0c581ec6ec9834fcf17b904f63e061d94c352",
+      "server": false
+    },
+    "config/enhancedcelestials2defaultlunarevents/translations-cache/ru_ru.json": {
+      "sha256": "cf0ad355a09dd2a9b94a5ee9c3b32487efafe401a54c4915b635bcfc03780ccb",
+      "server": false
+    },
+    "config/fabric/indigo-renderer.properties": {
+      "sha256": "2f265b2f9d9129aeb76ac18e25427236a25c04fd8d10e199d343ed05d7806278",
+      "server": false
+    },
+    "config/fallingtree.json": {
+      "sha256": "9704d03d869a866e68c5e783025c8720df6d35e3e76c56080e08e9bf6473a341",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/button.png": {
+      "sha256": "adfeba0e31fd118731f507e07678058a1612fe74c05531a18b573e8997b8ca7a",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/fieldnotes.png": {
+      "sha256": "f64159c8ae8b7d91b454a5466e6527c15a60f25b525800310ee7a20b7369ab4c",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/frontier-icon-16.png": {
+      "sha256": "da2ce23730d0b3ef5453ed4ba0c0bfdbcb45ba7d99cd22966a511aeac5b16109",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/frontier-icon-256.png": {
+      "sha256": "0c43ce0b0a05323485d20689d2d48ad364dd84404e4f6c50c1bb82f657e937d6",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/frontier-icon-32.png": {
+      "sha256": "d57c9427ff3ac160dfe2d5228dc13e1e2f90e8a55ccc9af3d0165dd20715158b",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/frontier.ico": {
+      "sha256": "5b15f36275b3c6de26e35ed8cb91b9fd326593d3e2215e202e70ad52d70e5d86",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/hover.png": {
+      "sha256": "9ab18c572ad31f171297c43c035462277180701a1f8f4c09baae428bafb6f4a5",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/masthead.png": {
+      "sha256": "46eebde5d43061d5cf04bf1574b1f98a96b05b421a3727bd4b85361a89e9a360",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/note_0.png": {
+      "sha256": "5c078e4881f187caafd8328e19875f080a181535b68816f2f06e04732103ffd0",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/note_1.png": {
+      "sha256": "7edb7b89894d457b97f347e18a0f3ccce7556d2237f4f30cac360be447a1578b",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/note_2.png": {
+      "sha256": "14b8cd2bd7483b738406294018d6c871858dc892dc62b5643f684f74b90ec174",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/note_3.png": {
+      "sha256": "840367d562d0803ecb8878f4ebc85c4bceb9c6c2e7e51361dca403c18216b315",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/note_4.png": {
+      "sha256": "d4eddc9a9b6f26c98c88cabdd931d7513900cddd24cffa6c158b5c43c3b54de8",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/note_5.png": {
+      "sha256": "c30dc490d6513d05d873ceec6d756c6b0c90555af12e1ca7af65733efb668b55",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/tip.png": {
+      "sha256": "e9d832597e1877e4dc962d48c6e090803a556b3ae2c2294c3593225b652e658c",
+      "server": false
+    },
+    "config/fancymenu/assets/frontier/valley.png": {
+      "sha256": "baa31f6954e05131a9b92e057b05fcbf047577230d65ab9e109c3e9ce1dd82b4",
+      "server": false
+    },
+    "config/fancymenu/custom_gui_screens.txt": {
+      "sha256": "f5b8e1edb9a7b304166ccd54867f8d9973fde7b377bac9c6e5e1b09d4880af3b",
+      "server": false
+    },
+    "config/fancymenu/customizablemenus.txt": {
+      "sha256": "22fddd986d502041ded0c6259229d35bc69108d59dbb1e49a31950fe66f501e5",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_about.txt": {
+      "sha256": "591dad63c64f0d3a49e39991b05ef1d3e50cf05058fa99557edadcbba827fbcf",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_accessibility_options_screen.txt": {
+      "sha256": "498719e9908d0bc2e8738984dadfeac90440ccf2680447e4e2c3ea40babadc4d",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_chat_options_screen.txt": {
+      "sha256": "ba8843c50eda3c1608e8c729e00b1e212aa948bf544f1995da5b653066f5aebc",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_controls_screen.txt": {
+      "sha256": "aa1f75fca46727273e1c56374cbf1efec301994affb9533607217b2db74d6ee2",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_create_world_screen.txt": {
+      "sha256": "d455402c9c2e2638dcb3197f5805191b7682133b1a4e96ce13ebf1f9e427c692",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_edit_world_screen.txt": {
+      "sha256": "94a01f1afe283056a2d97ee412730d50e4241e272daf08e4b42408f565e5efc2",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_join_multiplayer_screen.txt": {
+      "sha256": "49f53fcc49b49b53ab7f2afbacfd9e2888dda9800799f2972d2b4d9206e5ba0c",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_key_binds_screen.txt": {
+      "sha256": "cd4f1e8900c4e26113491a9b38053b7ce0c8453d146f294b713e097ad203870f",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_language_select_screen.txt": {
+      "sha256": "5a2621b0b1e10310343e478744a2a8010d56a7b79540723c57b4a8f980904fbf",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_level_loading_screen.txt": {
+      "sha256": "6923d098d328882edb8fb1d273f8ad6ff701268c8ae0d447a3dbcb9b9cb60ce3",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_level_loading_screen_tip1.txt": {
+      "sha256": "f099c55c4ccac6f42c690d6e88441a8a8fd0fd3001db79cbda7b3286576a6728",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_level_loading_screen_tip2.txt": {
+      "sha256": "9042a0aca16ee9d7033ab70a4bd563dbb40c54ee268c3d8b3cdf7bad0e35b53d",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_level_loading_screen_tip3.txt": {
+      "sha256": "8ad55de79d79d634dcf0bb006147fe25388b7558dd0e5b94eccdd3799715672e",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_level_loading_screen_tip4.txt": {
+      "sha256": "ca6a07fa4bb2fee83c9df31758f90e5e1f83c35d33e930dc20cb7a4522052d98",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_level_loading_screen_tip5.txt": {
+      "sha256": "c540ebcf0436fb99755ac4be96bfa143a9af2f8a543aa525d105fb34e9dee89f",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_loading.txt": {
+      "sha256": "bfcb1ed6a89ad6553d7965c0895c1ef409558e02b9cffb96779fd80fab033ba4",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_loading_tip1.txt": {
+      "sha256": "6924b31fa2e3a2daf5657e64b58287078249a14384730f9506e1fa199ca1b3c7",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_loading_tip2.txt": {
+      "sha256": "c3fd2d06223a2bef1b2b0a42bb51db4fb593f0a0b4a800a379b74aa2518a6de0",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_loading_tip3.txt": {
+      "sha256": "30007c591f531b1a4566f2cb8af5dda8f76da383aa92480280b8fdb341ad46bf",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_loading_tip4.txt": {
+      "sha256": "4dc1fb10023bed71010a63f17033328bb50211c66737a4a8e9ed3f1d55b6d4dc",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_loading_tip5.txt": {
+      "sha256": "0ecd1cc1898f402fc0e828127734f46118e17a64b1c0ac1537595262f433cee8",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_options_screen.txt": {
+      "sha256": "949622357c3f28f5de43357ce0947d959740a74fdeb3377ab7d9cc72763a63ff",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_pack_selection_screen.txt": {
+      "sha256": "9995726c4f7182a8105209548a4dc5a19496be845ca14d2702805d2a2b69d281",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_pause_screen.txt": {
+      "sha256": "7c3122193c948059ec56fc2874ce1d0c33bad01c43a74d1f52802123138ed135",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_receiving_level_screen.txt": {
+      "sha256": "4002d2be77ff8432e8089033539d4bf6cdf736eddd2894934609d6a777c8a56b",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_receiving_level_screen_tip1.txt": {
+      "sha256": "1f1a8a4ff13d6d59fbb6adf09683554e587e98c507fac5eeb3ab14a52010793b",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_receiving_level_screen_tip2.txt": {
+      "sha256": "84b43cf9bee909d8c731c587242be82618bb8cae0ae3b48be907dadbf736c4dd",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_receiving_level_screen_tip3.txt": {
+      "sha256": "41b652794561c857debd10c92f5979e869ab5b5aa3885807c5493144809cab7d",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_receiving_level_screen_tip4.txt": {
+      "sha256": "1096fd3c9c01e0c88d0be9cf93f7a891ed64488e01cc944a8a33ce21738134e3",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_receiving_level_screen_tip5.txt": {
+      "sha256": "86b399f7a1125ecb96a585da693be810f224c640876902a66b648604a1c1240f",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_select_world_screen.txt": {
+      "sha256": "02755676c537edc22f1caa3c2c8bcd9ed6003a274394bc235a4df9c34c313c08",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_sound_options_screen.txt": {
+      "sha256": "5f9e25b74668c263655fe01194cdb2855669f1e8b5cba9d126280d56ceda88e0",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_title.txt": {
+      "sha256": "14b53858434e0ac21013ae1ebee25520f4c0b5310e77f0b5d2056f5c509b8652",
+      "server": false
+    },
+    "config/fancymenu/customization/frontier_video_settings_screen.txt": {
+      "sha256": "b7cad631b7984fbe1e8dc90b295631f3f26073050de86571441dcef3e7583949",
+      "server": false
+    },
+    "config/fancymenu/legacy_checklist.txt": {
+      "sha256": "9a25d3dc708e43eabafce5479a13c02dae15bc7f673afb2745b8b2ba48a97dc0",
+      "server": false
+    },
+    "config/fancymenu/options.txt": {
+      "sha256": "f673e80ec9bee97fafb2b784b962286652473b532b0d648e411dd49fba8ade11",
+      "server": false
+    },
+    "config/fancymenu/ui_themes/cherry_blossom.json": {
+      "sha256": "993c16664fe2d1b9e8ad107bf1c19c1dbb244729c403ed058ca2e54616dc5452",
+      "server": false
+    },
+    "config/fancymenu/ui_themes/cozy_campfire.json": {
+      "sha256": "1e7505231b9d99e6315845043ce810dfc7004ce1d8f5a4ceddb4ecb96c03ac50",
+      "server": false
+    },
+    "config/fancymenu/ui_themes/dark.json": {
+      "sha256": "01e2a3b5d250c0259a7f97f0d353785bfeab6d7ee2e147c16bb910f1d23e9498",
+      "server": false
+    },
+    "config/fancymenu/ui_themes/dark_high_contrast.json": {
+      "sha256": "54316a2b309ddb472b9133f8ccb8694dce9b57be6ebcfb3c2e9d1bbfdade3f26",
+      "server": false
+    },
+    "config/fancymenu/ui_themes/light.json": {
+      "sha256": "a05e95f7b62f338049fe0045d9a6a50060d3aba52d5ab83ac1ed6ff55cac1153",
+      "server": false
+    },
+    "config/fancymenu/ui_themes/light_high_contrast.json": {
+      "sha256": "7c96ba2f2cb4d59d20eaf88960de7a9308ce8a3460c4e1757e07c42e174ea65a",
+      "server": false
+    },
+    "config/fancymenu/ui_themes/pumpkin_soup.json": {
+      "sha256": "7c6a5d5b19e53ca2f88371c2e867f51339b045697aab29864df5877a6bba9311",
+      "server": false
+    },
+    "config/fancymenu/ui_themes/purple_void.json": {
+      "sha256": "fa63577441fd576ebac90ecf06b7ded376cbf80ca5103d398bc9a73a25c6c2c0",
+      "server": false
+    },
+    "config/fancymenu/ui_themes/spooky_season.json": {
+      "sha256": "cfa46554bbb027efe3c2184a073ee652000acac2500cd5136764f901355ec0cd",
+      "server": false
+    },
+    "config/fletchery_expanded.json": {
+      "sha256": "3de3f4a62a316db8bedf49426f8dec303a0d435338c3ef0b51fff593a1769ddb",
+      "server": false
+    },
+    "config/flywheel-client.toml": {
+      "sha256": "4ae4bcb313f7215d1466a36e008e0f20805c98e1aa5b46b154a81dbfdb098e9d",
+      "server": false
+    },
+    "config/fml.toml": {
+      "sha256": "f79d56716a680ddec8765774b2b6ebfdecd427f0187e1fda20407326adfbf0ad",
+      "server": false
+    },
+    "config/frostworks-client.toml": {
+      "sha256": "980dd99680e27de5a3c0b8e47ea699c72c7449012a02af2d0e035e7b7b977a08",
+      "server": false
+    },
+    "config/frostworks-common.toml": {
+      "sha256": "c863e45cc6052706b1fc8e90dfb9d44d506d9dfe05544c8a20c14d0b8a3f894b",
+      "server": true
+    },
+    "config/frostworks-server.toml": {
+      "sha256": "a7ef5331f400998e6d0ebaf2ca73e68b0b41ab4a311f68076a45a0e702c020dc",
+      "server": true
+    },
+    "config/ftblibrary-client.snbt": {
+      "sha256": "4a98161835ae188156dbc1f1015287c0c17aa91db082a083ba6a505de99923f1",
+      "server": false
+    },
+    "config/ftbquests-client.snbt": {
+      "sha256": "1032e8651b80ddc5ddc712a56ae0d5a3408e9c28d5dcac2578705cce9ea4bcd0",
+      "server": false
+    },
+    "config/ftbquests/quests/chapter_groups.snbt": {
+      "sha256": "739539b4146abfddb28d18027abc040e62af3634552c3c8092d021545f0c08fe",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier22_a.snbt": {
+      "sha256": "770a410f895c3757dcc1f8b3638007b68d0b555253cad1d4131b40b4dc6ac16b",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier22_e.snbt": {
+      "sha256": "9dc4945e0e478063e9bbb9553628f11ec9572e1ba0ca0833a4555d4950932418",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier22_m.snbt": {
+      "sha256": "100d9263208c6c0e26a54c31e42339868428c954c18b087353dd6fcacad4c10e",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier22_p.snbt": {
+      "sha256": "9329d7875bdd80d2861dd6a505c6310500fe9b843df99830d00b59fcfaafcfff",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier22_t.snbt": {
+      "sha256": "6cc7f360545e669bc43681829a5d79b9b280124dd32e98950e7aa8d87aea0b11",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier22_x.snbt": {
+      "sha256": "45022754a8b4af40daa1ec8ed6a53848681f3b7a39ccffe3e15dfd0ead423a8b",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier_field_aether.snbt": {
+      "sha256": "3f74613a6d33c9650bcae4e8a8d12afecf0b13ee7a13b8e4212979a5c7676b9d",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier_field_ars_nouveau.snbt": {
+      "sha256": "447262ee004659cdb1b40b383e43197f4e09d37b5097459b28d5de17fa57770b",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier_field_create.snbt": {
+      "sha256": "bfae2c88012d22b4168e6ab73ca8e053cf870fa85b50694b10de9c55f9130ef7",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier_field_hexalia.snbt": {
+      "sha256": "2f4f35db33a7cb0f65030263691ac6c2802eeda89cf013afccadbd8fa6b602a3",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier_field_sons_of_sins.snbt": {
+      "sha256": "d904d1552858cc974cfe2c2340d3a75bf52c622eb2fa7b0318cba1d8f6ba63e6",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier_field_thaumaturge.snbt": {
+      "sha256": "925780ab853c759989bc7f5fa68a5d4c935bf0714f319f3bbb2baba8cf51a0e1",
+      "server": true
+    },
+    "config/ftbquests/quests/chapters/frontier_field_witchery.snbt": {
+      "sha256": "a1aaa75d5494a8660bfd90544afd02cc367a69308d302d79521067c5762c4c0d",
+      "server": true
+    },
+    "config/ftbquests/quests/data.snbt": {
+      "sha256": "770cf7a5a6531d0c5361ef0efdcd226c4bf6e3945669f266c4883213e7b6189f",
+      "server": true
+    },
+    "config/ftbquests/quests/lang/en_us.snbt": {
+      "sha256": "6102c2f64c3964d6c95e69714e0073e10cdd35b08799e5c6850a5df9ab8802e6",
+      "server": true
+    },
+    "config/ftbquests/quests/lang/ru_ru.snbt": {
+      "sha256": "3a371eecc6724e11373585c660cb6067003a12b019a9c6f4ba82b70aedb64ab7",
+      "server": true
+    },
+    "config/ftbteams-server.snbt": {
+      "sha256": "61b37c30c24d841f4d993e933df0d60f198fbcf06671a87a73b9a23f8434858d",
+      "server": false
+    },
+    "config/fzzy_config/keybinds.toml": {
+      "sha256": "26ac5810c9b5dc5c1968827357f0a58c58ac2b6f7b082630960228e16585062f",
+      "server": false
+    },
+    "config/goblintraders-entities.toml": {
+      "sha256": "a6b686012757cda8a573371fc26233183f175d0e56359c24255dd7323b07f262",
+      "server": false
+    },
+    "config/golemoverhaul.jsonc": {
+      "sha256": "7e694c92bd8b75e3cae9c6a0730a4d5e1cc00c39dc7f4924dd09ef8ce12da41d",
+      "server": false
+    },
+    "config/grand_teleport.properties": {
+      "sha256": "8d3211abb475598cb0e334c0a30b56139350817c4a307951cc22bb7d0697fb31",
+      "server": false
+    },
+    "config/gravestone-client.toml": {
+      "sha256": "6509ae4ffdec69d81c54f5d52e42c6d7d507b68bd019e658486b37908c1a7ed8",
+      "server": false
+    },
+    "config/gravestone-server.toml": {
+      "sha256": "d6bee13ae45904562fc651630ce48fa4e70cd3853fe2f488403c9b67d0c74c2a",
+      "server": true
+    },
+    "config/hexalia-common.toml": {
+      "sha256": "5753c2b4aab56946df097ec8244ae74b1099491117ec373d9d6105a304a8321b",
+      "server": true
+    },
+    "config/illagerinvasion-server.toml": {
+      "sha256": "8a0b55eb9296f5897140db1adceecb037b7b06aff74cee1a5255e9c3013f942c",
+      "server": true
+    },
+    "config/immersive_armors.json": {
+      "sha256": "c5deb8b07100eae8a76fa76ce207fc619d281b74b022bc9094784237125d3cc9",
+      "server": false
+    },
+    "config/inventorysorter-client.toml": {
+      "sha256": "3036042e2f401f4cec98e0399fa52cc84f1a419388762c3d31f254d088cc143f",
+      "server": false
+    },
+    "config/inventorysorter-server.toml": {
+      "sha256": "67187f690326108f6f4123dd517702157dad8e272016129ee4314341788f9db4",
+      "server": true
+    },
+    "config/iris-excluded.json": {
+      "sha256": "4d3264b58c502afaeca3f44e8d2db0843c54b8ba957afd21a2d450fe10dafefb",
+      "server": false
+    },
+    "config/iris.properties": {
+      "sha256": "eca2a23d93884dc5c963172287ad786f28ba171a30aceceb1756c353c200637d",
+      "server": false
+    },
+    "config/ironfurnaces-common.toml": {
+      "sha256": "bfb348e145fd39f5b53f94d034a6baf4bed2added70097f5ce507324adee6c3e",
+      "server": true
+    },
+    "config/jade/hide-blocks.json": {
+      "sha256": "309df4ae96864c19eae41b646d58497c85a73b1fc3c584e772ef4d5822794baa",
+      "server": false
+    },
+    "config/jade/hide-entities.json": {
+      "sha256": "3741bb54a4535fb5a00fb0ee1f4386f3dd17834aebdf9e89c21fcd3307109709",
+      "server": false
+    },
+    "config/jade/jade.json": {
+      "sha256": "f9f68a1557cdfab8394d2f4b54a2756d96451dcdddea4f5e04cb912b516ffa05",
+      "server": false
+    },
+    "config/jade/plugins.json": {
+      "sha256": "f5ec6e8029c778ba95f6ab62958e97732b2946b2d6a00a2f65e211b85d1e777e",
+      "server": false
+    },
+    "config/jade/sort-order.json": {
+      "sha256": "fb2a7ffbc9beb6c871f4d2ba5c02a3ec101fa73b06fb9e0732b295e5f4160653",
+      "server": false
+    },
+    "config/jamlib/known_suspicious_jars.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "server": false
+    },
+    "config/jei/blacklist.json": {
+      "sha256": "b4174dc6e985aa90be5002c14e94b956d8d586683c44b7b6710c44d08fb13648",
+      "server": false
+    },
+    "config/jei/client/default/jei-client.ini": {
+      "sha256": "7e410776dfa65503cac6eb55ecd89ddce4c2c2c1b862e6cf6e7649ca40b00cda",
+      "server": false
+    },
+    "config/jei/client/default/jei-colors.ini": {
+      "sha256": "c6d4ae48280627d04a7ae2b6d3db65e71d73670a72732f5aed9f4cfaac3837c7",
+      "server": false
+    },
+    "config/jei/client/default/jei-debug.ini": {
+      "sha256": "376cc883cac002d07792f209f7bc1915ea7fa8822effc67734f1589bab9bb806",
+      "server": false
+    },
+    "config/jei/client/default/jei-mod-id-format.ini": {
+      "sha256": "2e5119684366f75bc8a6df871381c6094a812cadd0d5ed0547405b5f1353f9e1",
+      "server": false
+    },
+    "config/jei/client/ingredient-list-mod-sort-order.ini": {
+      "sha256": "2feeb0b62773ab91f152a508933a824946b9007b49c7536257ed231d9ec14e2d",
+      "server": false
+    },
+    "config/jei/client/ingredient-list-type-sort-order.ini": {
+      "sha256": "d728cacae4c620093ca3c734f03981681dc652039e0509440b56666e4e13617e",
+      "server": false
+    },
+    "config/jei/client/recipe-category-sort-order.ini": {
+      "sha256": "56004b08be64949460f2068221639923105c10303aa6f7b9ff1109ce2edb3a0f",
+      "server": false
+    },
+    "config/jei/server/world/default/jei-server.ini": {
+      "sha256": "d143422ba3144d592e3627874cec2d980f4ce0e3c776bdbd109919dde3c5f4c2",
+      "server": false
+    },
+    "config/jeresources-common.toml": {
+      "sha256": "99cb20d7cd33b3b8cbf747fb026a02f11cec5d14463bd0e6cfa68f37526430f5",
+      "server": true
+    },
+    "config/justenoughbreeding-offsets.json": {
+      "sha256": "eac041b52f6f62f54b64495bd5ae3e3fd6f50830594ca614e9606407cd58c126",
+      "server": false
+    },
+    "config/justenoughbreeding.json": {
+      "sha256": "3b3519f38d850e4eb869d00d75b5e4dc664950959564aaf90c7ab7ccc6448a3c",
+      "server": false
+    },
+    "config/konkrete/locals/de_de.local": {
+      "sha256": "79a34cfd15c2d9c06498dc221be79279507d9b57666cd44f8d2c2cf95d3582ef",
+      "server": false
+    },
+    "config/konkrete/locals/en_us.local": {
+      "sha256": "fdf1864fd049b3f1b9af1f8db6c5125a627be7d06a451c778da3329843d3c39a",
+      "server": false
+    },
+    "config/konkrete/locals/pl_pl.local": {
+      "sha256": "d38a7776e362e4de6082078d803c1c9358d9d40526edfe4bdfd29c552aef76d8",
+      "server": false
+    },
+    "config/konkrete/locals/pt_br.local": {
+      "sha256": "dca55a2792451b31424cd5c24037141ec57cdca51955d062dd908fa9ca6a3e9c",
+      "server": false
+    },
+    "config/lambdynlights.toml": {
+      "sha256": "fdd6958ff17541c8d1c891bd1602088bb6888f41229e966387a07311f32ec6d9",
+      "server": false
+    },
+    "config/lithostitched.json": {
+      "sha256": "ce8ab190281862b0554c92043c2bf8af106fbe4116bcd6dab433f6506781dbc0",
+      "server": false
+    },
+    "config/mezz_config/client/default/settings.ini": {
+      "sha256": "1febf6ff1d35f4ffe34d6e5444e3c9496155a6abf3f49eb4ef5650d102645249",
+      "server": false
+    },
+    "config/modonomicon-client.toml": {
+      "sha256": "f7301ac5c174fd4958b6a7bbca7d6211da2f4ac83f85ef87e55461a2110f9044",
+      "server": false
+    },
+    "config/moogs_structures.json": {
+      "sha256": "db860fe96eacfed4d731e6b129ef189aaec81faf2df88f978f5bcbc4d7fc99d8",
+      "server": false
+    },
+    "config/naturalist-client.toml": {
+      "sha256": "3d626a28c780c6ff977a43d195335c066d48f4c1e4052a51c6339f86e5975791",
+      "server": false
+    },
+    "config/naturalist-server.toml": {
+      "sha256": "6ab307d70183380a10a0cbc50de621c2d23d43946384b8c08531acec14eb8dbf",
+      "server": true
+    },
+    "config/neoforge-client.toml": {
+      "sha256": "d58d93e2c429410d0abf25507d1679f732e1023b03bb52414348efcf5cf3ddb0",
+      "server": false
+    },
+    "config/neoforge-common.toml": {
+      "sha256": "8575eb5db529376141370dc9cf80bc762c4c70c22f538d3c89254b592e329f73",
+      "server": true
+    },
+    "config/neoforge-server.toml": {
+      "sha256": "b1e3b38d612295f8d9dfa0fbdb538a992b7a1a3b7a766c491b4e9fdf3823396f",
+      "server": true
+    },
+    "config/obscuria/ancient_remnants-common.toml": {
+      "sha256": "5fa8383758e7121551140b0005f6cc2475d2d4776675494b8a3e12af520e5197",
+      "server": true
+    },
+    "config/obscuria/aquamirae-client.toml": {
+      "sha256": "e5810dff812f19681fd66c5b0348c4312e9f07e4a18741ec62b94eced2b498ea",
+      "server": false
+    },
+    "config/obscuria/aquamirae-common.toml": {
+      "sha256": "39d606303bb24d21d3b0584b4ae2818070c3cbd486c6b07cc69393ac00518a31",
+      "server": true
+    },
+    "config/obscuria/maestro-client.toml": {
+      "sha256": "8a326a9fe77eb284ac9bc7fbdd57a9e85f34e78aeeed8caca5c3d3f6be2af10f",
+      "server": false
+    },
+    "config/occultism-client.toml": {
+      "sha256": "839dc8afb493c06c769ba0a17cf1ea985f767b285ac748575c31500e49d40ac9",
+      "server": false
+    },
+    "config/occultism-server.toml": {
+      "sha256": "9c778ddd77611b3e60de62e3dca792ae9605e845e0a2e5bbfaccccccc7371eff",
+      "server": true
+    },
+    "config/occultism-startup.toml": {
+      "sha256": "698caa85370cc13d2a6d636ec9ce9b5ed2dc8d813c8b89162ceda4136f66931e",
+      "server": true
+    },
+    "config/offroad-server.toml": {
+      "sha256": "d5f0ed8390618c769d9cb40a77df04779b7bbe636343b753c1ed6f92d325ae2b",
+      "server": true
+    },
+    "config/oreexcavation-client.toml": {
+      "sha256": "2a365c7a53b9bada08b609ef2fb08fb43450b47d880ba16880a6eb6cf7badfe4",
+      "server": false
+    },
+    "config/oreexcavation-common.toml": {
+      "sha256": "ac6821444f520300e07970a200eef54607aec6ee519e1ce493155cdb89ddf0f2",
+      "server": true
+    },
+    "config/oreexcavation/block_groups.json": {
+      "sha256": "c10846e015d2fb6bdbaf3c3271ae6a2ee17c31596949793b401cd390be091510",
+      "server": false
+    },
+    "config/oreexcavation/shapes.json": {
+      "sha256": "2a2429b18ea0ef737d05653964fa5443a2a80cf5b4d80e0f9b8a6022df34bb0d",
+      "server": false
+    },
+    "config/oreexcavation/tool_overrides.json": {
+      "sha256": "a456dc73234254ee94ddb1a3a6461729127c85b833370c83bb945a3d14e5344e",
+      "server": false
+    },
+    "config/placebo.cfg": {
+      "sha256": "eb7e9906d126543f03c2257ca98efa4b845d1e7479dc8b069a12b194c86debcf",
+      "server": false
+    },
+    "config/ponder-client.toml": {
+      "sha256": "55affffe67e84dfe11e590769e235aee999b77f9484a3adf7ee8247a9f3d35ba",
+      "server": false
+    },
+    "config/questsicons/quests/chapter_groups.snbt": {
+      "sha256": "e57d8311aec9f524911ed1313cabf138bb7fa5a2d3ba985a00a2a267ff35ef78",
+      "server": false
+    },
+    "config/questsicons/quests/chapters/getting_started.snbt": {
+      "sha256": "9f3887cba34d73fa8d292b2c886077342f835b6085a1f335dbc7b5b2ed9ee92d",
+      "server": false
+    },
+    "config/questsicons/quests/data.snbt": {
+      "sha256": "7e57ea4a4d0a7f374a751e851aa3f518fa075c8eb0435083b0de8cba77f3519e",
+      "server": false
+    },
+    "config/relativeblocks-client.toml": {
+      "sha256": "78e1736912561ec27e40a1133c6ceb6049124cd3e46b44a33169234cb539fb8b",
+      "server": false
+    },
+    "config/resourceful-config-web.json": {
+      "sha256": "a3d46c1af553f012e673c8aa76438c6dcff8ea659fe787e5b3b0c689a2b5d776",
+      "server": false
+    },
+    "config/ribbits-neoforge-1_21_1.toml": {
+      "sha256": "d7426d0b5c3cce1e3be82c6b68bb833efdcde4a52b3b4825502b5b26ee1e8043",
+      "server": false
+    },
+    "config/ribbits-options.json": {
+      "sha256": "671ee75b5333f98d3a9b92fcfcc79c7df7a6b4c0e5cda025a7b449ab79562b2b",
+      "server": false
+    },
+    "config/rightclickharvest.json5": {
+      "sha256": "6eb5169563472ae96184c94e9f42ff7d76fdba403ed3190ffb308e817ea0a21e",
+      "server": false
+    },
+    "config/rootsclassic-client.toml": {
+      "sha256": "657b72b9d50c57665b003fe54a64633514c272bd2af14838dadedce7b7061453",
+      "server": false
+    },
+    "config/rootsclassic-common.toml": {
+      "sha256": "9d0c53bd2b6c28bd7b2eb5df887951dda3afbc49e55d74c2c4c1185c1efe34b5",
+      "server": true
+    },
+    "config/sable-client.toml": {
+      "sha256": "5f816a5d7d32cc56ff3f26e3adbb25c6bfea6d81aba088cca9e00d42d73753e4",
+      "server": false
+    },
+    "config/sable-common.toml": {
+      "sha256": "43d5cdfc1997a8aaabfc301e746b773319999d348661a1a7a04b37a70fda93c1",
+      "server": true
+    },
+    "config/sable-server.toml": {
+      "sha256": "9c3e9012ea23ca1449fdfc7df7a8134d4f0f2eacc46f8f8c1ab9ccb2b4510783",
+      "server": true
+    },
+    "config/sauce-server.toml": {
+      "sha256": "23103a50164e767a6326c91313bf66f1e770ec1f0f214b6417c263c3f671bddd",
+      "server": true
+    },
+    "config/sereneseasons/fertility.toml": {
+      "sha256": "f63f94b985285add146c73a8747d278cec3d386807855b25de0e1db9962c153f",
+      "server": false
+    },
+    "config/sereneseasons/seasons.toml": {
+      "sha256": "0af7d0a1322d8740b5d46ef19f2b60f88f09f1ef3e36e8cdcd4b38a3cf18710d",
+      "server": false
+    },
+    "config/serilum/collective.json": {
+      "sha256": "f41ad25ed0e7d6959ca361b5b837140f8ab178c39b65e6d32cd9359c1d663c5f",
+      "server": false
+    },
+    "config/serilum/doubledoors.json": {
+      "sha256": "ae85d0e91ab0306f2d536cfb1bb6d114f94c385aa466d62de7ba20d2c4bdb8ea",
+      "server": false
+    },
+    "config/simplerkeybinds.json": {
+      "sha256": "27c754e2c2c33fc864ee6b2fc3f30dd83568215a3ba32bf1643692af24e58061",
+      "server": false
+    },
+    "config/simplymore/unique_effect.toml": {
+      "sha256": "3847c80053b5dc0c1f9ad37bd37b26c0a4d896c5eb77e4ccb0ca50fbd85433ef",
+      "server": false
+    },
+    "config/simplymore/weapon_attributes.toml": {
+      "sha256": "dca903a0ce118a9acba7c9c5e2136fa7cb575fc1548bb17df2c71f7d8e27e732",
+      "server": false
+    },
+    "config/simplyswords/compatibility.toml": {
+      "sha256": "e7a5c5756ccadd5d968049a8820c83dce700d7d478a843385688d38d135a9217",
+      "server": false
+    },
+    "config/simplyswords/gem_powers.toml": {
+      "sha256": "4f911868905452dc01a779d424fe298c583cc31ae57b0c76157c806f70c38727",
+      "server": false
+    },
+    "config/simplyswords/general.toml": {
+      "sha256": "0452c273bf163f178c6b03663070a9d732a63e3fecbb28b3fd4fb45dd3c6eafa",
+      "server": false
+    },
+    "config/simplyswords/gui.toml": {
+      "sha256": "d34c7814baa027aa67fde721f3a437bcb6b3e9a89f0245970fd1489525ef5620",
+      "server": false
+    },
+    "config/simplyswords/loot.toml": {
+      "sha256": "d4a49a7f776392a6643171d6b440c0afb897b285ba88c44aa8386b2aa2c9d55a",
+      "server": false
+    },
+    "config/simplyswords/status_effects.toml": {
+      "sha256": "978429e6e9aa6852c38d67cc221d7d71d8502b92df3a5803ff8c3b6966c890ce",
+      "server": false
+    },
+    "config/simplyswords/unique_effects.toml": {
+      "sha256": "a2d2026d1db8aad6397e348d2361a8d19f498157ecf47c7bafe58ede85679af6",
+      "server": false
+    },
+    "config/simplyswords/weapon_attributes.toml": {
+      "sha256": "7880be9f01875cd9e99c653c5afb1c41d98a9e649657f08bd47e702895fe133b",
+      "server": false
+    },
+    "config/simplytooltips/config.toml": {
+      "sha256": "3e5b250f6fa5e4ffb246fd04e6dcffde1cbf4da77d424e9d88e115444427cb09",
+      "server": false
+    },
+    "config/simulated-client.toml": {
+      "sha256": "aaeeaedb8179a8e2404a468c0b62fee76dd5becb6c87d870f206733e20009991",
+      "server": false
+    },
+    "config/simulated-server.toml": {
+      "sha256": "fbcf40465f120ceac12fdc297e8e196ca2774936406404165402d94009f0e53c",
+      "server": true
+    },
+    "config/skinlayers.json": {
+      "sha256": "45162f45aa2db525a0edc483959f35b6d958ba2e54066a4f87e7f3c3f0f99166",
+      "server": false
+    },
+    "config/smallships-client.toml": {
+      "sha256": "71ec8ea7c932d25ffdbdfd23a1cd78cf5d5bf53cfdd8505fbf8d7186b9ad18e9",
+      "server": false
+    },
+    "config/smallships-server.toml": {
+      "sha256": "b46d713d312c663916356b9caa669c0f9e82787104dea0ae32943eff1d17565a",
+      "server": true
+    },
+    "config/sodium-mixins.properties": {
+      "sha256": "b627c4456e6fa0bc4b5f85e2f1cd949faedae3cb9afdaf2a5f52e6f3b6ae1f01",
+      "server": false
+    },
+    "config/sodium-options.json": {
+      "sha256": "44478bef0973f1aa587c0493568a5cbc5426233b611f14bd2be489b5b862fa7f",
+      "server": false
+    },
+    "config/sounds/chat.json": {
+      "sha256": "83abb81edf749b840bbc3ae22cff164a6b32a5df1ffabd600b1c8e1f0fff8ebf",
+      "server": false
+    },
+    "config/sounds/event.json": {
+      "sha256": "6245d6fd01be9aac33c2c7967fb795b8542a21526623ffc19a85596b3a6e1d1f",
+      "server": false
+    },
+    "config/sounds/mod_utils.json": {
+      "sha256": "ad4c5fe9811db5595602b39957453cf553ca0ccf0c084db6393caa2f2fa05132",
+      "server": false
+    },
+    "config/sounds/ui.json": {
+      "sha256": "ad2d93625c17340af17d4f8160853cb2a8db338ebc5e8989c574798039379f56",
+      "server": false
+    },
+    "config/sounds/world.json": {
+      "sha256": "f8f1818ba5c8887bd01973839f9a413c1232cc1a1c4be7e5c72250ff2af042e7",
+      "server": false
+    },
+    "config/terrablender.toml": {
+      "sha256": "cff6a9a0d415b19b9852844c0ad5bb2b1cfdb9fce12e729e7228a6521fc95927",
+      "server": false
+    },
+    "config/terralith.json": {
+      "sha256": "eadc7fad5ce55fbcec25df521820d36c222d5b12f17006ed9fea34ebeb6fd01d",
+      "server": false
+    },
+    "config/thaumaturge-client.toml": {
+      "sha256": "d74c9fa11952366ad4be6300d58bb982f1afa82065dad995a324b5fd7b7b1e42",
+      "server": false
+    },
+    "config/thaumaturge-common.toml": {
+      "sha256": "d881a0b82114c23d993d2b34c35e46ec99b62faf67a15afded695c549337d1e3",
+      "server": true
+    },
+    "config/thaumaturge-server.toml": {
+      "sha256": "7c30170d185f3da305eedec8be3a49709d6382e4276562e84c75c1ecf657f043",
+      "server": true
+    },
+    "config/thaumaturge/aspect_index.json": {
+      "sha256": "7dbc9a26f4a43a76aa6e10860de083e0a09d1b3896249daf3ba613df00bdd2ea",
+      "server": false
+    },
+    "config/toms_storage-common.toml": {
+      "sha256": "a7ff87dbfa4587eda3e1aa9f8e05102bdf0e6f7961fde07a360e86c6cd69da1f",
+      "server": true
+    },
+    "config/toms_storage-server.toml": {
+      "sha256": "a880e3220dd5051ed2901cfcba028d59bccfef4af8775232037ed8a2c2e81cf7",
+      "server": true
+    },
+    "config/transition.json": {
+      "sha256": "60420a41571a4658b91babfa2b47d6fefb7c1766eeea969f51ff98ab34c2431c",
+      "server": false
+    },
+    "config/trender.json": {
+      "sha256": "0a282f3623f7f9443a1d10b5768865f69e58b74e000dcfb4f40399626b7a6124",
+      "server": false
+    },
+    "config/variantsandventures.json": {
+      "sha256": "68f0caa77d68772eeef01f670f26a57fb6eda3cc0a0eb4789044ace90558ccef",
+      "server": false
+    },
+    "config/watut-client.toml": {
+      "sha256": "cc750724e261c94be36d2cea4a5e4f9466192e9ff7cf01546cb1efcea918282b",
+      "server": false
+    },
+    "config/watut-common.toml": {
+      "sha256": "93d4055b22552b80ae5f96d396b335910993ab7010b562a34291adade59df4f6",
+      "server": true
+    },
+    "config/watut-item-arm-adjustments.json": {
+      "sha256": "543e09f71cda1d97d238ac4150e43e50868cf781027c88d68fc714f261d88982",
+      "server": false
+    },
+    "config/watut-server.toml": {
+      "sha256": "77c32650cc543180e5d03cf079956b631da769ef0c845cc75f34d95718be91f3",
+      "server": true
+    },
+    "config/waystones-common.toml": {
+      "sha256": "9b5828d2b4e9aa9a5400ccec751edd3f8cd26356fe6bc46cfff7e9e1fca9ba66",
+      "server": true
+    },
+    "config/witchery-common.toml": {
+      "sha256": "87ad09163be5cebee64615820e51f95bbd479f491be09e5bf52db792acd06983",
+      "server": true
+    },
+    "config/xaero/lib/client.cfg": {
+      "sha256": "43ed9dbfa5b4d6f0f3d2e8c2ced17ad298164b22c68ff11d415257a39b074336",
+      "server": false
+    },
+    "config/xaero/lib/common.cfg": {
+      "sha256": "98f698d96a6d21d830a455b4ad045b70516fa63c298021742d8499e7f0366cd2",
+      "server": false
+    },
+    "config/xaero/lib/profiles/default.cfg": {
+      "sha256": "34ae854b17d896d7cb853bdc28c27231a3947e91cb9f0991f372846ee3c2a907",
+      "server": false
+    },
+    "config/xaero/lib/server_profiles/default.cfg": {
+      "sha256": "d438aea41ca41e93697e059f523686935c0add482f6abe96b532bbf10c6ed80a",
+      "server": false
+    },
+    "config/xaero/minimap/client.cfg": {
+      "sha256": "c0915eff5d1a7905cd1038d646eb9086fd1a29e2f637d53535e4da161de17b9f",
+      "server": false
+    },
+    "config/xaero/minimap/common.cfg": {
+      "sha256": "2b49df024c03a369c62a303c72755e7fedeb4f4653ff53a12fd37bd83ccd4ed0",
+      "server": false
+    },
+    "config/xaero/minimap/default_radar_categories_client.json": {
+      "sha256": "b54c6eedcb752d1235c6ea60dc365d4d1621c4c80768faaac4347e76d4e10a13",
+      "server": false
+    },
+    "config/xaero/minimap/default_radar_categories_server.json": {
+      "sha256": "a4c652cafa7dea324e5f5cf3b1df46a84e54b6d4f877195857bce55a559c1cfd",
+      "server": false
+    },
+    "config/xaero/minimap/profiles/default.cfg": {
+      "sha256": "f1ff62b22cfc97486d00e8bd3367a3207f0a8da235e7b365c5aa2a54e3f8dc25",
+      "server": false
+    },
+    "config/xaero/minimap/profiles/info_display_config/default.cfg.txt": {
+      "sha256": "184e654fa1fc8ad09943c97c4e65ab78acb5b3cfca22417a831513d1b6d9bbc6",
+      "server": false
+    },
+    "config/xaero/minimap/server_profiles/default.cfg": {
+      "sha256": "d438aea41ca41e93697e059f523686935c0add482f6abe96b532bbf10c6ed80a",
+      "server": false
+    },
+    "config/xaero/world-map/client.cfg": {
+      "sha256": "d0f079a8df083f6f60a0e0c1316a25fc841755a91bdcb2f86c66ead8e7d4d13d",
+      "server": false
+    },
+    "config/xaero/world-map/common.cfg": {
+      "sha256": "0c229eb0daf85bd09af51f21eeeb99497a3bd50a825d5ab1ca695fb21bf6cf9d",
+      "server": false
+    },
+    "config/xaero/world-map/profiles/default.cfg": {
+      "sha256": "5422abf9c83fedef6509144293fad20f588d4bb6ce0cf1af78cbcd2bcd0d2ccf",
+      "server": false
+    },
+    "config/xaero/world-map/server_profiles/default.cfg": {
+      "sha256": "d438aea41ca41e93697e059f523686935c0add482f6abe96b532bbf10c6ed80a",
+      "server": false
+    },
+    "config/xaerohud.txt": {
+      "sha256": "58c9270f258d0b224bb7d0f7c927544d5fbe5f1b8027c820e1e14ecbf48fb88c",
+      "server": false
+    },
+    "config/yacl.json5": {
+      "sha256": "121b93764159be6fb7dab523b29a844e2bb78400ce8c48f52135a097e9b0006e",
+      "server": false
+    },
+    "config/yungscavebiomes-neoforge-1_21_1.toml": {
+      "sha256": "022f771e899ae3a0953a172e36e2b4c6bea556a4a8e467b0849eac101b943dda",
+      "server": false
+    },
+    "config/zombieawareness/ClientConfig.toml": {
+      "sha256": "2ef2ab0620164ec282aa3f9890e3dd9e851fae6d95d9297372aa0592fd060446",
+      "server": false
+    },
+    "config/zombieawareness/Features.toml": {
+      "sha256": "90cf8d5eb6e693804d73981eca0f8250b603735eaee9dac2767a5a089f3cf2dd",
+      "server": false
+    },
+    "config/zombieawareness/General.toml": {
+      "sha256": "92f2535f7ede0a91dc657b6165f31eab2f71038e7967949f9e18179ecd6d3e09",
+      "server": false
+    },
+    "config/zombieawareness/MobLists.toml": {
+      "sha256": "da69f4daca5e6270d93ec6895649c543eeaa4507f89df5820970e9bce1ac29fd",
+      "server": false
+    },
+    "config/zombieawareness/PlayerRulesAndLists.toml": {
+      "sha256": "bd60f14054777a8ff406e6033adf965f861c3faa347826f0022532eeabb23c09",
+      "server": false
+    },
+    "essential/Essential (neoforge_1.21.1).jar": {
+      "sha256": "62fc153195559d1962a33c8d5f1b9936dea7eb4d1a8d208791c19ad89287c573",
+      "server": false
+    },
+    "essential/Essential (neoforge_1.21.1).jar.meta": {
+      "sha256": "3fbde5fbe0c91f225b706adc6335f311490b28f0f63842ed94b3490880361292",
+      "server": false
+    },
+    "essential/config.toml": {
+      "sha256": "653833320caa59e5e3f40a25db3a623fcbae8fee6cc7186f4e759602d86adb1b",
+      "server": false
+    },
+    "essential/essential-loader.properties": {
+      "sha256": "9ed4e250cb326ad078a54e70739050c3a61714914df4e1b191ec972de0d5bffe",
+      "server": false
+    },
+    "mods/ApothicAttributes-1.21.1-2.11.0.jar": {
+      "sha256": "17c42bb6dd5c0d820fe090e1bb5959578cd5ab7b70caf98a2a59b319fcc7e1ba",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9006/294/ApothicAttributes-1.21.1-2.11.0.jar"
+    },
+    "mods/ClimateRivers-v21.1.3-1.21.1-NeoForge.jar": {
+      "sha256": "54d6d6659e93bd5c1faeb83443da54befbf298c666cc997f410e3b7e5f5c33f4",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7116/125/ClimateRivers-v21.1.3-1.21.1-NeoForge.jar"
+    },
+    "mods/Corgilib-NeoForge-1.21.1-5.0.0.10.jar": {
+      "sha256": "ae720bcc5bdff1483b0bfc7502ff885b5f27e4aaef920ba23c0f6d012c390f82",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9113/612/Corgilib-NeoForge-1.21.1-5.0.0.10.jar"
+    },
+    "mods/CreeperOverhaul-neoforge-1.21.1-4.0.6.jar": {
+      "sha256": "ed83bea2826667fca80a6a8067f89fe7b97eb8b3213bbcb7f0f4e6a6898c0bc9",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6051/279/CreeperOverhaul-neoforge-1.21.1-4.0.6.jar"
+    },
+    "mods/CustomSkinLoader_Universal-15.1.jar": {
+      "sha256": "c8769a38b3cc1da2a7b2f5827d1a53a24cd1ef6d0784b1eb545569f5882a2ffb",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9023/814/CustomSkinLoader_Universal-15.1.jar"
+    },
+    "mods/Data_Anchor-neoforge-1.21.1-2.0.0.18.jar": {
+      "sha256": "53828cb3371672e7306795f9c5b640fd37ff79067ce715f2922b5a01530bc5cb",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9372/693/Data_Anchor-neoforge-1.21.1-2.0.0.18.jar"
+    },
+    "mods/DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar": {
+      "sha256": "864e70def5b0d54d619b940b66bb2784e91d3f3fc253064fdc1b3fc5786cbfab",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9004/764/DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar"
+    },
+    "mods/EasyAnvils-v21.1.0-1.21.1-NeoForge.jar": {
+      "sha256": "dcd0e562710a639b4fdd60a7500dc9404c6fbd1007215a088248ce1c57ccc6dc",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5733/955/EasyAnvils-v21.1.0-1.21.1-NeoForge.jar"
+    },
+    "mods/EasyMagic-v21.1.4-1.21.1-NeoForge.jar": {
+      "sha256": "e641a83dcd0dd1a66c545069a706349df94f5b64dc5a252944596439009a699f",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7151/100/EasyMagic-v21.1.4-1.21.1-NeoForge.jar"
+    },
+    "mods/Enhanced-Celestials-2-Core-NeoForge-1.21.1-2.0.3.4.jar": {
+      "sha256": "afc0c3a1d142fcd8a1ea2e35d40a6c0c9e8b606fa4c84ad3ba18ab5311af03de",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9464/109/Enhanced-Celestials-2-Core-NeoForge-1.21.1-2.0.3.4.jar"
+    },
+    "mods/Enhanced-Celestials-2-Default-Lunar-Events-NeoForge-1.21.1-2.0.1.4.jar": {
+      "sha256": "085c3376dde5a84c0885db3ab7eee09105d0d7dd0a176808d05ecf73ecaecf79",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9464/192/Enhanced-Celestials-2-Default-Lunar-Events-NeoForge-1.21.1-2.0.1.4.jar"
+    },
+    "mods/Essential_1-5-2_neoforge_1-21-1.jar": {
+      "sha256": "726bc47dcb521ce950880a998c202f3061966e6787071945e942327e5b0cbc52",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9408/333/Essential_1-5-2_neoforge_1-21-1.jar"
+    },
+    "mods/FallingTree-1.21.1-1.21.1.11.jar": {
+      "sha256": "70ee147602d2239e7a093e166fdf0c0abcef959d5d457c0f8f3669ef9b483dc4",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6835/168/FallingTree-1.21.1-1.21.1.11.jar"
+    },
+    "mods/GatewaysToEternity-1.21.1-5.1.0.jar": {
+      "sha256": "5e4f87781e045e67492c0589b1062504df76ca33215ab0358fc8e4a1be5efac5",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6926/284/GatewaysToEternity-1.21.1-5.1.0.jar"
+    },
+    "mods/GlitchCore-neoforge-1.21.1-2.1.0.2.jar": {
+      "sha256": "d9ea421e7449a35cf3adc41c9f740156342b7b17a08b1be843660608af7b60f9",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8109/792/GlitchCore-neoforge-1.21.1-2.1.0.2.jar"
+    },
+    "mods/GrandTeleport-NeoForge-1.21.1-neoforge-1.0.1.jar": {
+      "sha256": "b0a2cba551686031825d5fb7dc845c47efbc8738c79fbd6b0a5948ed421ed058",
+      "server": false,
+      "repo": "pack/vendor/GrandTeleport-NeoForge-1.21.1-neoforge-1.0.1.jar"
+    },
+    "mods/IllagerInvasion-v21.1.6-1.21.1-NeoForge.jar": {
+      "sha256": "5adfdd0df0c5dbe81e4458da50442b58863f9db9f22abc182f81e487eef0e6db",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6492/670/IllagerInvasion-v21.1.6-1.21.1-NeoForge.jar"
+    },
+    "mods/Jade-1.21.1-NeoForge-15.10.6.jar": {
+      "sha256": "276f1f65a20d04f536989c4f311949d770b52c440c23c2b904a08860f3c93810",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/8591/319/Jade-1.21.1-NeoForge-15.10.6.jar"
+    },
+    "mods/JadeAddons-1.21.1-NeoForge-6.1.2.jar": {
+      "sha256": "1e7ce561f66c90446797e57f836c4459bb0dbc408b6bd551e5e18038774641ae",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9056/575/JadeAddons-1.21.1-NeoForge-6.1.2.jar"
+    },
+    "mods/JustEnoughResources-NeoForge-1.21.1-1.6.0.57.jar": {
+      "sha256": "5c905e20206ac94624aee732da19ea9816de0c3f4961a2bc5c2167f04cb15908",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9311/693/JustEnoughResources-NeoForge-1.21.1-1.6.0.57.jar"
+    },
+    "mods/MoogsEndStructures-universal-1.21-2.1.1.jar": {
+      "sha256": "00726445a0b2aaa9ab61ac5fa8a165280a45a0e22f1d67898d0b4934614729d5",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8902/211/MoogsEndStructures-universal-1.21-2.1.1.jar"
+    },
+    "mods/MoogsNetherStructures-universal-1.21-3.1.1.jar": {
+      "sha256": "46e0506264bd66df1ec6fb031f75d6b7f4660ad5f874b5df446dc1a3beebe7f6",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8902/210/MoogsNetherStructures-universal-1.21-3.1.1.jar"
+    },
+    "mods/MoogsStructureLib-neoforge-1.21.1-3.4.2.jar": {
+      "sha256": "753337838224c43dfd8070e54b587219847cbcfc3ffcd06128802fa34fb92214",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9047/179/MoogsStructureLib-neoforge-1.21.1-3.4.2.jar"
+    },
+    "mods/MouseTweaks-neoforge-mc1.21-2.26.1.jar": {
+      "sha256": "68e6f4201c5de97b77929a7215c9552495696ca6a3bf3ae4eacc34e135f6cc8b",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/5637/846/MouseTweaks-neoforge-mc1.21-2.26.1.jar"
+    },
+    "mods/OreExcavation-NeoForge-1.21.1-1.16.43.jar": {
+      "sha256": "bc34445e726f354e4f7c8d1f8981080d5ab95286eda8cb43719fc937c488789b",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6327/284/OreExcavation-NeoForge-1.21.1-1.16.43.jar"
+    },
+    "mods/Placebo-1.21.1-9.9.4.jar": {
+      "sha256": "d8952c019d6e54befe37155bc9876985ec57bf73dd33872115c7a65ac6bceba0",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9153/39/Placebo-1.21.1-9.9.4.jar"
+    },
+    "mods/Ribbits-1.21.1-NeoForge-4.1.6.jar": {
+      "sha256": "794223f5a91b8b80a962754b5180ec3e2472db6941e9b6c1cdd49324df628389",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7355/196/Ribbits-1.21.1-NeoForge-4.1.6.jar"
+    },
+    "mods/SereneSeasons-neoforge-1.21.1-10.1.0.3.jar": {
+      "sha256": "86d89fce593f868cb6b542943c0f82850ca56970fe0327e401966d8d0420861d",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6182/596/SereneSeasons-neoforge-1.21.1-10.1.0.3.jar"
+    },
+    "mods/SimplyTooltips-neoforge-0.1.5.jar": {
+      "sha256": "fdac367da1c5243ac5225f00f831b786817452ee9fa6a7f4acd99ec819b0f2b7",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8715/141/SimplyTooltips-neoforge-0.1.5.jar"
+    },
+    "mods/SmartBrainLib-neoforge-1.21.1-1.16.11.jar": {
+      "sha256": "68036561cc5511766d54cc0deabc3fc3a5e68f9e3db2478f2574ec82b494374b",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7055/149/SmartBrainLib-neoforge-1.21.1-1.16.11.jar"
+    },
+    "mods/SpiderOverhaul-0.1.0-NeoForge-v1.21.jar": {
+      "sha256": "e5421e98b6cf4b6ebfbd5c1082995e00f5884c21db981821a6247c44d96c1c9e",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9310/178/SpiderOverhaul-0.1.0-NeoForge-v1.21.jar"
+    },
+    "mods/Structory_26.2_v1.3.7.jar": {
+      "sha256": "e9079b2bb9bc2efb9b0f1244376488e41f8b50f25415094d8f03dc753cdfb131",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8396/883/Structory_26.2_v1.3.7.jar"
+    },
+    "mods/TerraBlender-neoforge-1.21.1-4.1.0.8.jar": {
+      "sha256": "edb34c388fe17ea88d0a7fd11174bbf8ae8f28a4c8ce886f1bf9a5cf0ebc36b8",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6054/947/TerraBlender-neoforge-1.21.1-4.1.0.8.jar"
+    },
+    "mods/Terralith_1.21.x_v2.6.2.jar": {
+      "sha256": "d38bd304897731b42f6c013cdc07e082e74411e80c74aabcee385251beb3b546",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8222/737/Terralith_1.21.x_v2.6.2.jar"
+    },
+    "mods/YungsApi-1.21.1-NeoForge-5.1.9.jar": {
+      "sha256": "375e0b2f988ab4f5bde182166c0f0b102377adc8f823660c24ade08b0b3cde56",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8894/736/YungsApi-1.21.1-NeoForge-5.1.9.jar"
+    },
+    "mods/YungsBetterCaves-1.21.1-NeoForge-3.1.6.jar": {
+      "sha256": "299cde08b3a87818b7d25ea00c63ff8e6deb2f21b179d6f63ad86b9ba004a5a3",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8806/71/YungsBetterCaves-1.21.1-NeoForge-3.1.6.jar"
+    },
+    "mods/YungsBetterDesertTemples-1.21.1-NeoForge-4.1.5.jar": {
+      "sha256": "2c3191ad447092cc7873a06e92f16bd3e2ff9dc31e93268b8893d06dd89e1fd6",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6276/955/YungsBetterDesertTemples-1.21.1-NeoForge-4.1.5.jar"
+    },
+    "mods/YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar": {
+      "sha256": "61816c3b7c9d92c6b44f93dce87ceb0a22827f20285d5d9c4d10d519d734de04",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5954/804/YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar"
+    },
+    "mods/YungsBetterEndIsland-1.21.1-NeoForge-3.1.2.jar": {
+      "sha256": "8005f1ea798d09fc05dad07a21ed1f393a523a718197cdbd37b1ce6d9a17e4a4",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6300/968/YungsBetterEndIsland-1.21.1-NeoForge-3.1.2.jar"
+    },
+    "mods/YungsBetterJungleTemples-1.21.1-NeoForge-3.1.2.jar": {
+      "sha256": "a0d57b78c7a1891796f342b1f09c214bc27bedf0a3a894f029dfdb2db9f813d0",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5924/482/YungsBetterJungleTemples-1.21.1-NeoForge-3.1.2.jar"
+    },
+    "mods/YungsBetterMineshafts-1.21.1-NeoForge-5.1.1.jar": {
+      "sha256": "5625930dfb3240820d6e4ecf55fff0c39f70ce782fad117a4d418251184c7be0",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5812/193/YungsBetterMineshafts-1.21.1-NeoForge-5.1.1.jar"
+    },
+    "mods/YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar": {
+      "sha256": "5450a64a7036237f449496837e08f3e5b3aa1d7974a10df43944172def75d8ff",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6606/621/YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar"
+    },
+    "mods/YungsBetterOceanMonuments-1.21.1-NeoForge-4.1.2.jar": {
+      "sha256": "cdcf8fe0e08c75261048d43c6ed4898972d23e096dd04a2524c136f06416ab02",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5924/487/YungsBetterOceanMonuments-1.21.1-NeoForge-4.1.2.jar"
+    },
+    "mods/YungsBetterStrongholds-1.21.1-NeoForge-5.1.3.jar": {
+      "sha256": "a9cab2fc01538368862365691f7d215309801aed0b390351681b6b60a1db7b58",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6272/264/YungsBetterStrongholds-1.21.1-NeoForge-5.1.3.jar"
+    },
+    "mods/YungsBetterWitchHuts-1.21.1-NeoForge-4.1.1.jar": {
+      "sha256": "888b1e6d1ada21982a75abfb4afb040c9bc2cc68777ec5fcd1199b978e3d4f8d",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5812/532/YungsBetterWitchHuts-1.21.1-NeoForge-4.1.1.jar"
+    },
+    "mods/YungsCaveBiomes-1.21.1-NeoForge-3.1.1.jar": {
+      "sha256": "7585587e5cb7859e26189c6ec0a5b829c5c228f095e4e843fa3add61f817dd20",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6913/179/YungsCaveBiomes-1.21.1-NeoForge-3.1.1.jar"
+    },
+    "mods/YungsExtras-1.21.1-NeoForge-5.1.1.jar": {
+      "sha256": "0cd26474e514f5dc3114aaf5ec7e049bcd285f0c5db191bb45223193f35df70d",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5812/546/YungsExtras-1.21.1-NeoForge-5.1.1.jar"
+    },
+    "mods/aether-1.21.1-1.5.10-neoforge.jar": {
+      "sha256": "b19386301560a017a458e9790a7b59999e270f93010def0b61e7cbe4c8630dbf",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7043/502/aether-1.21.1-1.5.10-neoforge.jar"
+    },
+    "mods/alexs_anti_creeper_grief_2.0.0_mod_1.21-26.2.jar": {
+      "sha256": "8d5ee67524235d8ed0b0cc69c2f90f978afd709aae936a759fde98a6d3f97a2b",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9518/863/alexs_anti_creeper_grief_2.0.0_mod_1.21-26.2.jar"
+    },
+    "mods/ancient_remnants-1.5.2+1.21.1-neoforge.jar": {
+      "sha256": "b16154ab1899f815c271f1a4947082b60484eacb09d8fb05170fcd77f98d29b1",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9084/406/ancient_remnants-1.5.2%2b1.21.1-neoforge.jar"
+    },
+    "mods/appleskin-neoforge-mc1.21-3.0.9.jar": {
+      "sha256": "38b48dd6231341c9f964ce6e42c57ec866c6cc8f72bec938390a59bafb3922df",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/7854/442/appleskin-neoforge-mc1.21-3.0.9.jar"
+    },
+    "mods/aquamirae-neoforge-1.21.1-7.2.13.jar": {
+      "sha256": "665927e1edf73101f2014682659a756d2972f6fbff0f54b3db4fdebba288c8e2",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9228/645/aquamirae-neoforge-1.21.1-7.2.13.jar"
+    },
+    "mods/architectury-13.0.12-neoforge.jar": {
+      "sha256": "aa558d884c9d35399bf5471e042d6be30c32e4a1cf0a5d06a4480ad49dba3ac0",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9608/861/architectury-13.0.12-neoforge.jar"
+    },
+    "mods/ars_creo-1.21.1-5.4.0.jar": {
+      "sha256": "50f0fe5c5f855151c1482c1772ea94c2eaadc2b0c85c963bb9aeb421fc801e4f",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8139/67/ars_creo-1.21.1-5.4.0.jar"
+    },
+    "mods/ars_nouveau-1.21.1-5.13.5.jar": {
+      "sha256": "f2cf7ea99cf4cb3db1aa4e02c9ef3cdc8aff6ee65eb992f7b560e99741c0b904",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9521/184/ars_nouveau-1.21.1-5.13.5.jar"
+    },
+    "mods/ars_ocultas-1.21.1-2.6.2.jar": {
+      "sha256": "7c5bba278d785334601f7a348136c19802d90edfaced707d3a80f54f121d6a30",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9305/372/ars_ocultas-1.21.1-2.6.2.jar"
+    },
+    "mods/ars_technica-1.21.1-2.7.6.jar": {
+      "sha256": "64b70f39f8c8ca38262c69e2b84a6494a8a11c8ef7e570d8136b1818d5d3159d",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7642/730/ars_technica-1.21.1-2.7.6.jar"
+    },
+    "mods/autotrash-neoforge-1.21.1-1.2.1.jar": {
+      "sha256": "7805fb05e13bb133941079b73bc65dae50846cce37e6051d05efff995e1b658e",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8894/124/autotrash-neoforge-1.21.1-1.2.1.jar"
+    },
+    "mods/balm-neoforge-1.21.1-21.0.67.jar": {
+      "sha256": "eaae887582a67a02f55a970ec2d7353f1886a99924ed6144aa4d898266606c34",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9406/246/balm-neoforge-1.21.1-21.0.67.jar"
+    },
+    "mods/baubley-heart-canisters-1.21.1-1.6.0.jar": {
+      "sha256": "753f567fd8873f9550c361b5cc9891c831f6380d78c653b251a97fbb36d0c6aa",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9558/741/baubley-heart-canisters-1.21.1-1.6.0.jar"
+    },
+    "mods/better_create-1.0.0-neoforge-1.21.1.jar": {
+      "sha256": "a55736c319e35a429e23ee4d37c7826473f1b029118bfeffaf8f9337393d64dd",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6289/346/better_create-1.0.0-neoforge-1.21.1.jar"
+    },
+    "mods/bettercombat-neoforge-2.4.0+1.21.1.jar": {
+      "sha256": "0446e9faa98b764ba010ac31e337d14ac96bbb2fbfeff9b599e1efd510dfde5a",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8430/183/bettercombat-neoforge-2.4.0%2b1.21.1.jar"
+    },
+    "mods/bm_end_overhaul-1.0.2.jar": {
+      "sha256": "933349328f664ac3a5efd1de463d3423b28388f56b4394ef44e9e627743eaf88",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9546/422/bm_end_overhaul-1.0.2.jar"
+    },
+    "mods/bookshelf-neoforge-1.21.1-21.1.81.jar": {
+      "sha256": "19e88d40da2b6a114c2b808f7fb469d96e66a5379df0a8a43fcb7834498b3e76",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7606/240/bookshelf-neoforge-1.21.1-21.1.81.jar"
+    },
+    "mods/caelus-neoforge-7.0.1+1.21.1.jar": {
+      "sha256": "432a645557f29de159d9edde2fd109f8e3b32ff30895b4fede04ee5f1a1a682f",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5694/215/caelus-neoforge-7.0.1%2b1.21.1.jar"
+    },
+    "mods/chatanimation-neoforge-1.3.5+mc1.21.jar": {
+      "sha256": "94cdd57cdd4d64d60b51e31eb80d9f56e1fe841e21bb75e7f67d76fb5694694a",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9206/398/chatanimation-neoforge-1.3.5%2bmc1.21.jar"
+    },
+    "mods/cirrus-neoforge-1.21.1-1.4.2.jar": {
+      "sha256": "e70597f59549eed51a539a6d4b9bfbcd5938ec82d546a167e2321276e2ac07e2",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9396/939/cirrus-neoforge-1.21.1-1.4.2.jar"
+    },
+    "mods/cloth-config-15.0.140-neoforge.jar": {
+      "sha256": "65e722e0d98431a07c45f8bdd8d529a217cc8c175fde1740248bd5c1b4f3c0d4",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5729/127/cloth-config-15.0.140-neoforge.jar"
+    },
+    "mods/collective-1.21.1-8.87.jar": {
+      "sha256": "81503885e59ea463e858271e3d224505519bff475d59a43e73964d645c0577fc",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9628/280/collective-1.21.1-8.87.jar"
+    },
+    "mods/connector-2.0.0-beta.17+1.21.1-full.jar": {
+      "sha256": "ca70b57df3a7a4e8d211fea7ff3ae77e768482af374f26bf953ff5fd755564f0",
+      "server": true,
+      "repo": "pack/vendor/connector-2.0.0-beta.17+1.21.1-full.jar"
+    },
+    "mods/continuity-3.0.0+1.21.neoforge.jar": {
+      "sha256": "4cc0a4a09ae09c64bb567e42381652b700f9cade5067a75e83115662cc475f0a",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/5981/335/continuity-3.0.0%2b1.21.neoforge.jar"
+    },
+    "mods/coroutil-neoforge-1.21.0-1.3.9.jar": {
+      "sha256": "097434e256a428335cc4e9b718ad7bb9c6804c2c775aa3dd7149a6904adca2bc",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7796/187/coroutil-neoforge-1.21.0-1.3.9.jar"
+    },
+    "mods/cosmeticarmorreworked-1.21.1-v1-neoforge.jar": {
+      "sha256": "6328049755735159c55f5918ac301cff53a8d8790c3fe63e32e7d8a0e37f123f",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5610/814/cosmeticarmorreworked-1.21.1-v1-neoforge.jar"
+    },
+    "mods/create-1.21.1-6.0.10.jar": {
+      "sha256": "ef87fe5709f1ba1f5b8bb20a2925b5afb4669e178fd6d8bf10c167759eefe37a",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7963/363/create-1.21.1-6.0.10.jar"
+    },
+    "mods/create-aeronautics-bundled-1.21.1-1.3.2.jar": {
+      "sha256": "a3f330d4757640f8715d991a43eedb826e4d0e51558d859c843ae6693bd35f1e",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8763/471/create-aeronautics-bundled-1.21.1-1.3.2.jar"
+    },
+    "mods/createaeronauticscurios-neoforge-1.21.1-2.3.jar": {
+      "sha256": "a9dd62a20597b075b304c235d76b32fa77ab8c34ea0b6ea859857ba2b7ff575e",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9076/258/createaeronauticscurios-neoforge-1.21.1-2.3.jar"
+    },
+    "mods/createbetterfps-1.21.1-1.1.5.jar": {
+      "sha256": "13fff8caa3fd6de652d12f8a989180c502bc11009e2a16bb0f89bb47fa57bac3",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/8908/301/createbetterfps-1.21.1-1.1.5.jar"
+    },
+    "mods/createtree-3.2.5.jar": {
+      "sha256": "e0a931ae53ac01a107074b7c689af8bf0d672ba34986b64c1998587eaa3b60e9",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9296/255/createtree-3.2.5.jar"
+    },
+    "mods/crittersandcompanions-neoforge-1.21.1-2.7.0.jar": {
+      "sha256": "bc09d4e9996fae2c17092b3f58e2cc6ffe49d176e7cdf06495eeb4ac9a85b5dd",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8646/976/crittersandcompanions-neoforge-1.21.1-2.7.0.jar"
+    },
+    "mods/curios-neoforge-9.6.0-1.21.1.jar": {
+      "sha256": "5ae6703ac25a5cfb138ce34924799b642021c8109aacef578e899e8591d67a3e",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9694/505/curios-neoforge-9.6.0-1.21.1.jar"
+    },
+    "mods/darkpaintings-neoforge-1.21.1-21.1.7.jar": {
+      "sha256": "9868fa609e4fccdf9153f21864e6592f26ebc79be9bfc223f100134e78ad78a7",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7114/825/darkpaintings-neoforge-1.21.1-21.1.7.jar"
+    },
+    "mods/deep_aether-1.21.1-1.1.5.1.jar": {
+      "sha256": "0f55ad970715bb933344e785b2c35a7354dfba25ffd426c0b68921d08bbe0ce5",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7843/283/deep_aether-1.21.1-1.1.5.1.jar"
+    },
+    "mods/despawntweaks-neoforge-1.0.0-1.21.1.jar": {
+      "sha256": "c3c65c7c58657b2b73db2a25d5c9acccb0115a2d64af40426db5d43c32028981",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6145/369/despawntweaks-neoforge-1.0.0-1.21.1.jar"
+    },
+    "mods/doubledoors-1.21.1-7.5.jar": {
+      "sha256": "378216c5b294d66975c8e1cbe01bb814af0f61426e9d3e515f535810a20e08e5",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9255/519/doubledoors-1.21.1-7.5.jar"
+    },
+    "mods/drippyloadingscreen-earlywindow_neoforge_3.1.5_MC_1.21.1.jar": {
+      "sha256": "7ea6fd30ccb87a6532c66af5472e7d8dccd1d66da944081fda8050701e232870",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/8552/908/drippyloadingscreen-earlywindow_neoforge_3.1.5_MC_1.21.1.jar"
+    },
+    "mods/drippyloadingscreen_neoforge_3.1.5_MC_1.21.1.jar": {
+      "sha256": "f1fcb6cf3cbc7a6055fed0912bf284a7c455a0830de42460943fc5e130072759",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/8552/907/drippyloadingscreen_neoforge_3.1.5_MC_1.21.1.jar"
+    },
+    "mods/effectual-neoforge-1.4.2-1.21.1.jar": {
+      "sha256": "dd4cc184817c300fb514f64067be05ecd98f71e44314cea454d7dcd6d4398d8f",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8966/347/effectual-neoforge-1.4.2-1.21.1.jar"
+    },
+    "mods/elytraslot-neoforge-9.0.2+1.21.1.jar": {
+      "sha256": "d86adf384390c40b144a296ef4fc11b72fd81e2780b264bd9ceb7b5ab9147399",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5778/461/elytraslot-neoforge-9.0.2%2b1.21.1.jar"
+    },
+    "mods/enchdesc-neoforge-1.21.1-21.1.11.jar": {
+      "sha256": "868d3eab3305d96dd3ecf510d18a7aa7444e2aea168695cf4aff23a96bec975f",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/8693/34/enchdesc-neoforge-1.21.1-21.1.11.jar"
+    },
+    "mods/endermanoverhaul-neoforge-1.21.1-2.0.3.jar": {
+      "sha256": "fe6c04dcfdbb8815058ebf1102d64cb4c86060a0a1b7350121e4a976d4a92248",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7661/859/endermanoverhaul-neoforge-1.21.1-2.0.3.jar"
+    },
+    "mods/endrem-neoforge-1.21.1-6.3.0.jar": {
+      "sha256": "666898b9cb494b9806bb05fdd03e948c0bb2e500ea8da3922c2dd8a824d9dafe",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8503/446/endrem-neoforge-1.21.1-6.3.0.jar"
+    },
+    "mods/essentials-neoforge-1.0.0-frontier.jar": {
+      "sha256": "8eb0423006a2b9a6ac77356ff5d6cdeb96150d5ecf2a119b99b16b1483ea9327",
+      "server": true,
+      "repo": "pack/vendor/essentials-neoforge-1.0.0-frontier.jar"
+    },
+    "mods/explore_ruins_aether-1.0.0-neoforge-1.21.1.jar": {
+      "sha256": "4fc02d88511e580e9660d96adec4f317fae4cb61b1702e7475df3c26b1f9cb99",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6889/560/explore_ruins_aether-1.0.0-neoforge-1.21.1.jar"
+    },
+    "mods/fancymenu_neoforge_3.10.0_MC_1.21.1.jar": {
+      "sha256": "a89df9c340ddf9d1873f1af914fa2bd71673bba87e7a357439588eebab6b74b9",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9537/151/fancymenu_neoforge_3.10.0_MC_1.21.1.jar"
+    },
+    "mods/fast-ip-ping-v1.0.12-mc1.21.1-neoforge.jar": {
+      "sha256": "f849ddf7a3eb39b58d5ad8abc96673130685017f0990620522f4f2a07cf40c55",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/8905/303/fast-ip-ping-v1.0.12-mc1.21.1-neoforge.jar"
+    },
+    "mods/fletchery_expanded-neoforge-1.21.1-2.0.1.jar": {
+      "sha256": "3469b987bd21dc7e08f8eef40603229569fc4d76552d1fa94bded21fca44c6d2",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9334/643/fletchery_expanded-neoforge-1.21.1-2.0.1.jar"
+    },
+    "mods/forgified-fabric-api-0.116.15+2.3.6+1.21.1.jar": {
+      "sha256": "bcbb5d8479032690d53debfcf61c0477080ff6d1d4dae9a9a85122b47377646a",
+      "server": true,
+      "repo": "pack/vendor/forgified-fabric-api-0.116.15+2.3.6+1.21.1.jar"
+    },
+    "mods/fragmentum-5.4.0+1.21.1-neoforge.jar": {
+      "sha256": "fb7e1b28d54fda52c62df2a7c050e772030d7c75663d1679371deb0a860d3c1f",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9202/578/fragmentum-5.4.0%2b1.21.1-neoforge.jar"
+    },
+    "mods/framework-neoforge-1.21.1-0.13.11.jar": {
+      "sha256": "429ea90a162d7c25c1463ee60979e4d7b1ddb525d9384a3a2a2f45d70bda03f5",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7530/361/framework-neoforge-1.21.1-0.13.11.jar"
+    },
+    "mods/frontier-campaign-data-2.2.jar": {
+      "sha256": "f671e319a9f6a5fbc3f2a80047801302d36fe33c767f95a320b272d4066ee732",
+      "server": true,
+      "repo": "pack/vendor/frontier-campaign-data-2.2.jar"
+    },
+    "mods/frontier-days.jar": {
+      "sha256": "27d48c874c9556eaf20e99d4ba69e78aaaa26938f202f30836842acf48a0cda5",
+      "server": true,
+      "repo": "pack/vendor/frontier-days.jar"
+    },
+    "mods/frontier-research-bridge-1.0.jar": {
+      "sha256": "c0d84675edb4f75dcfbe502ad77b5d66643e02841b25cf27afd0360e4159fcda",
+      "server": true,
+      "repo": "pack/vendor/frontier-research-bridge-1.0.jar"
+    },
+    "mods/frostworks-1.1.0-neoforge-1.21.1.jar": {
+      "sha256": "14535c2568bb4892b37d35074998467040d581d6c47971ce5de8274df4bbec15",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9493/784/frostworks-1.1.0-neoforge-1.21.1.jar"
+    },
+    "mods/ftb-library-neoforge-2101.1.40.jar": {
+      "sha256": "d97d8ae91b5049406f1bac5634ecbceafe7ff0f00e850047792deef4aec05d50",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9650/381/ftb-library-neoforge-2101.1.40.jar"
+    },
+    "mods/ftb-quests-neoforge-2101.1.39.jar": {
+      "sha256": "40f9bea7bb96e8129303b0dc1b9e47b38234f52018ff332f967be03df07a466e",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9650/792/ftb-quests-neoforge-2101.1.39.jar"
+    },
+    "mods/ftb-teams-neoforge-2101.1.12.jar": {
+      "sha256": "b3f33436070b7ae4a706280561f1d2f1d1eb1a089cb13ec9851e99646165aed2",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9434/81/ftb-teams-neoforge-2101.1.12.jar"
+    },
+    "mods/fzzy_config-0.7.7+fix1+1.21+neoforge.jar": {
+      "sha256": "414782aba00502349da192c1affcd4cbaf653119ec26605453f1b0690b3f8cc5",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9326/327/fzzy_config-0.7.7%2bfix1%2b1.21%2bneoforge.jar"
+    },
+    "mods/geckolib-neoforge-1.21.1-4.9.3.jar": {
+      "sha256": "20a1995e4074f387ff549e2c57ea79dd7d41ee83c6afb9dd6a6e840e592d1c47",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8893/490/geckolib-neoforge-1.21.1-4.9.3.jar"
+    },
+    "mods/goblintraders-neoforge-1.21.1-1.11.2.jar": {
+      "sha256": "523aebc80baab377072fe26c5ff9d1c3649764f185131e7849acd99833d406dd",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6427/515/goblintraders-neoforge-1.21.1-1.11.2.jar"
+    },
+    "mods/golemoverhaul-neoforge-1.21.1-1.1.1.jar": {
+      "sha256": "d46939101db2bb82a602ad20b9c8e7228da5fbcf24185169ed16e5da19b3cdc9",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8521/968/golemoverhaul-neoforge-1.21.1-1.1.1.jar"
+    },
+    "mods/gravestone-neoforge-1.21.1-1.0.40.jar": {
+      "sha256": "204be9ccb8632a56a87aee9aab4c7874d0f6749f566c07f5dd420d24e24dc8b0",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8671/622/gravestone-neoforge-1.21.1-1.0.40.jar"
+    },
+    "mods/hexalia-1.3.8.2-1.21.1+neoforge.jar": {
+      "sha256": "3e6974a318e6713b47c9ff512f8dd6ed74c68fcdf6b8853624a540c55f0ea0d9",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9355/770/hexalia-1.3.8.2-1.21.1-neoforge.jar"
+    },
+    "mods/immersive_armors-1.7.6+1.21.1-neoforge.jar": {
+      "sha256": "e9b6f1975ca5e1d92d73f60c5a86fe2d45d6be43497e3c1d013afe495e298ccc",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8076/920/immersive_armors-1.7.6%2b1.21.1-neoforge.jar"
+    },
+    "mods/inventorysorter-1.21.1-24.0.24.jar": {
+      "sha256": "6fde143f12b608aec80f590f16ff91787043796dee6642f46f82e4df029c6544",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7188/660/inventorysorter-1.21.1-24.0.24.jar"
+    },
+    "mods/iris-neoforge-1.8.14-beta.1+mc1.21.1.jar": {
+      "sha256": "60d5f8bf52f25e9986440f4a4270a6bd986d9cff994510e1108ac1547063b314",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/8242/804/iris-neoforge-1.8.14-beta.1%2bmc1.21.1.jar"
+    },
+    "mods/ironchest-1.21-neoforge-16.0.7.jar": {
+      "sha256": "dae66a38a33c2adac6ca0b7a4fbf4b365ba37a6a1f7a10961028617965c1fcaf",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5491/156/ironchest-1.21-neoforge-16.0.7.jar"
+    },
+    "mods/ironfurnaces-neoforge-1.21.1-4.3.2.jar": {
+      "sha256": "97c0d7c323fda4aa852fdce69bf1250a40323bb9d34ef6c87790e07334d1c2de",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7034/259/ironfurnaces-neoforge-1.21.1-4.3.2.jar"
+    },
+    "mods/jade-ars-nouveau-progress-1.0-neoforge-1.21.1.jar": {
+      "sha256": "06bdd5fb39d69932761793b6db91787c874bc4e2e73254819011ddba5f306adb",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9645/335/jade-ars-nouveau-progress-1.0-neoforge-1.21.1.jar"
+    },
+    "mods/jamlib-neoforge-1.3.6+1.21.1.jar": {
+      "sha256": "911afdfe717a2375a651253e282ac9e769f8bead381d33c2167955c25eefe514",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7766/752/jamlib-neoforge-1.3.6%2b1.21.1.jar"
+    },
+    "mods/jcs_dungeons_musics-1.5.0-neoforge-1.21.1.jar": {
+      "sha256": "2f47d58978ea31d8b5b0443672d79aadea25814f39bacc282a3a71964f16132b",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/8986/503/jcs_dungeons_musics-1.5.0-neoforge-1.21.1.jar"
+    },
+    "mods/jei-1.21.1-neoforge-19.64.0.455.jar": {
+      "sha256": "f7a9de3d7ee07eed8d293a1a1a0f6afaac556eb43c103523457bd07ebb551e7b",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9205/121/jei-1.21.1-neoforge-19.64.0.455.jar"
+    },
+    "mods/justenoughbreeding-neoforge-1.21.1-3.3.1.jar": {
+      "sha256": "6541ebcbaeb6cd6638ce01e509c38122e744e1d849bfdbd94e4097b54cd555d3",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9037/421/justenoughbreeding-neoforge-1.21.1-3.3.1.jar"
+    },
+    "mods/konkrete_neoforge_1.9.9_MC_1.21.jar": {
+      "sha256": "791c5538751dd3015ef3a2ce92d98719e1a28a48ebbd817b78506771256654cd",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5453/385/konkrete_neoforge_1.9.9_MC_1.21.jar"
+    },
+    "mods/kotlinforforge-5.13.0-all.jar": {
+      "sha256": "1aa52c3e992d8ee4d1b9e9bdb0c62bf7ad03845195136d63f312ade6f30809de",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9641/139/kotlinforforge-5.13.0-all.jar"
+    },
+    "mods/lambdynamiclights-4.8.11+1.21.1.jar": {
+      "sha256": "913b0358b1031828f1e060ea0ee361232dc2a1c82464f488a0a920739ce7c763",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/8780/227/lambdynamiclights-4.8.11%2b1.21.1.jar"
+    },
+    "mods/libIPN-neoforge-1.21.1-6.6.3.jar": {
+      "sha256": "98f061ba69d31764fa10ab7810ca49062633e107a6b261ba3b66dc25ba5fef7b",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/7810/552/libIPN-neoforge-1.21.1-6.6.3.jar"
+    },
+    "mods/lithostitched-1.8.1-neoforge-21.1.jar": {
+      "sha256": "e0da669fa5facc61a09b9b7bae21b322993de1fcd1eb05787adffb7309598cca",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9170/709/lithostitched-1.8.1-neoforge-21.1.jar"
+    },
+    "mods/ls_dungeons_paintings-2.0.1-neoforge-1.21.1.jar": {
+      "sha256": "e1d2317460f49a34f27099da0a0d5c04c4c6ee0ae1a54afcaa9d30edb4e46508",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5781/165/ls_dungeons_paintings-2.0.1-neoforge-1.21.1.jar"
+    },
+    "mods/maestro-neoforge-1.21.1-4.0.1.jar": {
+      "sha256": "feb92651cfc88e92b0410364ae10495cde826bc55cea19652c9c15f560055d28",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8922/83/maestro-neoforge-1.21.1-4.0.1.jar"
+    },
+    "mods/melody_neoforge_1.0.10_MC_1.21.jar": {
+      "sha256": "6b973a4564703c531fc0eae09db08b07a38091e0a743c687b8d2049457e84871",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5453/382/melody_neoforge_1.0.10_MC_1.21.jar"
+    },
+    "mods/mezz_config-1.21.1-neoforge-0.7.1-standalone.jar": {
+      "sha256": "c42510938584eda0aae134003e367d745fd32ceac1836221cecac4cbc7bfa3a1",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9527/937/mezz_config-1.21.1-neoforge-0.7.1-standalone.jar"
+    },
+    "mods/modonomicon-1.21.1-neoforge-1.123.1.jar": {
+      "sha256": "11d0fc92cdfb2db646c7ee9d8fa821a6dc26c82e4ee713d1ece2764375ee3227",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9646/793/modonomicon-1.21.1-neoforge-1.123.1.jar"
+    },
+    "mods/mru-1.0.41+1.21.1-neoforge.jar": {
+      "sha256": "245ebec0b410fb1a7456bb0cd970ea015fb7c243a0f45a4d79d655dc01bb6d89",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9004/36/mru-1.0.41%2b1.21.1-neoforge.jar"
+    },
+    "mods/naturalist-2.0.7-neoforge-1.21.1.jar": {
+      "sha256": "2740593710eba0a917f862e535f3e2ef06c39ccdd6441986da02f9dd4394f03a",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9280/587/naturalist-2.0.7-neoforge-1.21.1.jar"
+    },
+    "mods/netherportalfix-neoforge-1.21.1-21.1.1.jar": {
+      "sha256": "c1077de0c7f1ff5289d1852e0674d9c477247d4318c9809b21c60e56a31ae31a",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5623/547/netherportalfix-neoforge-1.21.1-21.1.1.jar"
+    },
+    "mods/occultism-1.21.1-neoforge-1.227.0.jar": {
+      "sha256": "f5de9cfc06198dddde0357f5c1c82d32608fd095c2b318b1c5e6e9e5106a94f1",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9554/25/occultism-1.21.1-neoforge-1.227.0.jar"
+    },
+    "mods/olafsrelativeblocks-1.0.3-neoforge+mc1.21.1.jar": {
+      "sha256": "e88298783e65015d47fc68c466d79e5e62b2fbdb1a5716d51aa8665a2bea592d",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8870/706/olafsrelativeblocks-1.0.3-neoforge%2bmc1.21.1.jar"
+    },
+    "mods/owo-lib-neoforge-0.12.15.6-beta.1+1.21.jar": {
+      "sha256": "5fc306ad3d42e1dc26812f2df856e7c232376405caab6af4f5aaffe89cd2b256",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9215/303/owo-lib-neoforge-0.12.15.6-beta.1%2b1.21.jar"
+    },
+    "mods/player-animation-lib-forge-2.0.4+1.21.1.jar": {
+      "sha256": "dbe5de45f5cd60c0e5e47af14e6d564534a98456e973cf670cb881f6938eee92",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7389/814/player-animation-lib-forge-2.0.4%2b1.21.1.jar"
+    },
+    "mods/prickle-neoforge-1.21.1-21.1.11.jar": {
+      "sha256": "ccf46c442ed3c7fe41ad056f0940560829ec4dd88360985dfacd78f4614eb167",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6961/457/prickle-neoforge-1.21.1-21.1.11.jar"
+    },
+    "mods/puzzleslib-v21.1.66-mc1.21.1+neoforge.jar": {
+      "sha256": "cb02de7e1d4a133746ec7b43a64eddc2cb621122cdc49e134a15272f456c31f2",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9331/322/puzzleslib-v21.1.66-mc1.21.1%2bneoforge.jar"
+    },
+    "mods/reeses-sodium-options-neoforge-2.2.4+mc1.21.1.jar": {
+      "sha256": "e4c86cad7c86c3601261441c0282571dc6b1ebeb41b694c11eb58b2becb90b51",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/8891/797/reeses-sodium-options-neoforge-2.2.4%2bmc1.21.1.jar"
+    },
+    "mods/resourcefulconfig-neoforge-1.21-3.0.11.jar": {
+      "sha256": "25b4f3502d25c535004acd4a9420272fff01d2f1e2df352239fec93fdab005d4",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6467/772/resourcefulconfig-neoforge-1.21-3.0.11.jar"
+    },
+    "mods/resourcefullib-neoforge-1.21-3.0.12.jar": {
+      "sha256": "5e36f2c69de008dc5795f730c84ab767688f15c810944b585485349a0c911261",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5973/188/resourcefullib-neoforge-1.21-3.0.12.jar"
+    },
+    "mods/rightclickharvest-neoforge-4.7.1-1.21.1.jar": {
+      "sha256": "93fb8402d4a263555c74014d2fc89fb448e95ddb3f753a37e869a4600cd1aef0",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9633/746/rightclickharvest-neoforge-4.7.1-1.21.1.jar"
+    },
+    "mods/sable-neoforge-1.21.1-2.0.6.jar": {
+      "sha256": "9c199157843bf953a47dff625fc5bb41c01a90538d35ad18e6996bbcb8a617c2",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9043/865/sable-neoforge-1.21.1-2.0.6.jar"
+    },
+    "mods/simplerkeybinds-1.0.0+1.21.1.jar": {
+      "sha256": "4a8bcc8b065a4ac0b8e650f18f604ef55aa10187365195b0dad696af8d288381",
+      "server": false,
+      "repo": "pack/vendor/simplerkeybinds-1.0.0+1.21.1.jar"
+    },
+    "mods/simplymore-forge-1.2.3.jar": {
+      "sha256": "f626664f3ddb5a4e8d6f1f338b505644b94b341e7274fb328f234bb840266ca5",
+      "server": true,
+      "repo": "pack/vendor/simplymore-forge-1.2.3.jar"
+    },
+    "mods/simplyswords-neoforge-1.70.2-1.21.1.jar": {
+      "sha256": "5e75bd66ea489079d60c9c1ed98762550fbc0bee88cd7af399f17bbeb56608c3",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8746/1/simplyswords-neoforge-1.70.2-1.21.1.jar"
+    },
+    "mods/skinlayers3d-neoforge-1.11.4-mc1.21.1.jar": {
+      "sha256": "0b6594418245efbe4ae2cf7fde133878d56a4c41eff06e231ba7e1a233e0b615",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9243/656/skinlayers3d-neoforge-1.11.4-mc1.21.1.jar"
+    },
+    "mods/smallships-neoforge-1.21.1-2.0.2.jar": {
+      "sha256": "aed11c65cd44a62309f52528727f83d05f74cced5cd93951692972273c340796",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9205/243/smallships-neoforge-1.21.1-2.0.2.jar"
+    },
+    "mods/sodium-neoforge-0.8.13+mc1.21.1.jar": {
+      "sha256": "575d187b15328d7bddd8a9b1bee64333c22c14735f5780ec49eac0cd5503c08d",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/8756/580/sodium-neoforge-0.8.13%2bmc1.21.1.jar"
+    },
+    "mods/sons_of_sins-2.2.1d-neoforge-1.21.1.jar": {
+      "sha256": "287d5378e3f3842bd9b769ae24b95c1bf1068e9c595faf69285e92822d142c49",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8782/200/sons_of_sins-2.2.1d-neoforge-1.21.1.jar"
+    },
+    "mods/sounds-2.4.22+lts+1.21.1-neoforge.jar": {
+      "sha256": "d3bda0a7a5b1f267747da182e788139da380f625eaf96a5c2a8fa5bcb8d908b7",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/7325/254/sounds-2.4.22%2blts%2b1.21.1-neoforge.jar"
+    },
+    "mods/thaumaturge-1.21.1-NeoForge-1.1.1-test14.jar": {
+      "sha256": "9f9355cb38d15e7fdfa463a7e99c870c3d76c1141884321a017752bd5993292b",
+      "server": true,
+      "repo": "pack/vendor/thaumaturge-1.21.1-NeoForge-1.1.1-test14.jar"
+    },
+    "mods/tlib-neoforge-1.5.0-1.21.1.jar": {
+      "sha256": "e8362f364c262ce1405c568c968fc3a0a69042d5223deecfbbb0595a0514f035",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8226/91/tlib-neoforge-1.5.0-1.21.1.jar"
+    },
+    "mods/toms_storage-1.21-2.4.2.jar": {
+      "sha256": "a703e28391b914298223a515238c8729007606f2f967a83b65b8d5cb39e0789d",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/8769/956/toms_storage-1.21-2.4.2.jar"
+    },
+    "mods/treasuredistance-1.0.jar": {
+      "sha256": "7cdbe75c12a1de20804511b880d09eae800832211cf247c15b30f1a9570ea00d",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5430/841/treasuredistance-1.0.jar"
+    },
+    "mods/txnilib-neoforge-1.0.24-1.21.1.jar": {
+      "sha256": "411e811a6a53a63c2716dbf71cd1167e3a98d000b884458759d6192720be3e18",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6533/725/txnilib-neoforge-1.0.24-1.21.1.jar"
+    },
+    "mods/variantsandventures-neoforge-1.0.30-mc1.21.1.jar": {
+      "sha256": "76a0b3a4577b7423ab7ca0fecde7488bd7c7ed4b0a4d4defadba81102e9cbc37",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9647/814/variantsandventures-neoforge-1.0.30-mc1.21.1.jar"
+    },
+    "mods/villagesandpillages-neoforge-2.0.0+mc1.21.1.jar": {
+      "sha256": "61cbcd1cf57cdb38eba89393c8f18ce9839d17d6e1cf5f7aa2616a82a2268e98",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9028/199/villagesandpillages-neoforge-2.0.0%2bmc1.21.1.jar"
+    },
+    "mods/watut-neoforge-1.21.0-1.2.7.jar": {
+      "sha256": "b1aac4b9832e16439ee86f27814f7b6a42f2f6bea0ea6949dfffffcd0599d88c",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6418/577/watut-neoforge-1.21.0-1.2.7.jar"
+    },
+    "mods/waystones-neoforge-1.21.1-21.1.47.jar": {
+      "sha256": "1b6afa9fd9ec3e2153001353e6a16e84c8d6c94a17257acc61ff3286c5518353",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/9626/89/waystones-neoforge-1.21.1-21.1.47.jar"
+    },
+    "mods/witchery-0.5.39+mc1.21.1.jar": {
+      "sha256": "8cc80ade5a1ffbe231763b3acc6d513d82f5a36342100d637da3ed5fd344ba63",
+      "server": true,
+      "repo": "pack/vendor/witchery-0.5.39+mc1.21.1.jar"
+    },
+    "mods/xaerominimap-neoforge-1.21.1-26.6.0.jar": {
+      "sha256": "d3398221b2262abfe2d394b588122e5b3fd2e4d8c4bf66a5fd357352fcf51b2e",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9067/173/xaerominimap-neoforge-1.21.1-26.6.0.jar"
+    },
+    "mods/xaeros_waystones_compatibility-NeoForge-1.21.1-2.1.0.jar": {
+      "sha256": "fcd0a18f5f5940b31353ee70ddb0194cf1cd9565a8bfc9557c93804e34422b89",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/7976/140/xaeros_waystones_compatibility-NeoForge-1.21.1-2.1.0.jar"
+    },
+    "mods/xaeroworldmap-neoforge-1.21.1-1.47.0.jar": {
+      "sha256": "6a42b6f01bd96b496e5fcc07d4541bad1a699d9ec8ad58ad40d5dcfe23a7d4c7",
+      "server": false,
+      "url": "https://edge.forgecdn.net/files/9067/277/xaeroworldmap-neoforge-1.21.1-1.47.0.jar"
+    },
+    "mods/yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar": {
+      "sha256": "b5c30321b46cfaa521645a04aff89d2804d8167a25bb23ad4b1ae8da73093a2f",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/7437/845/yet_another_config_lib_v3-3.8.2%2b1.21.1-neoforge.jar"
+    },
+    "mods/zombie_variants-neoforge-1.0.3-1.21.1.jar": {
+      "sha256": "3524cc3e22306aa47bc1be0ead99acf315102c4778b51ccd8b791186529efea6",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/6826/478/zombie_variants-neoforge-1.0.3-1.21.1.jar"
+    },
+    "mods/zombieawareness-neoforge-1.21.0-1.13.2.jar": {
+      "sha256": "8152f9fa4c0c3cdb6541ac46d852902617e80ccd121cfa43412c0b56045b40ae",
+      "server": true,
+      "url": "https://edge.forgecdn.net/files/5731/744/zombieawareness-neoforge-1.21.0-1.13.2.jar"
+    },
+    "options.txt": {
+      "sha256": "e38d3b62d0149ca2270becf5b9fe6745b5cd44c2bace48226d8fe343cf44d3c6",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/frontier/textures/questbook/button.png": {
+      "sha256": "adfeba0e31fd118731f507e07678058a1612fe74c05531a18b573e8997b8ca7a",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/frontier/textures/questbook/frontier_icon_32.png": {
+      "sha256": "d57c9427ff3ac160dfe2d5228dc13e1e2f90e8a55ccc9af3d0165dd20715158b",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/frontier/textures/questbook/hover.png": {
+      "sha256": "9ab18c572ad31f171297c43c035462277180701a1f8f4c09baae428bafb6f4a5",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/frontier/textures/questbook/valley.png": {
+      "sha256": "baa31f6954e05131a9b92e057b05fcbf047577230d65ab9e109c3e9ce1dd82b4",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/ftbquests/ftb_quests_theme.txt": {
+      "sha256": "993553370f3f61aaafc03904e0c1e7f82d6c30aa198e76bb30c200cc86dcc2aa",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/minecraft/texts/credits.json": {
+      "sha256": "34f62a43c2b09ba07e7ff59120f034cb8c1665144b4ca80271e2777396709dc7",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/minecraft/texts/end.txt": {
+      "sha256": "7b13c18fae62927f684454090f69999e2824bc18746431443bf7622655818e3c",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/minecraft/texts/postcredits.txt": {
+      "sha256": "faa93ba8dc026166a75bf7e65bb75c755c20d4960a5309c24f96a76c9657d624",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/minecraft/textures/gui/sprites/widget/button.png": {
+      "sha256": "24e270af5a5247c69709f18bbd4c9ae31bc78310427f311548263e15df80b0b6",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/minecraft/textures/gui/sprites/widget/button.png.mcmeta": {
+      "sha256": "c8f6fe62c01c357a814223d4ab6a368e5122c195fa2671e585fa24988557a505",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/minecraft/textures/gui/sprites/widget/button_disabled.png": {
+      "sha256": "3f8d21b8c044c6752e3762f7ce44d03bcf80cd9749ce28dbee046fc56c974525",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/minecraft/textures/gui/sprites/widget/button_disabled.png.mcmeta": {
+      "sha256": "d7dd31a632fe41be64e07ef0676b726e50f0af053e638742ec1f6f9550a1b7e5",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/minecraft/textures/gui/sprites/widget/button_highlighted.png": {
+      "sha256": "d5da5250d92c5cc897a00535bc861e04738d50f93287f6b89431abd178e98b3c",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/assets/minecraft/textures/gui/sprites/widget/button_highlighted.png.mcmeta": {
+      "sha256": "c8f6fe62c01c357a814223d4ab6a368e5122c195fa2671e585fa24988557a505",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/pack.mcmeta": {
+      "sha256": "cf0bbb325e4b66cf910058c1768f437f239b08d5f401558aa13d4cbc6ca4451b",
+      "server": false
+    },
+    "resourcepacks/Frontier Interface/pack.png": {
+      "sha256": "f7223a891748a38a09859d7a0947445426b3ac03914ed9edd523684bf10c26e5",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/aeronautics/lang/ru_ru.json": {
+      "sha256": "5fc04dcaa120f6a2508071dd67447c9b5328cea6c3a2602c74a5a3a65c7e3ce1",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/aeronautics_curios_compat/lang/ru_ru.json": {
+      "sha256": "baa0553d9629ffedf8c4d94985efd7da17198df5b2b2c8c5f2e16e56c3cccff0",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/aether/lang/ru_ru.json": {
+      "sha256": "51a61905efaf2570c5b700427886144b8e68dfeffbf8ac512be947dda0cd4565",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ancient_remnants/lang/ru_ru.json": {
+      "sha256": "20b596e4717a0238b021f0579f1fad9d421a53cec4dd7b332b684f0d8a053305",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/apollib/lang/ru_ru.json": {
+      "sha256": "10ecddf7ea6bba6c183e89fdcaea28ebb19ca52d6579b9b2c2d3b6c028ed51ec",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/apothic_attributes/lang/ru_ru.json": {
+      "sha256": "c3a02ccf6f5e1d5ccb9a804cbc7e51a45a72e978ec2f568706ebffb58aca3b3a",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/appleskin/lang/ru_ru.json": {
+      "sha256": "904e3ef2ac2d33d4adbb7dad5b7546799ad8c2670ac222fed8a4cd7b41c9db01",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/aquamirae/lang/ru_ru.json": {
+      "sha256": "5442f0de4a69166e20f2fd8ad216eb9c9a4b8dab9da963e7c15772220681bcf4",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ars_creo/lang/ru_ru.json": {
+      "sha256": "f68f56620195a3159defbfe369cbfaaa4e11377dbff9b2b4e4c70bc46d05c2f9",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ars_nouveau/lang/ru_ru.json": {
+      "sha256": "34ffac97bcf0802395acc32c8a4a0b860604e8646daef3ca1532e9cc9a127e77",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ars_ocultas/lang/ru_ru.json": {
+      "sha256": "1914715f94f28d34f99411ba165d743c4d241ee1f01d32f2b8732346ff4f443a",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ars_technica/lang/ru_ru.json": {
+      "sha256": "29e0b2aa3fd2af677732cdb2a84bece975aa773b66c7951d96217915a54ef8c9",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/autotrash/lang/ru_ru.json": {
+      "sha256": "c9db73d1cd8cd03a7c1cd6e7257ac9a6f1ac709f8bef20880d0539217e7c785b",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/balm/lang/ru_ru.json": {
+      "sha256": "c76a0edb315f52078586de7d635561840d7e12f6cfe32fc33b99c186deb104b8",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/bettercaves/lang/ru_ru.json": {
+      "sha256": "100d058c10798343523df0a34216a46194d8c4561be3c9c794f65e298f8813ce",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/bettercombat/lang/ru_ru.json": {
+      "sha256": "dd3ab8613f4b52b0ba7deed4d0a846703a798617d9dcd2c0310fe7480486a799",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/betterdungeons/lang/ru_ru.json": {
+      "sha256": "e747eb17dce8734647773ad8661f6fc5bb1e1e57e9d7f6a7f220b3522f1e4ed0",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/betterendisland/lang/ru_ru.json": {
+      "sha256": "05b0164dd23b881d204a15b24a25f7d24f9c32b818d6898176135dd3599dfd37",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/betterstrongholds/lang/ru_ru.json": {
+      "sha256": "bcf4a20e61522b7f0c996f2331afa90b934898c022c20ecce239243cd4b164cc",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/bhc/lang/ru_ru.json": {
+      "sha256": "020e4fc267e310ffe329b8baaa05b13f7e3d52c29263bd741a32ee108ef604a8",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/bookshelf/lang/ru_ru.json": {
+      "sha256": "98979371cc25348dfdfa226887429711351ca440ce564dd1313a7342da317773",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/caelus/lang/ru_ru.json": {
+      "sha256": "17685a7d1e4317497bd3aac942545b970eaa1301fa44ee37c04abcc8a0d49045",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/chatanimation/lang/ru_ru.json": {
+      "sha256": "f66eda75f3b11a26bc864c324233e0f820b37796551d03a2460d35c9444e6541",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/cirrus/lang/ru_ru.json": {
+      "sha256": "02792ac5058b94f8b66dfa6e4366205d8adfd4b448903ed04bdafa0c733c2150",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/climaterivers/lang/ru_ru.json": {
+      "sha256": "842152fe9c02b2b734595fc2e284be1eedc72b138e3c14aef84d159c279f6a94",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/cloth-config2/lang/ru_ru.json": {
+      "sha256": "4dd3f0a01870ae1fe5fddce0a9b164596e2275e3f79278754cc2a854300d53e2",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/collective/lang/ru_ru.json": {
+      "sha256": "461dc8724ea51f2d5527b002f6df2627b442848a724e4d16757cfe9e9bd256a8",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/create/lang/ru_ru.json": {
+      "sha256": "20515e9e5594679a0ba41539d0c280eed49d9c7064eeeaab9aab117b73830669",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/createtree/lang/ru_ru.json": {
+      "sha256": "8d772391a2bc42a0a8c76166d2bc3a3ffa02e7b0b4af636abd02b6a9ccf1ed6e",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/creeperoverhaul/lang/ru_ru.json": {
+      "sha256": "483a2aa08ec14b0bc55e6fc0912ab77b3e8ded758ac529693026d61295683a1b",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/crittersandcompanions/lang/ru_ru.json": {
+      "sha256": "1ab76f779cd3918484f6668be9efae30dfb5d99fb8ee4269911f83fa73fd93f8",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/cumulus_menus/lang/ru_ru.json": {
+      "sha256": "891ee4d2b6387f1e21e062098d7717921dac20e61491493cbb3cda49f06429b1",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/curios/lang/ru_ru.json": {
+      "sha256": "9526e196b5c2d4ef035dc36ecc6640819012be4c70961cdd688a234c2bd483e6",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/darkpaintings/lang/ru_ru.json": {
+      "sha256": "67aaaa3d46e35711d40494ec52c40defb107498be1cb1b67cd1ae22a89a2fca5",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/deep_aether/lang/ru_ru.json": {
+      "sha256": "20033eb53c3abcae9d521b2cfa2438e1eddf7b1b8298332245c58ef69e93d39e",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/despawntweaks/lang/ru_ru.json": {
+      "sha256": "218b70c67357ec3ad4e6b6bf847009113fef9345cfc81ebf244df38236fb2e8e",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/distanthorizons/lang/ru_ru.json": {
+      "sha256": "59e61283a6beb0237590967f1b09e1b8b5c889e6443436165e00068f6a834752",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/drippyloadingscreen/lang/ru_ru.json": {
+      "sha256": "d0a9bf9c7a4eb9fd04a8c8babf682cc4f3be113e587cfef4788ae8dcbf056e7f",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/easyanvils/lang/ru_ru.json": {
+      "sha256": "46dac0eff12468574365c6d5626cb0329774c96de650240c5b4cdddb51f4ebd2",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/easymagic/lang/ru_ru.json": {
+      "sha256": "b44b376ad73f12350e2438efa413eacc8712e48ccb8c1f39804790834d4aab40",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/enchdesc/lang/ru_ru.json": {
+      "sha256": "eeadcd71e24dea90cdfc25c3f9358ffeb3ffa1d5e0bb264d83f784747a9cec37",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/endermanoverhaul/lang/ru_ru.json": {
+      "sha256": "ee90390057a0280de55bb575c7266bab8f65ef867de9d89b8f7b249618b43802",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/endrem/lang/ru_ru.json": {
+      "sha256": "e7e2ab1f15d39adc4d6353d7ca50a7070a3c19e8d8b35eafff7098b91f89ba08",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/enhancedcelestials2core/lang/ru_ru.json": {
+      "sha256": "4d89b8a5ffb5eca7144b92e8a6feabe7b811ba33966cc8da85e35776ef34e32a",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/essential/lang/ru_ru.json": {
+      "sha256": "40b79134a522d0436e675cd819202cad1b92cdc8da0d64739ba4f450fe1f7709",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/essential/lang/ru_ru.lang": {
+      "sha256": "c30f74b4a83adef635bcf465e5b0fc0ffac4c9b46aa8a9ab78a5e990d5f9ca7f",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/example_mod/lang/ru_ru.json": {
+      "sha256": "eb44ff4368fd4008134f2353e58870ea9f5940047580b474b48acb31d72aa166",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/fabric-convention-tags-v2/lang/ru_ru.json": {
+      "sha256": "977b185c97fff8a6e33dedaf3e77bb4849405adf33ec44b21360218848bab520",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/fabric-data-attachment-api-v1/lang/ru_ru.json": {
+      "sha256": "8d997646d53434dccf0fcedb403261bc243811ce8814d6ef8e31e8d422e298ff",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/fallingtree/lang/ru_ru.json": {
+      "sha256": "e067df683ef434c6715d7d3d354ff63ec01166a1db7175d35822109cef6e8f5e",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/fancymenu/lang/ru_ru.json": {
+      "sha256": "e68bdae8545a0aae393d5e4d272afcb985e5ecd2eebf98cc5fa80d7c9dec1f14",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/fletchery_expanded/lang/ru_ru.json": {
+      "sha256": "04c9b99b71cf3bad2884b977e7fa3a27d3a2435b0be26c4c4c99cdfecf427123",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/flywheel/lang/ru_ru.json": {
+      "sha256": "48329625ee38413d5946112a64a27155fed0e5dc59a7ac75c580417be4abd6b9",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/fragmentum/lang/ru_ru.json": {
+      "sha256": "8f0770e7922ee9aac7c3bfb239084cb5c09ce5ce127723b63ac100f787acd57a",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/frostworks/lang/ru_ru.json": {
+      "sha256": "81399456ac67317a6eb4c59c65c0f4db075ae0bb5d8692a3310a8c624b2d4290",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ftblibrary/lang/ru_ru.json": {
+      "sha256": "6ccb5af4a854cb030f9abebf58bd00b74fbcf8dbf337b13940001e7106d29594",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ftbquests/lang/ru_ru.json": {
+      "sha256": "25823c5b7b1bac03366e3f53f54e061210443d5d12a9a17b4ea5861e33b8f320",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ftbteams/lang/ru_ru.json": {
+      "sha256": "ebdd13e73d431644ed5d92c1c9c678b9c992494d8f14c9b119ec2d0b6ada169c",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/fzzy_config/lang/ru_ru.json": {
+      "sha256": "d4b892dda414bbc6630819414d7e8af8b9e643d12586003e8a8b88bc7dfec249",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/gateways/lang/ru_ru.json": {
+      "sha256": "c8a3e20f0be5606e2c03eaae98aae48cb54e5cdc09b737d30956e5c05928cfe5",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/goblintraders/lang/ru_ru.json": {
+      "sha256": "fad2c522ca8e2b98acdbe2d4204c5a445d7752ee8426dc8c92719d7dbc974e00",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/golemoverhaul/lang/ru_ru.json": {
+      "sha256": "8b2257711bc0357b9d91be01a27bf9d1e25083476e65e45e7aad2cc78c208987",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/gravestone/lang/ru_ru.json": {
+      "sha256": "7dea514ae58cc94e305598af0e43489acd7b020029fba18f4bb111ea6f865a54",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/gtalike_teleport/lang/ru_ru.json": {
+      "sha256": "0ae1ce5eb36ccb720988d97cd3d1753eacf52f3bcc9e2a480564002bec5f1dff",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/lang/ru_ru.json": {
+      "sha256": "f4d3d0df8d0263da53897d27c69d65874abc799be22a94d9a90391a9b0349fcb",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/categories/content.json": {
+      "sha256": "03e582c4886493a3f2bb83c09160487c025b67391c7fb67991a25bca2070ab02",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/categories/core_mechanics.json": {
+      "sha256": "48ebea531c3d5706223c12057433b159e69de082ab22dbf1c44e22266ca56ee3",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/categories/entities.json": {
+      "sha256": "50fe15d45fb23373758ea88f6b9ebd48e57a0e0ad4be300f130143afc7e337a3",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/categories/resources.json": {
+      "sha256": "e055712b6d42dd7fdb93a53b6e081f6094c1ab878822d03d87f777a6f84c70dc",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/categories/technical.json": {
+      "sha256": "c15943729d4690c1ca1cbb07a8230363d967cd34c08a7e1870f60f708d92ed3f",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/blocks/ritual_brazier.json": {
+      "sha256": "0a9ab23c0f05070c26cf08e1e40564e51a7e31b57e8f083ec9b3c74d74ce6fb3",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/content/blocks_functional.json": {
+      "sha256": "847ba1dbc62685f1be1242df8ae6995641996cc56d11d6e66425cc511357ac4f",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/content/brews.json": {
+      "sha256": "3c6c31cc84146a34a16ff465b6b6de8a5c7152f33c67b45083fc3eae3ebf5e3b",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/content/equipment_armor.json": {
+      "sha256": "f1509728a73217f3436cfc8c46a907016cf9a836836f61cd7ca5d5229497f90f",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/content/idols.json": {
+      "sha256": "29c49f8661858fcc62a5af71a8cce72beff0942400c5cab212feb6a6b0c615d8",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/content/salves.json": {
+      "sha256": "60774fe3a2ca30bac609c1e09c0855b3c329fc3a2ba02718d7565b898f12a762",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/content/structures.json": {
+      "sha256": "d2feebb8827da3f5b27d6cd6b79b9e8b186d9a35aa65f5766ff857522c147259",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/content/throwable_sacs.json": {
+      "sha256": "4c6a671594002876df01026c5f6e66e6b8ffecea04e9a02507da2b007f2711d1",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/content/tools.json": {
+      "sha256": "e2e98d1eb8ea325ac7a659d08a495cb3ecfd5f4f6544a071c835a00914c76ecd",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/content/weapons.json": {
+      "sha256": "233ff0401bb30937dc2e6d0abaf4f3ba2b39f34d81bb8616c8248d58821fa50e",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/core_mechanics/brewing.json": {
+      "sha256": "45232d70df31a4afdd041b0ac562f09fbf0de2ef883bfc50b3d6b6ec45eff1db",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/core_mechanics/celestial_infusion.json": {
+      "sha256": "e86403c374404768da3b579134ddeaa2b21133b2093225e2b8e3642115d4b1e2",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/core_mechanics/censer.json": {
+      "sha256": "bb525f4b7019b28c2e9a92f909ea75a2a22437c506f633a75252dc9d58f40a67",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/core_mechanics/enchanted_plants.json": {
+      "sha256": "846219f6be401233c989053ec91b338293573a4535857abfe07948a043413a95",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/core_mechanics/mortar_and_pestle.json": {
+      "sha256": "45f7e095fc4d6781ac91d06082f9b8afb3b3dc78a939759ff29cead3362a106e",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/core_mechanics/mutation.json": {
+      "sha256": "5fb2f0ec55c49338b74fc2f53c594350dfc9cfbac9ddd1e1749ac836261d1b76",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/core_mechanics/natures_ritual.json": {
+      "sha256": "11753e5577da1e2905f752c11936e10d453073382a622b7bebcc32d0a9ce4757",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/entities/entities_cacofey.json": {
+      "sha256": "9b78b3ebeec2e7f8edea015aaa3505356b5f16ecd377a2d7566738c52d79f2d4",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/entities/entities_silk_moth.json": {
+      "sha256": "a971569b13691d8a155b624247d3251551bc6afa16ce59283d1574db3e7b82cf",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/resources/crops.json": {
+      "sha256": "7e9253d8bdefa0caf2572870b5f8a669fb75d70ff4cdd49368ba73976c51a938",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/resources/herbs.json": {
+      "sha256": "89bcef70c5f252b57b7007608cddbb1c16fad3a03bd649eb08d2b74f6cf94803",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/resources/natural_resources.json": {
+      "sha256": "3c7e124f9657c89f63ad2f2bf65e1a2145b5314a78e75b7b9e6e5fd308c1bcdb",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/resources/salt.json": {
+      "sha256": "5b50a99e8679b5c14ee8fe68945729cb081f64ee7569bf435da0d2db23ab67df",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/technical/automation.json": {
+      "sha256": "5e34e247660765cdcc666af108b317a9f19c01819297aab767a19fc4c1f45f90",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/entries/technical/configuration.json": {
+      "sha256": "e18469d4657f6046a656fa7f21c2763dd9e63a681c016e7ebb32f2ffeca23ffa",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/hexalia/patchouli_books/verdant_grimoire/ru_ru/templates/recipe_page.json": {
+      "sha256": "eac142dea8aea1ffdc06f6520360b2a4ad956601d3dfde4fae12002e7e1a2b39",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/inventorysorter/lang/ru_ru.json": {
+      "sha256": "6aac5ff472f670b3312fcdc1c3fdc454c0d71bca26eae84bc5d33fe5920dbc0b",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/iris/lang/ru_ru.json": {
+      "sha256": "b44674f21204adb989484cd2e2ebc13096cd5e48237fc1d826cba6570d658f2a",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ironchest/lang/ru_ru.json": {
+      "sha256": "8c238257eaec2fc3f6111cd4b884e6d6acdc37b3b385fd0a84b5d6d29999e6ab",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ironfurnaces/lang/ru_ru.json": {
+      "sha256": "2e8287e7eee177bbeec92e41ae2b7b307f4ef1da2078e88aa9713957d86063ab",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/jade/lang/ru_ru.json": {
+      "sha256": "382c7621fe1de49723fa959aaf798f2d76efebb990188ec787d9de1183a6bf33",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/jadeaddons/lang/ru_ru.json": {
+      "sha256": "a27737f09d609dd4ae241a5fd17c3a6fbf1963e59c795971e07c3393f095b01e",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/jamlib/lang/ru_ru.json": {
+      "sha256": "91f1a080bf3c16fa10ffb1d8f59e02e604d947bf547c7f70501a3f1b9e9c63d7",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/jei/lang/ru_ru.json": {
+      "sha256": "0d00ed65fffa2ffb53293f55126b27eec6bf24a740ba0055d09bdafdf05b625e",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/jeresources/lang/ru_ru.json": {
+      "sha256": "ff23f1e8a409b5adb6fed23a85f5536fe28927a0dd37c587f5849f73fa9755a5",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/lambdynlights/lang/ru_ru.json": {
+      "sha256": "475981260d7ac33a5ba9dd22835f37f25765649055a4f2789d7bd1ae1e2a85ee",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/libipn/lang/ru_ru.json": {
+      "sha256": "72ca50d8219f1ff40ee7c9e1be3991affce71d4328537d0b559a40d15d262869",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ls_dungeons_paintings/lang/ru_ru.json": {
+      "sha256": "8ea8093c984e2a49c2fdc78438a7c6febac74f567948759038eab24f7bb7561b",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/maestro/lang/ru_ru.json": {
+      "sha256": "ca8d0bcc931f9c825911aa0542197d50f38dc3b796c44de3e618adc28be2271f",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/mes/lang/ru_ru.json": {
+      "sha256": "ea896f6a739735d84fa3ff4a09e696efce57ac1817321d169eca8ca2290dc41b",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/mezz_config/lang/ru_ru.json": {
+      "sha256": "d35582a7c22111b87e4751244b3c6656258005e4b518889f740c4f020490bee9",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/mns/lang/ru_ru.json": {
+      "sha256": "540c2df28c3383b445a3812aff8bc5de487bf1c02497c573e2024e84bb9d4029",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/modonomicon/lang/ru_ru.json": {
+      "sha256": "968841bc3f430de662d2e76551dd7e760da0d9a22b3a4ff645bce23092377fbe",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/moogs_structures/lang/ru_ru.json": {
+      "sha256": "98f15b6e34e62d7a31c9a643d431bfda0c4c2778019547a1f60acfe20c424df1",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/naturalist/lang/ru_ru.json": {
+      "sha256": "92df1a048abd41d33a4369274c74d1697ef4a0ccb44cd2ad45a4a78ea9afb9d6",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/nitrogen_internals/lang/ru_ru.json": {
+      "sha256": "b585667a56b49558257cb372d6128045feb2c99451e41a4fd219052d61e634a7",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/nuggets/lang/ru_ru.json": {
+      "sha256": "06e20a8efa64a5a1cf9cdb1f6c119efbdbad6db4eb4297faf29ff178025a5238",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/occultism/lang/ru_ru.json": {
+      "sha256": "01f92a63603c95768f038ee35d2430e178ddac3cc4c410ebff3924bde44542f3",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/offroad/lang/ru_ru.json": {
+      "sha256": "51da700084baf7b9680a5ff98802ff890b03bfba71a02b8d154f0c0b30229bed",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/oreexcavation/lang/ru_ru.json": {
+      "sha256": "d8e7252a1e6923d6910bdd27db0f2c424a96c8187aef92ce4693e7b9872abc11",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/owo/lang/ru_ru.json": {
+      "sha256": "be6ff71061898fe931b22ddc9a67fec77d26ee6a225785b4597429f01b6be27d",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/placebo/lang/ru_ru.json": {
+      "sha256": "964a2b6e7c6d5e2134319878755f72f5fc1e24d83d4b146301c9087b46ccf593",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ponder/lang/ru_ru.json": {
+      "sha256": "321703961175c7f7e0ecec3597c04c9246e51ab8d09a74f8ab27614cf644fb22",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/reeses-sodium-options/lang/ru_ru.json": {
+      "sha256": "2ab1ae3ff980d8419ef20c8c338a6a6079b3143cca8a48efbe9deb663cc05648",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/relativeblocks/lang/ru_ru.json": {
+      "sha256": "9759a95ebd351c8bd71c0203b86e66b274a7ee36894830f5959d2a2c3fb67e2a",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/resourcefulconfig/lang/ru_ru.json": {
+      "sha256": "03b6fe36029bc906cd80efdfccb417eb5affaaba02fb5218557570e85d5aacc2",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/ribbits/lang/ru_ru.json": {
+      "sha256": "0090be66625dd5e07d66b371eebb6cf462c7b008909d26dbd3e7cd32559dd3d1",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/rightclickharvest/lang/ru_ru.json": {
+      "sha256": "010feb68693470979e36072e7f7f5a5919ce12c35904cb2e38eb9a58f1c47fba",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/sable/lang/ru_ru.json": {
+      "sha256": "1c69aabd7acee87d699e022f6642d8f59bbcd42f3e9e5d5caa8a4654c43c8812",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/sauce/lang/ru_ru.json": {
+      "sha256": "8bb4cfd0f0cd2d9fba32734a5823d8f8939bea19cc53b0c60bc0762640e578de",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/simplymore/lang/ru_ru.json": {
+      "sha256": "34cf6181d6cac1b72a9c32cfe086429a29c214e81df81afa7e2b238c0aaec91a",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/simplyswords/lang/ru_ru.json": {
+      "sha256": "f25d53d1df41911d9a90fefd7a3c4acc025f4c8ece0243940a458acab955bae2",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/simplytooltips/lang/ru_ru.json": {
+      "sha256": "f0ba2b1f479345f9477b7949a6d18dfca68831b71c8c3632cc7a3994f1ecfd96",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/simulated/lang/ru_ru.json": {
+      "sha256": "87901c8640b121d099733bfe167fa13456e5dcf738a9291225908d3dc3b7fcc4",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/smallships/lang/ru_ru.json": {
+      "sha256": "f9fd107fd92c6e856612894fc24fad020aac91e156e5eb2a96df30760850b547",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/sodium/lang/ru_ru.json": {
+      "sha256": "be960c007da3a993c3c8d7e43cee949391c807eaa5ab09c91a835185b62bc411",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/sons_of_sins/lang/ru_ru.json": {
+      "sha256": "911e5634d209020f7bfc1b3c8de85d910216b5a14f90dd9c5af896902434fc57",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/sounds/lang/ru_ru.json": {
+      "sha256": "103dfd4b84750919536979a3282a65486436063691ebd44e0b909b30c5e697ec",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/spider_overhaul/lang/ru_ru.json": {
+      "sha256": "ee0ce754cfb2edcec6c901450355b3c1c9509eb0a2e3e2ce0a74437cd92d050f",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/terralith/lang/ru_ru.json": {
+      "sha256": "6f1953aa06e73c7169324c0d3bc2755d44e6909d8bb730278d5b6c499a8b938c",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/thaumaturge/lang/ru_ru.json": {
+      "sha256": "d0127a3e8432123002899340b67c76f3358594ca57368036e19ecd7aa11fec85",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/toms_storage/lang/ru_ru.json": {
+      "sha256": "6021ec4e9786c701e68a077897b55365a84103981877ad9edff020ea676b83b7",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/trender/lang/ru_ru.json": {
+      "sha256": "c8f905da5163a2252a7d240ef94440a7382067984d50ca45d8b050ff5660c007",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/variantsandventures/lang/ru_ru.json": {
+      "sha256": "208a792bdc689fd7dc5e6fd56cb11de7b5d019e95e8c7387284e81d9056a4cb6",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/veil/lang/ru_ru.json": {
+      "sha256": "f326068e6c751f5c3fc884da21708e515a950a0d7e2910d33a9272486fcfd4f3",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/waystones/lang/ru_ru.json": {
+      "sha256": "d5e6851dfabd285cc21c2da73ed6d007874442b7b482d004ee0493e86a9515f9",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/witchery/lang/ru_ru.json": {
+      "sha256": "d0a4bf50db8db52a203bf7a4345c9aa4807802388039905923e9e3265e3fc135",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/xaerobetterpvp/lang/ru_ru.json": {
+      "sha256": "fead0f3590699348d638109cc47bddd1bd856bdc08b863090763402cedf88cd5",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/xaerolib/lang/ru_ru.json": {
+      "sha256": "edd309a17228ae79900749e11b7924659db4172d4bca41dfa6aeddd37fe15d78",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/xaerominimap/lang/ru_ru.json": {
+      "sha256": "d77e25236d662de81b13f618316772045276fd11191efb3772af981ff27a68ed",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/xaeroworldmap/lang/ru_ru.json": {
+      "sha256": "9b16f7820e9ef64bd9b0c3aa3433577c277a66ace4d4b59b1d802d49af5d744f",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/yungsapi/lang/ru_ru.json": {
+      "sha256": "061bb833901853bf187ec57fa47a87a55229ae2f48c016f1de123591b826b0c5",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/yungscavebiomes/lang/ru_ru.json": {
+      "sha256": "d513e171956670afeb089bcd0d45f8922eb654bfbd66ac54b9b3954e6060684a",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/zombie_variants/lang/ru_ru.json": {
+      "sha256": "241ca1b639138f784cc1e9ddd82464b1ce3787bb22c55bdfdd61552c93cad556",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/assets/zombieawareness/lang/ru_ru.json": {
+      "sha256": "ff928ecf66d1c8c2c0e6c45b9a95c0f8592a9e1f5325298fd353d394ed4c651c",
+      "server": false
+    },
+    "resourcepacks/Frontier Russian/pack.mcmeta": {
+      "sha256": "86f196fbf3a31ceb580ab8d71cb6bb511810e484cb803b24d4bd385f2b52a29d",
+      "server": false
+    }
+  }
+}

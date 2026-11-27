@@ -55,7 +55,7 @@ final class DirectGame {
             for(String s:values){for(var kv:vars.entrySet())s=s.replace("${"+kv.getKey()+"}",kv.getValue());if(s.contains("${"))throw new IOException("Неподдерживаемый параметр профиля");out.add(s);}
         }
     }
-    static List<String> classpath(Path base,JsonObject mc,JsonObject neo)throws Exception{
+    static List<String> classpath(Path base,JsonObject mc,JsonObject neo,boolean local)throws Exception{
         var files=new LinkedHashMap<String,String>();Path libraries=base.resolve("libraries");
         for(JsonObject version:List.of(neo,mc))for(var el:version.getAsJsonArray("libraries")){
             var lib=el.getAsJsonObject();if(!allowed(lib))continue;
@@ -64,28 +64,42 @@ final class DirectGame {
             if(files.containsKey(key))continue;
             Path path=libraries.resolve(art.get("path").getAsString()).normalize();
             if(!path.startsWith(libraries))throw new IOException("Путь библиотеки");
-            if(!Files.isRegularFile(path)||art.has("url")&&!art.get("url").getAsString().isBlank())fetch(path,art);
+            if(local){if(!Files.isRegularFile(path))throw new IOException("Не установлена библиотека "+path.getFileName());}
+            else if(!Files.isRegularFile(path)||art.has("url")&&!art.get("url").getAsString().isBlank())fetch(path,art);
             files.put(key,path.toString());
         }
         var result=new ArrayList<>(files.values());result.add(base.resolve("versions/1.21.1/1.21.1.jar").toString());return result;
     }
-    static void run(Path game,MinecraftAccount.Identity identity,Consumer<String> log)throws Exception{
-        
+    static void run(Path game,MinecraftAccount.Identity identity,boolean local,Consumer<String> log)throws Exception{
+        run(game,identity,local,log,false);
+    }
+    static void run(Path game,MinecraftAccount.Identity identity,boolean local,Consumer<String> log,boolean verifyOnly)throws Exception{
         Path base=Files.exists(Frontier.mc().resolve("versions/1.21.1/1.21.1.json"))?Frontier.mc():LauncherUpdates.home().resolve("minecraft");
+        log.accept("Проверка файлов Minecraft и NeoForge…");
+        JsonObject mc;
+        if(local){
+            Path version=base.resolve("versions/1.21.1/1.21.1.json");
+            if(!Files.isRegularFile(version)||!Files.isRegularFile(version.resolveSibling("1.21.1.jar"))||
+                !Files.isRegularFile(base.resolve("versions/"+Frontier.ID+"/"+Frontier.ID+".json")))
+                throw new IOException("Для локальной игры установите Minecraft 1.21.1 и NeoForge 21.1.267 на этом компьютере.");
+            mc=Pack.read(version);
+        }else{
         Files.createDirectories(base);
         if(!Files.exists(base.resolve("launcher_profiles.json"))&&!base.equals(Frontier.mc()))Pack.write(base.resolve("launcher_profiles.json"),"{\"profiles\":{}}");
-        log.accept("Проверка файлов Minecraft и NeoForge…");var mc=vanilla(base);
+        mc=vanilla(base);
         fetch(base.resolve("versions/1.21.1/1.21.1.jar"),mc.getAsJsonObject("downloads").getAsJsonObject("client"));
         Frontier.loader(base,false,log);
+        }
         var neo=Pack.read(base.resolve("versions/"+Frontier.ID+"/"+Frontier.ID+".json"));
         if(!"1.21.1".equals(neo.get("inheritsFrom").getAsString()))throw new IOException("Неподдерживаемый профиль NeoForge");
-        var cp=classpath(base,mc,neo);
+        var cp=classpath(base,mc,neo,local);
         Path assets=base.resolve("assets");var ai=mc.getAsJsonObject("assetIndex");String index=ai.get("id").getAsString();
-        Path aiFile=assets.resolve("indexes/"+index+".json");fetch(aiFile,ai);
+        Path aiFile=assets.resolve("indexes/"+index+".json");if(!local)fetch(aiFile,ai);
         var objects=Pack.read(aiFile).getAsJsonObject("objects");int done=0;
         for(var ent:objects.entrySet()){
             String h=ent.getValue().getAsJsonObject().get("hash").getAsString();if(!h.matches("[a-f0-9]{40}"))throw new IOException("Повреждён индекс ресурсов");
-            String rel=h.substring(0,2)+"/"+h;fetch(assets.resolve("objects/"+rel),"https://resources.download.minecraft.net/"+rel,h);
+            String rel=h.substring(0,2)+"/"+h;if(local){if(!Files.isRegularFile(assets.resolve("objects/"+rel)))throw new IOException("Отсутствует ресурс Minecraft: "+ent.getKey());}
+            else fetch(assets.resolve("objects/"+rel),"https://resources.download.minecraft.net/"+rel,h);
             if(++done%64==0||done==objects.size())log.accept("Ресурсы Minecraft: "+done+" / "+objects.size());
         }
         Path natives=game.resolve(".frontier/natives");Files.createDirectories(natives);
@@ -95,6 +109,8 @@ final class DirectGame {
             Map.entry("assets_root",assets.toString()),Map.entry("assets_index_name",index),Map.entry("natives_directory",natives.toString()),Map.entry("launcher_name","WoidWatch"),Map.entry("launcher_version",LauncherUpdates.VERSION));
         var jvm=new ArrayList<>(List.of("-Xmx6G","-Xms512M"));var args=new ArrayList<String>();
         for(var version:List.of(mc,neo)){var a=version.getAsJsonObject("arguments");arguments(jvm,a.getAsJsonArray("jvm"),vars);arguments(args,a.getAsJsonArray("game"),vars);}
+        if(local)args.add("--disableMultiplayer");
+        if(verifyOnly){jvm.set(1,"-Xms32M");jvm.add("--dry-run");}
         jvm.add(neo.get("mainClass").getAsString());
         Path argfile=Files.createTempFile(game.resolve(".frontier"),"jvm-",".args");
         try{

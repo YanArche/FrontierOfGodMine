@@ -74,8 +74,9 @@ public class Frontier {
             boolean direct=!server&&!prepare;
             MinecraftAccount.Identity identity=null;
             if(direct){
-                log.accept("Вход в Minecraft");
-                identity=MinecraftAccount.signIn("player");
+                if(offline&&LocalPlayer.gameOpen(target))throw new IOException("Фронтир уже открыт. Закройте игру перед локальным запуском.");
+                log.accept(offline?"Локальный профиль":"Вход в Minecraft");
+                identity=offline?LocalPlayer.player(target):MinecraftAccount.signIn("player");
                 log.accept("Проверка файлов Фронтира");
             }
             new Pack(target,resources,server,log).update(offline);
@@ -88,12 +89,13 @@ public class Frontier {
                 String argfile="@libraries/net/neoforged/neoforge/21.1.267/win_args.txt";
                 int code=new ProcessBuilder(java().toString(),"@user_jvm_args.txt",argfile,"nogui").directory(target.toFile()).inheritIO().start().waitFor();
                 if(code!=0)throw new IOException("Сервер завершился с кодом "+code);
-            }else{String communityAddress=null;try{communityAddress=Community.refresh();}catch(Exception e){log.accept("Адрес сервера временно недоступен.");}
-                if(communityAddress!=null)ServerListFile.sync(target,communityAddress);DirectGame.run(target,identity,log);}
+            }else{String communityAddress=null;try{if(!offline)communityAddress=Community.refresh();}catch(Exception e){log.accept("Адрес сервера временно недоступен.");}
+                if(communityAddress!=null)ServerListFile.sync(target,communityAddress);DirectGame.run(target,identity,offline,log);}
         }
     }
     public static void main(String[] args)throws Exception{
         if(args.length==0){try{LauncherUpdates.run();}catch(Exception e){JOptionPane.showMessageDialog(null,e.toString(),"WoidWatch",JOptionPane.ERROR_MESSAGE);}return;}
+        if(args[0].equals("--local-library")){System.setProperty("woidwatch.local","true");SwingUtilities.invokeLater(()->Library.open(null));return;}
         if(args[0].equals("--library")){SwingUtilities.invokeLater(()->Library.open(Path.of(args[1])));return;}
         var flags=Arrays.asList(args);Path target=Path.of(args[args.length-1]).toAbsolutePath().normalize();
         run(target,flags.contains("--server"),flags.contains("--prepare"),flags.contains("--offline"),System.out::println);

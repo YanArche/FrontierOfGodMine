@@ -29,6 +29,7 @@ final class Library {
     }
     static void open(Path ready){
         try{
+            boolean local=Boolean.getBoolean("woidwatch.local");
             JFrame frame=new JFrame("WoidWatch Launcher "+LauncherUpdates.VERSION);frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             JPanel panel=new JPanel();panel.setBackground(new Color(17,17,24));panel.setBorder(BorderFactory.createEmptyBorder(24,30,24,30));panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
             JLabel heading=new JLabel("WOIDWATCH   /   Библиотека");heading.setForeground(new Color(0,230,214));panel.add(heading);
@@ -37,10 +38,10 @@ final class Library {
             Runnable refresh=()->{try{Path dir=location();info.setText("Сборка "+version(dir)+"   ·   Minecraft 1.21.1   ·   NeoForge 21.1.267");path.setText(dir.toString());}catch(Exception e){status.setText(e.getMessage());}};
             refresh.run();Path rollback=LauncherUpdates.home().resolve("rollback.txt");if(Files.isRegularFile(rollback)){status.setText(Files.readString(rollback));Files.deleteIfExists(rollback);}
             JPanel actions=new JPanel(new FlowLayout(FlowLayout.LEFT));actions.setOpaque(false);actions.setAlignmentX(Component.LEFT_ALIGNMENT);panel.add(actions);
-            JButton play=new JButton("Играть"),imp=new JButton("Импортировать сборку");actions.add(play);actions.add(imp);
-            JButton account=new JButton("Мой аккаунт");actions.add(account);account.addActionListener(e->WoidAccount.login(frame,account,status));
-            JButton admin=new JButton("Администрирование");actions.add(admin);admin.addActionListener(e->Community.admin(frame,admin,status));
-            new Thread(()->{try{String a=Community.refresh();Path selected=location();
+            JButton play=new JButton(local?"Играть локально":"Играть"),imp=new JButton("Импортировать сборку");actions.add(play);actions.add(imp);
+            JButton account=new JButton("Мой аккаунт");if(!local)actions.add(account);account.addActionListener(e->WoidAccount.login(frame,account,status));
+            JButton admin=new JButton("Администрирование");if(!local)actions.add(admin);admin.addActionListener(e->Community.admin(frame,admin,status));
+            if(!local)new Thread(()->{try{String a=Community.refresh();Path selected=location();
                 boolean playing=ProcessHandle.allProcesses().anyMatch(p->p.info().arguments().map(args->java.util.Arrays.asList(args).contains("--gameDir")).orElse(false));
                 if(!playing&&Files.isDirectory(selected))ServerListFile.sync(selected,a);SwingUtilities.invokeLater(()->status.setText(a.isEmpty()?"Сервер сообщества пока не открыт":"Сервер сообщества: "+a));}catch(Exception ignored){}}).start();
             imp.addActionListener(e->{JFileChooser picker=new JFileChooser();picker.setDialogTitle("Папка Frontier of God с mods, saves и options.txt");picker.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
@@ -52,20 +53,20 @@ final class Library {
             JLabel phase=new JLabel("Подготовка");phase.setForeground(Color.WHITE);loading.add(phase);
             JProgressBar progress=new JProgressBar();progress.setForeground(heading.getForeground());loading.add(progress);
             JLabel detail=new JLabel(" ");detail.setForeground(Color.LIGHT_GRAY);loading.add(detail);pages.add(loading,"loading");
-            JButton minecraft=new JButton("Войти в Minecraft");actions.add(minecraft);
+            JButton minecraft=new JButton("Войти в Minecraft");if(!local)actions.add(minecraft);
             java.util.function.Consumer<Boolean> start=launch->{
-                if(MinecraftAccount.clientId().isEmpty()){
+                if(!local&&MinecraftAccount.clientId().isEmpty()){
                     status.setText("Вход Microsoft ожидает регистрации приложения WoidWatch.");
                     return;
                 }
                 cards.show(pages,"loading");progress.setIndeterminate(true);detail.setText(" ");
-                phase.setText("Вход в Minecraft");frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                phase.setText(local?"Локальный профиль":"Вход в Minecraft");frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 new Thread(()->{
                     String result;
                     try{
                         if(launch){
                             Path dir=location();if(Files.exists(settings()))imported(dir);
-                            Frontier.run(dir,false,false,false,msg->SwingUtilities.invokeLater(()->{
+                            Frontier.run(dir,false,false,local,msg->SwingUtilities.invokeLater(()->{
                                 if(msg.startsWith("Ресурсы Minecraft: ")){
                                     String[] counts=msg.substring("Ресурсы Minecraft: ".length()).split(" / ");
                                     progress.setIndeterminate(false);progress.setMaximum(Integer.parseInt(counts[1]));progress.setValue(Integer.parseInt(counts[0]));
@@ -81,8 +82,8 @@ final class Library {
             };
             play.addActionListener(e->start.accept(true));minecraft.addActionListener(e->start.accept(false));
             JLabel updates=new JLabel("Проверка обновлений лаунчера…");updates.setForeground(new Color(110,196,187));panel.add(updates);
-            new Timer(1500,e->{try{Path f=LauncherUpdates.home().resolve("update-status.txt");if(Files.exists(f))updates.setText(Files.readString(f));}catch(IOException ignored){}}).start();
-            frame.setContentPane(pages);frame.setSize(880,320);frame.setLocationRelativeTo(null);frame.setVisible(true);Files.createFile(ready);
+            if(local)updates.setText("Одиночная игра · установленная сборка");else new Timer(1500,e->{try{Path f=LauncherUpdates.home().resolve("update-status.txt");if(Files.exists(f))updates.setText(Files.readString(f));}catch(IOException ignored){}}).start();
+            frame.setContentPane(pages);frame.setSize(880,320);frame.setLocationRelativeTo(null);frame.setVisible(true);if(ready!=null)Files.createFile(ready);
         }catch(Exception ex){ex.printStackTrace();System.exit(1);}
     }
 }

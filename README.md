@@ -4,7 +4,7 @@
 
 Minecraft Java Edition 1.21.1 · NeoForge 21.1.267
 
-Скачайте и полностью распакуйте [последний выпуск](https://github.com/YanArche/FrontierOfGodMine/releases/latest).
+Для сервера и исходного клиента 1.0.0 скачайте и полностью распакуйте [выпуск сборки](https://github.com/YanArche/FrontierOfGodMine/releases/tag/v1.0.0).
 
 * **Windows x64** — откройте Frontier.exe, нажмите «Обновить и открыть Java Edition», затем «Играть» в официальном лаунчере. При первом входе авторизуйтесь в Microsoft с лицензией Java Edition. Перед следующим запуском закройте игру и официальный лаунчер.
 * **macOS Intel и Apple Silicon** — откройте Frontier of God.app. Требуется официальный Minecraft Launcher. Приложение без подписи Apple.

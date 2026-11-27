@@ -16,7 +16,7 @@ if launcher:
     details={'tag_name':tag,'name':'WoidWatch Launcher '+tag.removeprefix('launcher-v'),'draft':True,'target_commitish':'main','body':'Библиотека, импорт существующего Фронтира и подписанные обновления приложения. Полностью распакуйте архив Windows или macOS. Для перехода с 1.0.0 также доступен маленький архив Migration с инструкцией.'}
 else:
     details=None
-if not release:release=api('/releases',details or {'tag_name':tag,'target_commitish':'main','name':'Frontier of God · '+tag,'draft':True,'body':'Распакуйте один архив для вашей платформы. Windows — Frontier.exe, macOS — Frontier of God.app, выделенный сервер Windows — Prepare-server.cmd для подготовки и Start-server.cmd для запуска.'})
+if not release:release=api('/releases',details or {'tag_name':tag,'target_commitish':'main','name':'Frontier of God · '+tag,'draft':True,'body':'Распакуйте один архив для вашей платформы. Windows — WoidWatch.exe, macOS — WoidWatch Launcher.app, выделенный сервер Windows — Prepare-server.cmd для подготовки и Start-server.cmd для запуска.'})
 def upload(name):
     f=Path('dist')/name
     sha='sha256:'+hashlib.file_digest(f.open('rb'),'sha256').hexdigest()
@@ -30,5 +30,5 @@ def upload(name):
         r=conn.getresponse();a=json.load(r)
     if r.status!=201 or a.get('digest')!=sha:raise RuntimeError((r.status,a.get('message'),f.name))
     print('Verified',f.name,flush=True)
-with concurrent.futures.ThreadPoolExecutor(3) as pool:list(pool.map(upload,(['woidwatch.jar','WoidWatch-Migration.zip','WoidWatch-Windows.zip','WoidWatch-macOS.zip'] if launcher else ['Frontier-Server.zip','Frontier-Windows.zip','Frontier-macOS.zip'])))
+with concurrent.futures.ThreadPoolExecutor(3) as pool:list(pool.map(upload,(['woidwatch.jar','WoidWatch-Migration.zip','WoidWatch-Windows.zip','WoidWatch-macOS.zip'] if launcher else ['Frontier-Server.zip','WoidWatch-Windows.zip','WoidWatch-macOS.zip'])))
 print(api('/releases/'+str(release['id']),{'draft':False,'make_latest':'false' if launcher else 'true'},'PATCH')['html_url'])

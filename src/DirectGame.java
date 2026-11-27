@@ -69,8 +69,8 @@ final class DirectGame {
         }
         var result=new ArrayList<>(files.values());result.add(base.resolve("versions/1.21.1/1.21.1.jar").toString());return result;
     }
-    static void run(Path game,String user,Consumer<String> log)throws Exception{
-        log.accept("Проверка профиля Minecraft Java…");var identity=MinecraftAccount.signIn(user);
+    static void run(Path game,MinecraftAccount.Identity identity,Consumer<String> log)throws Exception{
+        
         Path base=Files.exists(Frontier.mc().resolve("versions/1.21.1/1.21.1.json"))?Frontier.mc():LauncherUpdates.home().resolve("minecraft");
         Files.createDirectories(base);
         if(!Files.exists(base.resolve("launcher_profiles.json"))&&!base.equals(Frontier.mc()))Pack.write(base.resolve("launcher_profiles.json"),"{\"profiles\":{}}");
@@ -82,9 +82,11 @@ final class DirectGame {
         var cp=classpath(base,mc,neo);
         Path assets=base.resolve("assets");var ai=mc.getAsJsonObject("assetIndex");String index=ai.get("id").getAsString();
         Path aiFile=assets.resolve("indexes/"+index+".json");fetch(aiFile,ai);
-        for(var ent:Pack.read(aiFile).getAsJsonObject("objects").entrySet()){
+        var objects=Pack.read(aiFile).getAsJsonObject("objects");int done=0;
+        for(var ent:objects.entrySet()){
             String h=ent.getValue().getAsJsonObject().get("hash").getAsString();if(!h.matches("[a-f0-9]{40}"))throw new IOException("Повреждён индекс ресурсов");
             String rel=h.substring(0,2)+"/"+h;fetch(assets.resolve("objects/"+rel),"https://resources.download.minecraft.net/"+rel,h);
+            if(++done%64==0||done==objects.size())log.accept("Ресурсы Minecraft: "+done+" / "+objects.size());
         }
         Path natives=game.resolve(".frontier/natives");Files.createDirectories(natives);
         var vars=Map.ofEntries(Map.entry("classpath",String.join(File.pathSeparator,cp)),Map.entry("library_directory",base.resolve("libraries").toString()),Map.entry("classpath_separator",File.pathSeparator),
@@ -98,7 +100,17 @@ final class DirectGame {
         try{
             Files.write(argfile,jvm.stream().map(s->"\""+s.replace("\\","\\\\").replace("\"","\\\"")+"\"").toList());
             var cmd=new ArrayList<>(List.of(Frontier.java().toString(),"@"+argfile));cmd.addAll(args);
-            log.accept("Minecraft запущен");var p=new ProcessBuilder(cmd).directory(game.toFile()).redirectError(ProcessBuilder.Redirect.DISCARD).redirectOutput(ProcessBuilder.Redirect.DISCARD).start();
+            log.accept("Запуск Java 21…");
+            var p=new ProcessBuilder(cmd).directory(game.toFile()).redirectErrorStream(true).start();
+            try(var lines=p.inputReader()){
+                String line;
+                while((line=lines.readLine())!=null){
+                    if(line.contains("NeoForge mod loading"))log.accept("NeoForge загружает моды");
+                    else if(line.contains("Reloading ResourceManager"))log.accept("Minecraft загружает ресурспаки");
+                    else if(line.contains("Sound engine started"))log.accept("Звук игры готов");
+                    else if(line.contains("minecraft:textures/atlas/gui.png-atlas"))log.accept("Интерфейс Minecraft загружен");
+                }
+            }
             if(p.waitFor()!=0)throw new IOException("Minecraft завершился с ошибкой. Проверьте logs/latest.log в папке сборки.");
         }finally{Files.deleteIfExists(argfile);}
     }

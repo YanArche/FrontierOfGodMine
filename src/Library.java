@@ -45,13 +45,44 @@ final class Library {
                 if(!playing&&Files.isDirectory(selected))ServerListFile.sync(selected,a);SwingUtilities.invokeLater(()->status.setText(a.isEmpty()?"Сервер сообщества пока не открыт":"Сервер сообщества: "+a));}catch(Exception ignored){}}).start();
             imp.addActionListener(e->{JFileChooser picker=new JFileChooser();picker.setDialogTitle("Папка Frontier of God с mods, saves и options.txt");picker.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 if(picker.showOpenDialog(frame)==JFileChooser.APPROVE_OPTION)try{link(picker.getSelectedFile().toPath());refresh.run();status.setText("Подключена существующая папка с мирами и настройками.");}catch(Exception ex){JOptionPane.showMessageDialog(frame,ex.getMessage());}});
-            play.addActionListener(e->{play.setEnabled(false);imp.setEnabled(false);frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-                new Thread(()->{try{Path dir=location();if(Files.exists(settings()))imported(dir);Frontier.run(dir,false,false,false,msg->SwingUtilities.invokeLater(()->status.setText(msg)));}
-                    catch(Exception ex){SwingUtilities.invokeLater(()->JOptionPane.showMessageDialog(frame,ex.getMessage()));}
-                    finally{SwingUtilities.invokeLater(()->{play.setEnabled(true);imp.setEnabled(true);refresh.run();frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);});}}).start();});
+            CardLayout cards=new CardLayout();JPanel pages=new JPanel(cards);pages.add(panel,"library");
+            JPanel loading=new JPanel();loading.setBackground(panel.getBackground());loading.setLayout(new BoxLayout(loading,BoxLayout.Y_AXIS));
+            loading.setBorder(BorderFactory.createEmptyBorder(28,32,28,32));
+            JLabel gameTitle=new JLabel("Frontier of God");gameTitle.setForeground(heading.getForeground());gameTitle.setFont(name.getFont());loading.add(gameTitle);
+            JLabel phase=new JLabel("Подготовка");phase.setForeground(Color.WHITE);loading.add(phase);
+            JProgressBar progress=new JProgressBar();progress.setForeground(heading.getForeground());loading.add(progress);
+            JLabel detail=new JLabel(" ");detail.setForeground(Color.LIGHT_GRAY);loading.add(detail);pages.add(loading,"loading");
+            JButton minecraft=new JButton("Войти в Minecraft");actions.add(minecraft);
+            java.util.function.Consumer<Boolean> start=launch->{
+                if(MinecraftAccount.clientId().isEmpty()){
+                    status.setText("Вход Microsoft ожидает регистрации приложения WoidWatch.");
+                    return;
+                }
+                cards.show(pages,"loading");progress.setIndeterminate(true);detail.setText(" ");
+                phase.setText("Вход в Minecraft");frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                new Thread(()->{
+                    String result;
+                    try{
+                        if(launch){
+                            Path dir=location();if(Files.exists(settings()))imported(dir);
+                            Frontier.run(dir,false,false,false,msg->SwingUtilities.invokeLater(()->{
+                                if(msg.startsWith("Ресурсы Minecraft: ")){
+                                    String[] counts=msg.substring("Ресурсы Minecraft: ".length()).split(" / ");
+                                    progress.setIndeterminate(false);progress.setMaximum(Integer.parseInt(counts[1]));progress.setValue(Integer.parseInt(counts[0]));
+                                    phase.setText("Проверка ресурсов Minecraft");detail.setText(counts[0]+" из "+counts[1]);
+                                }else if(msg.startsWith("Обновление: ")){phase.setText("Обновление сборки");detail.setText(msg.substring("Обновление: ".length()));}
+                                else{phase.setText(msg);detail.setText(" ");progress.setIndeterminate(!msg.equals("Интерфейс Minecraft загружен"));}
+                            }));
+                            result="Игра закрыта.";
+                        }else{var player=MinecraftAccount.signIn("player");result="Minecraft: "+player.name();}
+                    }catch(Exception ex){result=ex.getMessage()==null?"Не удалось завершить запуск":ex.getMessage();}
+                    String message=result;SwingUtilities.invokeLater(()->{cards.show(pages,"library");refresh.run();status.setText(message);frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);});
+                }).start();
+            };
+            play.addActionListener(e->start.accept(true));minecraft.addActionListener(e->start.accept(false));
             JLabel updates=new JLabel("Проверка обновлений лаунчера…");updates.setForeground(new Color(110,196,187));panel.add(updates);
             new Timer(1500,e->{try{Path f=LauncherUpdates.home().resolve("update-status.txt");if(Files.exists(f))updates.setText(Files.readString(f));}catch(IOException ignored){}}).start();
-            frame.setContentPane(panel);frame.setSize(740,290);frame.setLocationRelativeTo(null);frame.setVisible(true);Files.createFile(ready);
+            frame.setContentPane(pages);frame.setSize(880,320);frame.setLocationRelativeTo(null);frame.setVisible(true);Files.createFile(ready);
         }catch(Exception ex){ex.printStackTrace();System.exit(1);}
     }
 }

@@ -1,15 +1,11 @@
 import com.google.gson.*;
-import com.sun.net.httpserver.HttpServer;
-import java.awt.Desktop;
 import java.io.*;
 import java.net.*;
 import java.net.http.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
-import java.security.*;
 import java.time.Duration;
 import java.util.*;
-import java.util.concurrent.*;
 
 final class MinecraftAccount {
     // Set in the release build after Mojang approves the project's public client ID.
@@ -21,7 +17,6 @@ final class MinecraftAccount {
     static final String OAUTH="https://login.microsoftonline.com/consumers/oauth2/v2.0/";
     static final String MC="https://api.minecraftservices.com/";
     static String enc(String s){return URLEncoder.encode(s,StandardCharsets.UTF_8);}
-    static String random(){byte[] bytes=new byte[32];new SecureRandom().nextBytes(bytes);return Base64.getUrlEncoder().withoutPadding().encodeToString(bytes);}
     static JsonObject http(String url,String body,String type,String bearer)throws Exception{
         var b=HttpRequest.newBuilder(URI.create(url)).timeout(Duration.ofSeconds(30)).header("Accept","application/json");
         if(bearer!=null)b.header("Authorization","Bearer "+bearer);
@@ -34,25 +29,6 @@ final class MinecraftAccount {
         return JsonParser.parseString(r.body()).getAsJsonObject();
     }
     static class InvalidSession extends IOException {}
-    static String authorize(String id)throws Exception{
-        var listener=HttpServer.create(new InetSocketAddress("127.0.0.1",0),0);
-        String redirect="http://127.0.0.1:"+listener.getAddress().getPort()+"/callback";
-        String state=random(),proof=random();
-        String challenge=Base64.getUrlEncoder().withoutPadding().encodeToString(MessageDigest.getInstance("SHA-256").digest(proof.getBytes(StandardCharsets.US_ASCII)));
-        CompletableFuture<String> result=new CompletableFuture<>();
-        listener.createContext("/callback",x->{try{
-            Map<String,String> params=new HashMap<>();String raw=x.getRequestURI().getRawQuery();
-            for(String pair:(raw==null?"":raw).split("&")){int n=pair.indexOf('=');if(n>0)params.put(pair.substring(0,n),URLDecoder.decode(pair.substring(n+1),StandardCharsets.UTF_8));}
-            boolean valid=x.getRequestMethod().equals("GET")&&x.getRequestURI().getPath().equals("/callback")&&state.equals(params.get("state"));
-            if(valid){if(params.containsKey("code"))result.complete(params.get("code"));else result.completeExceptionally(new IOException("Вход отменён"));}
-            byte[] msg="Return to WoidWatch Launcher.".getBytes(StandardCharsets.UTF_8);
-            x.getResponseHeaders().add("Cache-Control","no-store");x.sendResponseHeaders(valid?200:400,msg.length);x.getResponseBody().write(msg);
-        }finally{x.close();}});
-        listener.start();try{
-            Desktop.getDesktop().browse(URI.create(OAUTH+"authorize?client_id="+id+"&response_type=code&scope="+enc("XboxLive.signin offline_access")+"&redirect_uri="+enc(redirect)+"&state="+state+"&code_challenge_method=S256&code_challenge="+challenge));
-            return "grant_type=authorization_code&redirect_uri="+enc(redirect)+"&code_verifier="+proof+"&code="+enc(result.get(5,TimeUnit.MINUTES));
-        }finally{listener.stop(0);}
-    }
     static JsonObject exchange(String url,JsonObject properties,String relying)throws Exception{
         var req=new JsonObject();req.add("Properties",properties);req.addProperty("RelyingParty",relying);req.addProperty("TokenType","JWT");return http(url,req.toString(),"application/json",null);
     }
@@ -67,7 +43,7 @@ final class MinecraftAccount {
             try{token=http(OAUTH+"token","client_id="+id+"&grant_type=refresh_token&refresh_token="+enc(refresh),"application/x-www-form-urlencoded",null);}
             catch(InvalidSession e){Files.delete(file);}
         }
-        if(token==null)token=http(OAUTH+"token","client_id="+id+"&"+authorize(id),"application/x-www-form-urlencoded",null);
+        if(token==null)token=DeviceSignIn.login(id);
         if(token.has("refresh_token")){
             String saved=WoidAccount.protect(token.get("refresh_token").getAsString(),true,slot);
             Pack.write(file,Frontier.MAC?"keychain":saved);

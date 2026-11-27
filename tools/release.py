@@ -20,9 +20,9 @@ with concurrent.futures.ThreadPoolExecutor(3) as pool:list(pool.map(fetch,runtim
 def build(name):
     mac=name=='macOS'
     server=name=='Server'
-    prefix='Frontier of God.app/Contents/' if mac else ''
+    prefix='WoidWatch Launcher.app/Contents/' if mac else ''
     res=prefix+('Resources/' if mac else 'resources/')
-    with zipfile.ZipFile(dist/('Frontier-'+name+'.zip'),'w',allowZip64=True) as z:
+    with zipfile.ZipFile(dist/(('Frontier-' if server else 'WoidWatch-')+name+'.zip'),'w',allowZip64=True) as z:
         for src,dst in [(dist/('server.zip' if server else 'client.zip'),'payload.zip'),('pack/index.json','index.json'),('dist/frontier.jar','frontier.jar'),('lib/gson.jar','gson.jar'),('dist/loader.jar','loader.jar')]:
             z.write(src,res+dst)
         if mac:
@@ -41,7 +41,11 @@ def build(name):
                 z.write('platform/frontier.ps1','frontier.ps1')
                 for action,flags in [('Prepare-server',' -PrepareOnly'),('Start-server','')]:
                     z.writestr(action+'.cmd','@echo off\r\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0frontier.ps1" -Server'+flags+'\r\n')
-            else:z.write('dist/Frontier.exe','Frontier.exe')
+            else:z.write('dist/Frontier.exe','WoidWatch.exe')
         z.write('README.md','README.md')
     print(name,flush=True)
 for platform in ('Server','Windows','macOS'):build(platform)
+
+with zipfile.ZipFile(dist/'WoidWatch-Migration.zip','w') as patch:
+    patch.write(dist/'woidwatch.jar','frontier.jar')
+    patch.write('launcher/MIGRATION.md','README.md')

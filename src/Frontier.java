@@ -88,19 +88,9 @@ public class Frontier {
             }else{profiles(mc(),target);openLauncher();log.accept("В Java Edition нажмите «Играть».");}
         }
     }
-    static void window(){
-        JFrame f=new JFrame("FRONTIER OF GOD");f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel pane=new JPanel(new BorderLayout(12,16));pane.setBackground(new Color(23,45,36));pane.setBorder(BorderFactory.createEmptyBorder(24,32,24,32));
-        JLabel title=new JLabel("FRONTIER OF GOD");title.setFont(new Font("Serif",Font.BOLD,30));title.setForeground(new Color(242,222,173));pane.add(title,BorderLayout.NORTH);
-        JLabel status=new JLabel("Minecraft Java 1.21.1   •   NeoForge 21.1.267");status.setForeground(Color.WHITE);pane.add(status,BorderLayout.CENTER);
-        JButton start=new JButton("Обновить и открыть Java Edition");pane.add(start,BorderLayout.SOUTH);
-        start.addActionListener(e->{start.setEnabled(false);new Thread(()->{try{run(game(),false,false,false,s->SwingUtilities.invokeLater(()->status.setText(s)));}
-            catch(Exception ex){SwingUtilities.invokeLater(()->JOptionPane.showMessageDialog(f,ex.getMessage(),"Фронтир",JOptionPane.ERROR_MESSAGE));}
-            finally{SwingUtilities.invokeLater(()->start.setEnabled(true));}}).start();});
-        f.setContentPane(pane);f.setSize(590,220);f.setLocationRelativeTo(null);f.setVisible(true);
-    }
     public static void main(String[] args)throws Exception{
-        if(args.length==0){SwingUtilities.invokeLater(Frontier::window);return;}
+        if(args.length==0){try{LauncherUpdates.run();}catch(Exception e){JOptionPane.showMessageDialog(null,e.toString(),"WoidWatch",JOptionPane.ERROR_MESSAGE);}return;}
+        if(args[0].equals("--library")){SwingUtilities.invokeLater(()->Library.open(Path.of(args[1])));return;}
         var flags=Arrays.asList(args);Path target=Path.of(args[args.length-1]).toAbsolutePath().normalize();
         run(target,flags.contains("--server"),flags.contains("--prepare"),flags.contains("--offline"),System.out::println);
     }

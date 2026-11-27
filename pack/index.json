@@ -1,5 +1,6 @@
 {
   "format": 1,
+  "packVersion": "1.0.0",
   "minecraft": "1.21.1",
   "neoforge": "21.1.267",
   "overrides": "2bf24374f33c192f437902b2f00e6851ae9a57c6f6534d7404f7b71155bf72bc",

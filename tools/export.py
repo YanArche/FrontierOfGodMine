@@ -40,7 +40,7 @@ def export(profile, baseline):
             files[path]=entry
             client.writestr(path,data,compress_type=zipfile.ZIP_STORED if mod else zipfile.ZIP_DEFLATED)
             if onserver:server.writestr(path,data,compress_type=zipfile.ZIP_STORED if mod else zipfile.ZIP_DEFLATED)
-    index={'format':1,'minecraft':'1.21.1','neoforge':'21.1.267','overrides':sha((pack/'overrides.zip').read_bytes()),'files':files}
+    index={'format':1,'packVersion':(pack/'VERSION').read_text().strip(),'minecraft':'1.21.1','neoforge':'21.1.267','overrides':sha((pack/'overrides.zip').read_bytes()),'files':files}
     (pack/'index.json').write_text(json.dumps(index,ensure_ascii=False,indent=2),encoding='utf8')
 if __name__=='__main__':
     ap=argparse.ArgumentParser();ap.add_argument('profile',type=Path);ap.add_argument('baseline',type=Path);a=ap.parse_args();export(a.profile,a.baseline)

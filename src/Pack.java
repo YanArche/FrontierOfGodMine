@@ -99,7 +99,7 @@ final class Pack {
                 String key=pair.getKey();var item=pair.getValue().getAsJsonObject();
                 if(server&&!item.get("server").getAsBoolean())continue;
                 Path target=safe(key);
-                if(Files.exists(target)&&(key.equals("options.txt")||key.equals("config/simplerkeybinds.json")))continue;
+                if(Files.exists(target)&&(key.equals("options.txt")||key.equals("config/simplerkeybinds.json")||key.equals("config/fzzy_config/keybinds.toml")))continue;
                 String hash=item.get("sha256").getAsString();
                 if(Files.isRegularFile(target)&&digest(target).equals(hash))continue;
                 log.accept("Обновление: "+key);

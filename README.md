@@ -1,5 +1,7 @@
 # FRONTIER OF GOD
 
+[WoidWatch Launcher для Windows и macOS](https://github.com/YanArche/FrontierOfGodMine/releases/tag/launcher-v1.1.0) содержит библиотеку, импорт существующей папки и собственный подписанный канал обновления. [Переход с 1.0.0](launcher/MIGRATION.md). Версия модпака задаётся в pack/VERSION, версия приложения — в LauncherUpdates.java. Для выпуска приложения после сборки подпишите манифест tools/sign-launcher.ps1, загрузите файлы tools/publish.py с тегом launcher-vX.Y.Z и опубликуйте launcher/stable.json. Закрытый ключ хранится в личном хранилище сертификатов Windows пользователя выпуска.
+
 Minecraft Java Edition 1.21.1 · NeoForge 21.1.267
 
 Скачайте и полностью распакуйте [последний выпуск](https://github.com/YanArche/FrontierOfGodMine/releases/latest).

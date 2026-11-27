@@ -5,7 +5,8 @@ try {
   $java=Join-Path $res 'runtime/bin/java.exe'
   $flags=@()
   if($Server){
-    $flags+= '--server'
+    & "$PSScriptRoot/accounts/setup.ps1" -Mode prepare
+    $flags+= '--server' 
     if($PrepareOnly){$flags+='--prepare'}
     $flags+=(Join-Path $PSScriptRoot server)
   }

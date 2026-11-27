@@ -14,6 +14,7 @@ with tempfile.TemporaryDirectory() as temp:
     os.environ["WOIDWATCH_COOKIE_KEY"]=secrets.token_urlsafe(48)
     sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"accounts"))
     from service import app, database, digest, ORIGIN
+    app.config["GAME_READY"]=lambda:True
     client=app.test_client()
     invite=secrets.token_urlsafe(24)
     with database() as db:

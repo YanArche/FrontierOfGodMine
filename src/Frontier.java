@@ -76,7 +76,7 @@ public class Frontier {
             if(direct){
                 if(LocalPlayer.gameOpen(target))throw new IOException("Фронтир уже открыт. Закройте игру перед локальным запуском.");
                 log.accept(offline?"Локальный профиль":"Вход в Minecraft");
-                identity=LocalPlayer.player(target);
+                identity=AccountPanel.identity(target);
                 log.accept("Проверка файлов Фронтира");
             }
             new Pack(target,resources,server,log).update(direct || offline);
@@ -86,8 +86,9 @@ public class Frontier {
                 Path eula=target.resolve("eula.txt");
                 if(!Files.exists(eula))Pack.write(eula,"# https://aka.ms/MinecraftEULA\neula=false\n");
                 if(Files.readAllLines(eula).stream().noneMatch(s->s.trim().equals("eula=true")))throw new IOException("Прочитайте EULA и подтвердите согласие в "+eula);
-                String argfile="@libraries/net/neoforged/neoforge/21.1.267/win_args.txt";
-                int code=new ProcessBuilder(java().toString(),"@user_jvm_args.txt",argfile,"nogui").directory(target.toFile()).inheritIO().start().waitFor();
+                String host=System.getenv("WOIDWATCH_HOST_PYTHON");
+                if(host==null)throw new IOException("Для запуска сервера используйте обновлённый Start-server.cmd.");
+                int code=new ProcessBuilder(host,System.getenv("WOIDWATCH_HOST_SCRIPT"),"--mode","server","--data",System.getenv("WOIDWATCH_HOST_DATA"),"--game",target.toString(),"--java",java().toString()).directory(target.toFile()).inheritIO().start().waitFor();
                 if(code!=0)throw new IOException("Сервер завершился с кодом "+code);
             }else{DirectGame.run(target,identity,true,log);}
         }

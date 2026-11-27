@@ -35,12 +35,13 @@ final class Library {
             JLabel heading=new JLabel("WOIDWATCH   /   Библиотека");heading.setForeground(new Color(0,230,214));panel.add(heading);
             JLabel name=new JLabel("Frontier of God");name.setFont(new Font("Serif",Font.BOLD,36));name.setForeground(Color.WHITE);panel.add(name);
             JLabel info=new JLabel(),path=new JLabel(),status=new JLabel(" ");for(var label:new JLabel[]{info,path,status}){label.setForeground(Color.LIGHT_GRAY);panel.add(label);}
-            Runnable refresh=()->{try{Path dir=location();info.setText(LocalPlayer.display(dir)+"   ·   Сборка "+version(dir)+"   ·   Minecraft 1.21.1   ·   NeoForge 21.1.267");path.setText(dir.toString());}catch(Exception e){status.setText(e.getMessage());}};
+            Runnable refresh=()->{try{Path dir=location();info.setText( "Сборка "+version(dir)+"   ·   Minecraft 1.21.1   ·   NeoForge 21.1.267");path.setText(dir.toString());}catch(Exception e){status.setText(e.getMessage());}};
             refresh.run();Path rollback=LauncherUpdates.home().resolve("rollback.txt");if(Files.isRegularFile(rollback)){status.setText(Files.readString(rollback));Files.deleteIfExists(rollback);}
             JPanel actions=new JPanel(new FlowLayout(FlowLayout.LEFT));actions.setOpaque(false);actions.setAlignmentX(Component.LEFT_ALIGNMENT);panel.add(actions);
             JButton play=new JButton("Играть"),imp=new JButton("Импортировать сборку");actions.add(play);actions.add(imp);
-            JButton profile=new JButton("Мой профиль");actions.add(profile);
-            profile.addActionListener(e->{try{LocalPlayer.edit(frame,location());refresh.run();}catch(Exception ex){status.setText(ex.getMessage());}});
+            JButton account=new JButton("Аккаунт");actions.add(account);
+            account.addActionListener(e->{try{AccountPanel.open(frame,status);}catch(Exception ex){status.setText(ex.getMessage());}});
+            new Thread(()->{try{boolean test=AccountPanel.test();var me=AccountPanel.current(test);if(me!=null)SwingUtilities.invokeLater(()->status.setText((test?"Тестовый аккаунт: ":"Аккаунт: ")+me.get("name").getAsString()));}catch(Exception ignored){}}).start();
             imp.addActionListener(e->{JFileChooser picker=new JFileChooser();picker.setDialogTitle("Папка Frontier of God с mods, saves и options.txt");picker.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 if(picker.showOpenDialog(frame)==JFileChooser.APPROVE_OPTION)try{link(picker.getSelectedFile().toPath());refresh.run();status.setText("Подключена существующая папка с мирами и настройками.");}catch(Exception ex){JOptionPane.showMessageDialog(frame,ex.getMessage());}});
             CardLayout cards=new CardLayout();JPanel pages=new JPanel(cards);pages.add(panel,"library");

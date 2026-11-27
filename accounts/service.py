@@ -49,7 +49,8 @@ def digest(value):
 
 @app.before_request
 def protect():
-    if request.method == "POST" and request.path not in ("/desktop/start", "/desktop/poll"):
+    if request.path not in ("/health","/","/account.js") and not app.config.get("GAME_READY",lambda:False)():abort(503)
+    if request.method == "POST" and not request.path.startswith("/desktop/"):
         if request.headers.get("Origin") != ORIGIN or not request.is_json:
             abort(403)
     if request.path.startswith("/desktop/") and (request.headers.get("Origin") or not request.is_json):
@@ -166,9 +167,14 @@ def me():
     with database() as db:
         row=db.execute("SELECT name FROM sessions WHERE token=? AND expires>?",(digest(header[7:]),time.time())).fetchone()
     if not row:abort(401)
-    return jsonify(name=row[0])
+    with database() as db:
+        account=db.execute("SELECT id FROM password_users WHERE name=?",(row[0],)).fetchone()
+    return jsonify(name=row[0],id=account[0] if account else None)
 
 @app.get("/health")
 def health():
     with database() as db:db.execute("SELECT id FROM users LIMIT 0")
-    return jsonify(status="ok")
+    return jsonify(status="ok",registration=bool(app.config.get("GAME_READY",lambda:False)()))
+
+from passwords import install
+install(app,database,digest)

@@ -17,6 +17,38 @@ final class LocalPlayer {
             "if(Get-Process java,javaw -ErrorAction SilentlyContinue | Where-Object MainWindowTitle -eq 'FRONTIER OF GOD'){exit 10}").start();
         return check.waitFor()==10;
     }
+    static String display(Path game)throws Exception{
+        Path file=game.resolve(".frontier/local-player.json");
+        return Files.isRegularFile(file)?Pack.read(file).get("name").getAsString():"Локальный игрок";
+    }
+    static void edit(JFrame parent,Path game)throws Exception{
+        Path file=game.resolve(".frontier/local-player.json");
+        JsonObject old=Files.isRegularFile(file)?Pack.read(file):new JsonObject();
+        JsonArray known=known(game);
+        String initial=old.has("name")?old.get("name").getAsString():known.size()==1?known.get(0).getAsJsonObject().get("name").getAsString():"";
+        var nick=new JTextField(initial,22);
+        var about=new JTextField(old.has("about")?old.get("about").getAsString():"",22);
+        Object[] fields={"Ник в игре",nick,"О себе (необязательно, до 160 символов)",about};
+        if(JOptionPane.showConfirmDialog(parent,fields,"Мой локальный профиль",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+        save(game,old,known,nick.getText(),about.getText());
+    }
+    static JsonArray known(Path game)throws IOException{
+        Path cache=game.resolve("usercache.json");
+        return Files.isRegularFile(cache)?JsonParser.parseString(Files.readString(cache)).getAsJsonArray():new JsonArray();
+    }
+    static JsonObject save(Path game,JsonObject p,JsonArray known,String name,String about)throws Exception{
+        name=name.strip();about=about.strip();
+        if(!name.matches("[A-Za-z0-9_]{1,16}"))throw new IOException("Ник: от 1 до 16 латинских букв, цифр или символов подчёркивания.");
+        if(about.codePointCount(0,about.length())>160)throw new IOException("Описание должно быть короче 161 символа.");
+        UUID uuid=p.has("uuid")?UUID.fromString(p.get("uuid").getAsString()):UUID.randomUUID();
+        if(!p.has("uuid")){
+            if(known.size()==1)uuid=UUID.fromString(known.get(0).getAsJsonObject().get("uuid").getAsString());
+            else for(var e:known){var u=e.getAsJsonObject();if(name.equalsIgnoreCase(u.get("name").getAsString())){uuid=UUID.fromString(u.get("uuid").getAsString());break;}}
+        }
+        if(!p.has("created"))p.addProperty("created",java.time.Instant.now().toString());
+        p.addProperty("name",name);p.addProperty("uuid",uuid.toString());p.addProperty("about",about);
+        Pack.write(game.resolve(".frontier/local-player.json"),Pack.JSON.toJson(p));return p;
+    }
     static MinecraftAccount.Identity player(Path game)throws Exception{
         Path saved=game.resolve(".frontier/local-player.json");
         JsonObject p;
@@ -31,10 +63,7 @@ final class LocalPlayer {
                 FutureTask<String> pick=new FutureTask<>(()->JOptionPane.showInputDialog(null,"Ник для одиночной игры. Для прежнего мира укажите прежний ник.","Локальный профиль",JOptionPane.QUESTION_MESSAGE));
                 SwingUtilities.invokeLater(pick);name=pick.get();if(name==null)throw new IOException("Запуск отменён.");
             }
-            name=name.strip();if(!name.matches("[A-Za-z0-9_]{1,16}"))throw new IOException("Ник должен содержать от 1 до 16 латинских букв, цифр или символов подчёркивания.");
-            UUID uuid=UUID.nameUUIDFromBytes(("OfflinePlayer:"+name).getBytes(StandardCharsets.UTF_8));
-            for(var e:known){var user=e.getAsJsonObject();if(name.equalsIgnoreCase(user.get("name").getAsString())){name=user.get("name").getAsString();uuid=UUID.fromString(user.get("uuid").getAsString());break;}}
-            p=new JsonObject();p.addProperty("name",name);p.addProperty("uuid",uuid.toString());Pack.write(saved,Pack.JSON.toJson(p));
+            p=save(game,new JsonObject(),known,name,"");
         }
         return new MinecraftAccount.Identity(p.get("name").getAsString(),UUID.fromString(p.get("uuid").getAsString()).toString().replace("-",""),"0","");
     }

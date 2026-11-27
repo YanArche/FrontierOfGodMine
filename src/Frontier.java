@@ -74,12 +74,12 @@ public class Frontier {
             boolean direct=!server&&!prepare;
             MinecraftAccount.Identity identity=null;
             if(direct){
-                if(offline&&LocalPlayer.gameOpen(target))throw new IOException("Фронтир уже открыт. Закройте игру перед локальным запуском.");
+                if(LocalPlayer.gameOpen(target))throw new IOException("Фронтир уже открыт. Закройте игру перед локальным запуском.");
                 log.accept(offline?"Локальный профиль":"Вход в Minecraft");
-                identity=offline?LocalPlayer.player(target):MinecraftAccount.signIn("player");
+                identity=LocalPlayer.player(target);
                 log.accept("Проверка файлов Фронтира");
             }
-            new Pack(target,resources,server,log).update(offline);
+            new Pack(target,resources,server,log).update(direct || offline);
             if(prepare)return;
             if(server)loader(target,true,log);
             if(server){
@@ -89,8 +89,7 @@ public class Frontier {
                 String argfile="@libraries/net/neoforged/neoforge/21.1.267/win_args.txt";
                 int code=new ProcessBuilder(java().toString(),"@user_jvm_args.txt",argfile,"nogui").directory(target.toFile()).inheritIO().start().waitFor();
                 if(code!=0)throw new IOException("Сервер завершился с кодом "+code);
-            }else{String communityAddress=null;try{if(!offline)communityAddress=Community.refresh();}catch(Exception e){log.accept("Адрес сервера временно недоступен.");}
-                if(communityAddress!=null)ServerListFile.sync(target,communityAddress);DirectGame.run(target,identity,offline,log);}
+            }else{DirectGame.run(target,identity,true,log);}
         }
     }
     public static void main(String[] args)throws Exception{

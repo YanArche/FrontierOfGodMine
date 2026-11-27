@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 final class LauncherUpdates {
     static final int BUILD = 4;
-    static final String VERSION = "1.3.0-preview";
+    static final String VERSION = "1.3.0";
     static final String CHANNEL = "https://raw.githubusercontent.com/"+Pack.PROJECT+"/main/launcher/stable.json";
     static Path home(){return Frontier.game().getParent().resolve("woidwatch");}
     record Release(int build,String version,String hash,long bytes) {}

@@ -55,12 +55,12 @@ final class AccountPanel {
     static void open(JFrame parent,JLabel status)throws Exception{
         JDialog d=new JDialog(parent,"Аккаунт WoidWatch",true);JPanel p=new JPanel(new GridLayout(0,1,4,4));
         p.setBorder(BorderFactory.createEmptyBorder(14,20,14,20));
-        JCheckBox sandbox=new JCheckBox("Тестовый сервер на этом ПК",test());p.add(sandbox);
+        JCheckBox sandbox=new JCheckBox("Тестовый сервер на этом ПК",test());p.add(Look.label("Профиль WoidWatch",23,Look.PAPER,true));p.add(sandbox);
         JTextField name=new JTextField(22),invite=new JTextField();JPasswordField pass=new JPasswordField();
         p.add(new JLabel("Ник (3–16 букв A–Z, цифры и _)"));p.add(name);p.add(new JLabel("Пароль"));p.add(pass);p.add(new JLabel("Приглашение для регистрации"));p.add(invite);
         JLabel message=new JLabel(" ");p.add(message);JPanel buttons=new JPanel();
         for(String action:new String[]{"Войти","Регистрация","Выйти"}){
-            JButton button=new JButton(action);buttons.add(button);button.addActionListener(e->{
+            JButton button=Look.button(action,action.equals("Войти"));buttons.add(button);button.addActionListener(e->{
                 boolean test=sandbox.isSelected();char[] pw=pass.getPassword();var body=new JsonObject();
                 body.addProperty("name",name.getText().strip());body.addProperty("invite",invite.getText().strip());body.addProperty("password",new String(pw));Arrays.fill(pw,'\0');pass.setText("");
                 for(Component c:buttons.getComponents())c.setEnabled(false);sandbox.setEnabled(false);d.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);

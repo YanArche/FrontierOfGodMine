@@ -6,7 +6,7 @@ New-Item -ItemType Directory $classes | Out-Null
 try{
  & javac --release 21 -encoding UTF-8 -cp lib/gson.jar -d $classes (Get-ChildItem src/*.java).FullName
  if($LASTEXITCODE){throw 'javac failed'}
- & jar cf dist/woidwatch.jar -C $classes . -C launcher release.cer
+ & jar cf dist/woidwatch.jar -C $classes . -C launcher release.cer -C launcher art
  if($LASTEXITCODE){throw 'jar failed'}
  Copy-Item dist/woidwatch.jar dist/frontier.jar -Force
 }finally{

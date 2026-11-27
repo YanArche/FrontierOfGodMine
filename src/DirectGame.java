@@ -107,7 +107,7 @@ final class DirectGame {
             Map.entry("auth_player_name",identity.name()),Map.entry("auth_uuid",identity.uuid()),Map.entry("auth_access_token",identity.access()),Map.entry("auth_xuid",identity.xuid()),
             Map.entry("clientid",MinecraftAccount.clientId()),Map.entry("user_type","msa"),Map.entry("version_type","release"),Map.entry("version_name",Frontier.ID),Map.entry("game_directory",game.toString()),
             Map.entry("assets_root",assets.toString()),Map.entry("assets_index_name",index),Map.entry("natives_directory",natives.toString()),Map.entry("launcher_name","WoidWatch"),Map.entry("launcher_version",LauncherUpdates.VERSION));
-        var jvm=new ArrayList<>(List.of("-Xmx6G","-Xms512M"));var args=new ArrayList<String>();
+        var jvm=new ArrayList<>(List.of("-Xmx"+LauncherSettings.memory(LauncherSettings.read())+"G","-Xms512M"));var args=new ArrayList<String>();
         for(var version:List.of(mc,neo)){var a=version.getAsJsonObject("arguments");arguments(jvm,a.getAsJsonArray("jvm"),vars);arguments(args,a.getAsJsonArray("game"),vars);}
         if(local)args.add("--disableMultiplayer");
         if(verifyOnly){jvm.set(1,"-Xms32M");jvm.add("--dry-run");}

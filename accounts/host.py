@@ -49,6 +49,12 @@ def main():
             server.run();return 0
         props=args.game/"server.properties"
         settings=props.read_text(encoding="iso-8859-1").splitlines() if props.exists() else []
+        defaults={"max-players":"15","view-distance":"7","simulation-distance":"5",
+                  "entity-broadcast-range-percentage":"80","sync-chunk-writes":"true",
+                  "enable-rcon":"false","enable-query":"false","server-port":"25565"}
+        for name,value in defaults.items():
+            if not any(re.match(r"^\s*"+name+r"(?:\s|[:=]|$)",line) for line in settings):
+                settings.append(name+"="+value)
         settings=[line for line in settings if not re.match(r"^\s*(online-mode|enforce-secure-profile)(?:\s|[:=]|$)",line)]
         if any(line.rstrip().endswith(chr(92)) for line in settings):
             raise SystemExit("Multiline server.properties is unsupported")
@@ -57,11 +63,26 @@ def main():
         os.replace(temp,props)
         verifier=secrets.token_urlsafe(32)
         app.config["GAME_VERIFIER"]=verifier
+        control=args.game/".frontier"/"stop-request"
+        control.unlink(missing_ok=True)
         game=subprocess.Popen([str(args.java),"@user_jvm_args.txt",
                                "-Dminecraft.api.session.host=http://127.0.0.1:8787/verify/"+verifier,
                                "-Dminecraft.api.services.host=http://127.0.0.1:8787","@libraries/net/neoforged/neoforge/21.1.267/win_args.txt","nogui"],
-                              cwd=args.game,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,bufsize=0)
+                              cwd=args.game,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,bufsize=0)
         threading.Thread(target=server.run,daemon=True).start()
+        def monitor_stop():
+            while game.poll() is None:
+                if control.exists():
+                    control.unlink(missing_ok=True)
+                    ready.clear()
+                    try:
+                        game.stdin.write(b"stop\n")
+                        game.stdin.flush()
+                    except (BrokenPipeError, OSError):
+                        pass
+                    return
+                time.sleep(1)
+        threading.Thread(target=monitor_stop,daemon=True).start()
         for line in game.stdout:
             sys.stdout.buffer.write(line.replace(verifier.encode(),b"[redacted]"));sys.stdout.buffer.flush()
             if re.search(rb"\[Server thread/INFO\].*:\s*Done \([0-9.,]+s\)! ",line):ready.set()

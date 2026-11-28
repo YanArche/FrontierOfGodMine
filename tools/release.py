@@ -16,14 +16,16 @@ def fetch(key):
         subprocess.run(['curl.exe','-fsSL','--retry','3','-o',str(target)+'.part',url],check=True)
         os.replace(str(target)+'.part',target)
     assert hashlib.file_digest(target.open('rb'),'sha256').hexdigest()==sha,key
-with concurrent.futures.ThreadPoolExecutor(3) as pool:list(pool.map(fetch,runtimes))
+server_only='--server-only' in sys.argv[1:]
+targets=('windows',) if server_only else runtimes
+with concurrent.futures.ThreadPoolExecutor(3) as pool:list(pool.map(fetch,targets))
 def build(name):
     mac=name=='macOS'
     server=name=='Server'
     prefix='WoidWatch Launcher.app/Contents/' if mac else ''
     res=prefix+('Resources/' if mac else 'resources/')
     with zipfile.ZipFile(dist/(('Frontier-' if server else 'WoidWatch-')+name+'.zip'),'w',allowZip64=True) as z:
-        for src,dst in [(dist/('server.zip' if server else 'client.zip'),'payload.zip'),('pack/index.json','index.json'),('dist/frontier.jar','frontier.jar'),('lib/gson.jar','gson.jar'),('dist/loader.jar','loader.jar')]:
+        for src,dst in [(dist/('server.zip' if server else 'client.zip'),'payload.zip'),('pack/index.json','index.json'),(('dist/frontier-server.jar' if server_only else 'dist/frontier.jar'),'frontier.jar'),('lib/gson.jar','gson.jar'),('dist/loader.jar','loader.jar')]:
             z.write(src,res+dst)
         if mac:
             z.write('platform/Info.plist',prefix+'Info.plist')
@@ -41,12 +43,17 @@ def build(name):
                 for file in Path('accounts').iterdir():
                     if file.is_file():z.write(file,'accounts/'+file.name)
                 z.write('platform/frontier.ps1','frontier.ps1')
-                for action,flags in [('Prepare-server',' -PrepareOnly'),('Start-server','')]:
-                    z.writestr(action+'.cmd','@echo off\r\npowershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0frontier.ps1" -Server'+flags+'\r\n')
+                for file in ('Run-server.ps1','Stop-server.ps1','Install-Autostart.ps1','server-jvm-defaults.txt'):
+                    z.write('platform/'+file,file)
+                z.write('SERVER-DEPLOY.md','SERVER-DEPLOY.md')
+                wrappers={'Prepare-server':('frontier.ps1',' -Server -PrepareOnly'), 'Start-server':('Run-server.ps1',''), 'Stop-server':('Stop-server.ps1','')}
+                for action,(script,flags) in wrappers.items():
+                    z.writestr(action+'.cmd','@echo off\r\npowershell.exe -NoProfile -ExecutionPolicy RemoteSigned -File "%~dp0'+script+'"'+flags+' %*\r\n')
             else:z.write('dist/Frontier.exe','WoidWatch.exe')
         z.write('README.md','README.md')
     print(name,flush=True)
-for platform in ('Server','Windows','macOS'):build(platform)
+for platform in (('Server',) if server_only else ('Server','Windows','macOS')):build(platform)
+if server_only:sys.exit(0)
 
 with zipfile.ZipFile(dist/'WoidWatch-Migration.zip','w') as patch:
     patch.write(dist/'woidwatch.jar','frontier.jar')

@@ -59,6 +59,12 @@ public class Client {
         if(event.getEntity() instanceof AbstractClientPlayer p){var look=lookup(p);if(look!=null&&!look.title().isEmpty()&&p==Minecraft.getInstance().player&&!p.isInvisible()&&!p.isCrouching()&&!Minecraft.getInstance().options.getCameraType().isFirstPerson())event.setCanRender(net.neoforged.neoforge.common.util.TriState.TRUE);if(look!=null&&!look.title().isEmpty())event.setContent(event.getContent().copy().append(Component.literal(" · "+look.title()).withStyle(net.minecraft.ChatFormatting.GOLD)));}
     }
     @SubscribeEvent public static void menu(ScreenEvent.Init.Post event){
-        if(event.getScreen() instanceof PauseScreen screen&&ticket!=null)event.addListener(Button.builder(Component.literal("Гардероб"),b->Minecraft.getInstance().setScreen(new Closet(screen))).bounds(4,4,74,20).build());
+        var screen=event.getScreen();
+        if(!(screen instanceof PauseScreen||screen instanceof net.minecraft.client.gui.screens.TitleScreen))return;
+        var mc=Minecraft.getInstance();
+        int y=screen.height-46;
+        event.addListener(Hub.button("Гардероб",8,y,78,()->mc.setScreen(new Closet(screen))));
+        event.addListener(Hub.button("Друзья",90,y,62,()->mc.setScreen(new Friends(screen))));
+        event.addListener(Hub.button("Менеджер",156,y,76,()->mc.setScreen(new Hub(screen))));
     }
 }

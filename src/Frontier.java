@@ -68,6 +68,9 @@ public class Frontier {
         if(code!=0||!Files.exists(ready))throw new IOException("Ошибка NeoForge. Журнал: "+output);
     }
     static void run(Path target,boolean server,boolean prepare,boolean offline,Consumer<String> log)throws Exception{
+        run(target,server,prepare,offline,"",log);
+    }
+    static void run(Path target,boolean server,boolean prepare,boolean offline,String address,Consumer<String> log)throws Exception{
         Files.createDirectories(target.resolve(".frontier"));
         try(var ch=FileChannel.open(target.resolve(".frontier/run.lock"),StandardOpenOption.CREATE,StandardOpenOption.WRITE);var lock=ch.tryLock()){
             if(lock==null)throw new IOException("Фронтир уже запущен.");
@@ -80,17 +83,17 @@ public class Frontier {
                 log.accept("Проверка файлов Фронтира");
             }
             new Pack(target,resources,server,log).update(direct || offline);
-            if(prepare)return;
             if(server)loader(target,true,log);
             if(server){
                 Path eula=target.resolve("eula.txt");
                 if(!Files.exists(eula))Pack.write(eula,"# https://aka.ms/MinecraftEULA\neula=false\n");
+                if(prepare)return;
                 if(Files.readAllLines(eula).stream().noneMatch(s->s.trim().equals("eula=true")))throw new IOException("Прочитайте EULA и подтвердите согласие в "+eula);
                 String host=System.getenv("WOIDWATCH_HOST_PYTHON");
                 if(host==null)throw new IOException("Для запуска сервера используйте обновлённый Start-server.cmd.");
                 int code=new ProcessBuilder(host,System.getenv("WOIDWATCH_HOST_SCRIPT"),"--mode","server","--data",System.getenv("WOIDWATCH_HOST_DATA"),"--game",target.toString(),"--java",java().toString()).directory(target.toFile()).inheritIO().start().waitFor();
                 if(code!=0)throw new IOException("Сервер завершился с кодом "+code);
-            }else{DirectGame.run(target,identity,true,log);}
+            }else if(!prepare){DirectGame.run(target,identity,true,log,false,address);}
         }
     }
     public static void main(String[] args)throws Exception{

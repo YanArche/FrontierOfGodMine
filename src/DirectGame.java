@@ -74,6 +74,9 @@ final class DirectGame {
         run(game,identity,local,log,false);
     }
     static void run(Path game,MinecraftAccount.Identity identity,boolean local,Consumer<String> log,boolean verifyOnly)throws Exception{
+        run(game,identity,local,log,verifyOnly,"");
+    }
+    static void run(Path game,MinecraftAccount.Identity identity,boolean local,Consumer<String> log,boolean verifyOnly,String address)throws Exception{
         Path base=Files.exists(Frontier.mc().resolve("versions/1.21.1/1.21.1.json"))?Frontier.mc():LauncherUpdates.home().resolve("minecraft");
         log.accept("Проверка файлов Minecraft и NeoForge…");
         JsonObject mc;
@@ -123,6 +126,10 @@ final class DirectGame {
             String endpoint=test?"http://127.0.0.1:18787":WoidAccount.ORIGIN;
             jvm.add("-Dminecraft.api.session.host="+endpoint);
             jvm.add("-Dminecraft.api.services.host="+endpoint);
+        }
+        if(!address.isEmpty()){
+            if(gameTicket==null)throw new IOException("Для входа на сервер нужен игровой билет WoidWatch.");
+            args.add("--quickPlayMultiplayer");args.add(Community.address(address));
         }
         if(verifyOnly){jvm.set(1,"-Xms32M");jvm.add("--dry-run");}
         jvm.add(neo.get("mainClass").getAsString());

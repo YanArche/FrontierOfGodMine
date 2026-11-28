@@ -23,6 +23,11 @@ final class AccountPanel {
         try{r=WoidAccount.HTTP.send(b.build(),HttpResponse.BodyHandlers.ofString());}
         catch(IOException ex){throw new IOException(test?"Запустите Test-accounts.cmd на этом ПК.":"Сервер аккаунтов недоступен.",ex);}
         if(r.statusCode()==401)return null;
+        if(path.equals("/desktop/social")&&r.statusCode()!=200)throw new IOException(switch(r.statusCode()){
+            case 400,404 -> "Проверьте ник. Нужен другой зарегистрированный игрок.";
+            case 403 -> "Действие недоступно для этого игрока.";
+            case 409 -> "Заявка уже закрыта.";
+            default -> "Список друзей недоступен (HTTP "+r.statusCode()+").";});
         if(r.statusCode()!=200)throw new IOException(switch(r.statusCode()){
             case 400 -> "Проверьте ник и пароль (для регистрации от 12 до 128 символов).";
             case 403 -> "Приглашение недействительно или уже использовано.";

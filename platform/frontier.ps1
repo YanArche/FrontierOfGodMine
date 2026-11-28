@@ -1,4 +1,4 @@
-param([switch]$Server,[switch]$PrepareOnly)
+param([switch]$Server,[switch]$PrepareOnly,[switch]$Offline)
 $ErrorActionPreference="Stop"
 try {
   $res=Join-Path $PSScriptRoot resources
@@ -8,8 +8,9 @@ try {
     & "$PSScriptRoot/accounts/setup.ps1" -Mode prepare
     $flags+= '--server' 
     if($PrepareOnly){$flags+='--prepare'}
+    if($Offline){$flags+='--offline'}
     $flags+=(Join-Path $PSScriptRoot server)
   }
   & $java "-Dfrontier.resources=$res" -cp "$res/frontier.jar;$res/gson.jar" Frontier @flags
   if($LASTEXITCODE){throw "Frontier exited with code $LASTEXITCODE"}
-} catch {Write-Host $_; Read-Host 'Press Enter'; exit 1}
+} catch {[Console]::Error.WriteLine($_.ToString()); exit 1}

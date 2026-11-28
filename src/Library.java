@@ -43,7 +43,7 @@ final class Library {
             JPanel nav=Look.clear(new BorderLayout(0,9));side.add(nav,BorderLayout.CENTER);
             nav.add(Look.label("МОИ СБОРКИ",11,Look.MUTED,true),BorderLayout.NORTH);JPanel items=Look.clear(new FlowLayout(FlowLayout.LEFT,0,0));nav.add(items);
             JButton pack=Look.button("Frontier of God",false);pack.setIcon(new ImageIcon(Look.ART.getScaledInstance(38,29,Image.SCALE_SMOOTH)));pack.setPreferredSize(new Dimension(186,50));pack.setFont(Look.font(13,true));pack.setBorder(Look.pad(7,6));pack.setForeground(Look.GOLD);items.add(pack);
-            JButton settings=Look.button("Настройки лаунчера",false);var footerActions=Look.clear(new GridLayout(0,1,0,5));var closet=Look.button("Гардероб",false);footerActions.add(closet);footerActions.add(settings);side.add(footerActions,BorderLayout.SOUTH);
+            JButton settings=Look.button("Настройки лаунчера",false);var footerActions=Look.clear(new GridLayout(0,1,0,5));var closet=Look.button("Гардероб",false);footerActions.add(closet);var friends=Look.button("Друзья",false);footerActions.add(friends);var manager=Look.button("Менеджер",false);footerActions.add(manager);side.add(footerActions,BorderLayout.SOUTH);
             JPanel right=new JPanel(new BorderLayout(0,12));right.setBackground(new Color(19,29,35));right.setBorder(Look.pad(17,19));root.add(right);
             JPanel bar=Look.clear(new BorderLayout());bar.add(Look.label("Библиотека",19,Look.PAPER,true),BorderLayout.WEST);JLabel updates=Look.label("WoidWatch   /   "+LauncherUpdates.VERSION,12,Look.MUTED,false);bar.add(updates,BorderLayout.EAST);right.add(bar,BorderLayout.NORTH);
             CardLayout cards=new CardLayout();JPanel pages=new JPanel(cards);pages.setOpaque(false);right.add(pages);
@@ -79,7 +79,8 @@ final class Library {
             JPanel progressBox=new JPanel(new GridLayout(0,1,0,8));progressBox.setOpaque(false);progressBox.setBorder(Look.pad(12,4));
             JLabel phase=Look.label("Подготовка",24,Look.PAPER,true),detail=Look.label(" ",14,Look.PAPER,false);JProgressBar progress=new JProgressBar();progress.setForeground(Look.MINT);progress.setBackground(Look.PANEL);
             progressBox.add(phase);progressBox.add(progress);progressBox.add(detail);loading.add(progressBox,BorderLayout.SOUTH);
-            play.addActionListener(event->{
+            java.util.function.Consumer<String> launch=address->{
+                if(playing[0])return;
                 playing[0]=true;settings.setEnabled(false);account.setEnabled(false);cards.show(pages,"loading");progress.setIndeterminate(true);detail.setText(" ");
                 phase.setText("Локальный профиль");frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 new Thread(()->{
@@ -87,7 +88,7 @@ final class Library {
                     try{
 
                             Path dir=location();if(Files.exists(settings()))imported(dir);
-                            Frontier.run(dir,false,false,true,msg->SwingUtilities.invokeLater(()->{
+                            Frontier.run(dir,false,false,true,address,msg->SwingUtilities.invokeLater(()->{
                                 if(msg.startsWith("Ресурсы Minecraft: ")){
                                     String[] counts=msg.substring("Ресурсы Minecraft: ".length()).split(" / ");
                                     progress.setIndeterminate(false);progress.setMaximum(Integer.parseInt(counts[1]));progress.setValue(Integer.parseInt(counts[0]));
@@ -100,7 +101,10 @@ final class Library {
                     }catch(Exception ex){result=ex.getMessage()==null?"Не удалось завершить запуск":ex.getMessage();}
                     String message=result;SwingUtilities.invokeLater(()->{playing[0]=false;settings.setEnabled(true);account.setEnabled(true);cards.show(pages,"library");refresh.run();status.setText(message);frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);});
                 }).start();
-            });
+            };
+            play.addActionListener(e->launch.accept(""));
+            manager.addActionListener(e->{if(!playing[0])LauncherManager.open(frame,settings,imp,launch);});
+            friends.addActionListener(e->{if(!playing[0])new FriendsPanel(frame,launch);});
             new Timer(3500,e->{try{Path f=LauncherUpdates.home().resolve("update-status.txt");if(Files.exists(f))updates.setToolTipText(Files.readString(f));}catch(IOException ignored){}}).start();
             frame.setContentPane(root);frame.setMinimumSize(new Dimension(810,530));frame.setSize(1110,680);frame.setLocationRelativeTo(null);frame.setVisible(true);if(ready!=null)Files.createFile(ready);
         }catch(Exception ex){ex.printStackTrace();System.exit(1);}

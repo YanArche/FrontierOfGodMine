@@ -187,3 +187,6 @@ install_wardrobe(app,database,digest)
 
 from game_login import install as install_game_login
 install_game_login(app,database,digest)
+
+from social import install as install_social
+install_social(app,database,digest)

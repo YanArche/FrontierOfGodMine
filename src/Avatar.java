@@ -9,6 +9,7 @@ import com.google.gson.*;
 
 final class Avatar extends JComponent {
     BufferedImage skin;boolean slim,follow=true;double yaw=-.24,pitch=.07;String identity="";
+    BufferedImage hat,cape; String pin="", title=""; double zoom=1, turn=0; boolean studio;
     final javax.swing.Timer motion=new javax.swing.Timer(45,e->track());
     Avatar(){setPreferredSize(new Dimension(160,145));}
     public void addNotify(){super.addNotify();motion.start();}
@@ -56,13 +57,26 @@ final class Avatar extends JComponent {
     protected void paintComponent(Graphics gr){var g=(Graphics2D)gr.create();int w=getWidth(),h=getHeight();
         g.setPaint(new RadialGradientPaint(w*.5f,h*.55f,Math.max(1,h*.6f),new float[]{0,1},new Color[]{new Color(44,81,78),Look.INK}));g.fillRect(0,0,w,h);
         g.setColor(new Color(97,166,151,40));g.drawOval(w/2-49,h-21,98,13);g.drawOval(w/2-37,h-18,74,8);
-        double s=Math.min((h-15)/34.,w/22.);g.translate(w/2.,(h-32*s)/2);g.scale(s,s);
+        double s=Math.min((h-15)/39.,w/25.)*zoom;g.translate(w/2.,(h-31*s)/2);g.scale(s,s);
         g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
         int arm=slim?3:4;boolean modern=skin!=null&&skin.getHeight()==64;
-        block(g,-2,26,4,12,4,0,16,-.10,0,Look.PANEL,0);block(g,2,26,4,12,4,modern?16:0,modern?48:16,-.10,0,Look.PANEL,0);
-        block(g,0,14,8,12,4,16,16,-.10,0,Look.MINT,0);
-        block(g,-4-arm/2.,14,arm,12,4,40,16,-.10,0,Look.MUTED,0);block(g,4+arm/2.,14,arm,12,4,modern?32:40,modern?48:16,-.10,0,Look.MUTED,0);
-        if(modern){block(g,0,14,8,12,4,16,32,-.10,0,Look.MINT,.18);block(g,-4-arm/2.,14,arm,12,4,40,32,-.10,0,Look.MUTED,.18);block(g,4+arm/2.,14,arm,12,4,48,48,-.10,0,Look.MUTED,.18);block(g,-2,26,4,12,4,0,32,-.10,0,Look.PANEL,.15);block(g,2,26,4,12,4,0,48,-.10,0,Look.PANEL,.15);}
-        block(g,0,4,8,8,8,0,0,yaw,pitch,Look.GOLD,0);
-        if(skin!=null)block(g,0,4,8,8,8,32,0,yaw,pitch,Look.GOLD,.38);g.dispose();}
+        double body=studio?turn:-.10;
+        boolean back=Math.cos(body)<0;
+        if(cape!=null&&!back)g.drawImage(cape,-7,8,12,21,null);
+        block(g,-2,26,4,12,4,0,16,body,0,Look.PANEL,0);block(g,2,26,4,12,4,modern?16:0,modern?48:16,body,0,Look.PANEL,0);
+        block(g,0,14,8,12,4,16,16,body,0,Look.MINT,0);
+        block(g,-4-arm/2.,14,arm,12,4,40,16,body,0,Look.MUTED,0);block(g,4+arm/2.,14,arm,12,4,modern?32:40,modern?48:16,body,0,Look.MUTED,0);
+        if(modern){block(g,0,14,8,12,4,16,32,body,0,Look.MINT,.18);block(g,-4-arm/2.,14,arm,12,4,40,32,body,0,Look.MUTED,.18);block(g,4+arm/2.,14,arm,12,4,48,48,body,0,Look.MUTED,.18);block(g,-2,26,4,12,4,0,32,body,0,Look.PANEL,.15);block(g,2,26,4,12,4,0,48,body,0,Look.PANEL,.15);}
+        block(g,0,4,8,8,8,0,0,body+yaw,pitch,Look.GOLD,0);
+        if(skin!=null)block(g,0,4,8,8,8,32,0,body+yaw,pitch,Look.GOLD,.38);        if(cape!=null&&back)g.drawImage(cape,-5,8,10,16,null);
+        if(hat!=null)g.drawImage(hat,-7,-5,14,Math.max(4,14*hat.getHeight()/hat.getWidth()),null);
+        if(!back&&!pin.isEmpty()){
+            g.setColor(pin.equals("amethyst")?new Color(196,142,250):new Color(231,148,96));
+            g.fill(new Rectangle2D.Double(2,10,1.2,1.2));
+        }
+        if(studio&&!title.isEmpty()){
+            g.setFont(Look.font(1,true));g.setColor(Look.GOLD);
+            g.drawString(title,(float)(-g.getFontMetrics().stringWidth(title)/2.),-6);
+        }
+        g.dispose();}
 }

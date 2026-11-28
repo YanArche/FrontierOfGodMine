@@ -94,6 +94,13 @@ def install(app, database, digest):
                     state[CATALOG[item][0]] = item
             elif op == "remove" and item in ("title","accessory"):
                 state[item] = ""
+            elif op == "apply":
+                for slot in ("title", "accessory"):
+                    selected = data.get(slot)
+                    if not isinstance(selected, str) or (selected and
+                        (selected not in state["owned"] or CATALOG.get(selected, (None,))[0] != slot)):
+                        abort(403)
+                state.update(title=data["title"], accessory=data["accessory"], skin=skin_png(data.get("skin")))
             elif op == "skin":
                 state["skin"] = skin_png(data.get("skin"))
             elif op in ("save","load") and item in ("1","2"):

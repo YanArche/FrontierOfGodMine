@@ -27,6 +27,9 @@ with tempfile.TemporaryDirectory() as folder:
     assert action("save","1").status_code==200 and action("remove","title").status_code==200
     assert action("skin",skin="").json["skin"]=="" and action("load","1").json["skin"]
     assert action("skin",skin="bad").status_code==400
+    assert action("apply", title="mechanic", accessory="copper", skin="").status_code==403
+    assert action().json["skin"]
+    assert action("apply", title="mechanic", accessory="amethyst", skin=action().json["skin"]).status_code==200
     public=api.get("/wardrobe/player/Tester",headers=second).json
     assert public["title"]=="Механик" and public["accessory"]=="amethyst" and public["skin"] and "owned" not in public
     assert not action(headers=second).json["owned"]

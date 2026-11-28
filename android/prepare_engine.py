@@ -58,12 +58,37 @@ def prepare(target, pack):
     gradle=app/"build.gradle"
     gradle.write_text(gradle.read_text(encoding="utf-8")
         .replace("org.angelauramc.amethyst","win.noboredgames.woidwatch")
-        .replace("minSdkVersion 21","minSdkVersion 26"),encoding="utf-8")
+        .replace("minSdkVersion 21","minSdkVersion 26")
+        .replace('resValue "string", "app_name", "Amethyst (Debug)"','resValue "string", "app_name", "WoidWatch Launcher"')
+        .replace('resValue "string", "app_short_name", "Amethyst (Debug)"','resValue "string", "app_short_name", "WoidWatch"'),encoding="utf-8")
+    icons=source/"res/drawable-nodpi"
+    icons.mkdir(parents=True,exist_ok=True)
+    shutil.copyfile(HERE.parent/"launcher/art/eye.png",icons/"woidwatch_icon.png")
+    manifest=source/"AndroidManifest.xml"
+    edit(manifest,'android:icon="@drawable/woidwatch_icon"',
+        'android:icon="@mipmap/ic_launcher"','android:icon="@drawable/woidwatch_icon"')
+    edit(manifest,'android:roundIcon="@drawable/woidwatch_icon"',
+        'android:roundIcon="@mipmap/ic_launcher_round"','android:roundIcon="@drawable/woidwatch_icon"')
+    edit(app/"build.gradle","abiFilters 'arm64-v8a'",
+        '        minSdkVersion 26',"        minSdkVersion 26\n        ndk { abiFilters 'arm64-v8a' }")
+    edit(app/"build.gradle","WoidWatch 4G only",
+        "            useLegacyPackaging = true",
+        "            useLegacyPackaging = true\n"
+        "            // WoidWatch 4G only: AARs can still supply non-ARM64 libraries.\n"
+        "            excludes += ['lib/armeabi/**', 'lib/armeabi-v7a/**', 'lib/x86/**', 'lib/x86_64/**', 'lib/mips/**', 'lib/mips64/**']")
     edit(source/"AndroidManifest.xml",'android:label="WoidWatch Launcher"',
         'android:label="@string/app_name"','android:label="WoidWatch Launcher"')
     edit(package/"LauncherActivity.java","WoidWatchSetup.mount(this)",
         "        setContentView(R.layout.activity_pojav_launcher);",
         "        setContentView(R.layout.activity_pojav_launcher);\n        WoidWatchSetup.mount(this);")
+    edit(package/"utils/JREUtils.java",'WoidWatch: start the heap small',
+        '        userArgs.add("-Xms" + LauncherPreferences.PREF_RAM_ALLOCATION + "M");',
+        '        // WoidWatch: start the heap small on phones.\n        userArgs.add("-Xms512M");')
+    bypass=target/"androidnsbypass/build.gradle.kts"
+    if bypass.is_file():
+        edit(bypass,'ndkVersion = "27.3.13750724"',
+            "    compileSdk {\n        version = release(36) {\n            minorApiLevel = 1\n        }\n    }",
+            '    compileSdk = 37\n    ndkVersion = "27.3.13750724"')
     print(f"WoidWatch overlay applied to {rev}")
 
 if __name__=="__main__":

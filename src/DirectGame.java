@@ -109,7 +109,21 @@ final class DirectGame {
             Map.entry("assets_root",assets.toString()),Map.entry("assets_index_name",index),Map.entry("natives_directory",natives.toString()),Map.entry("launcher_name","WoidWatch"),Map.entry("launcher_version",LauncherUpdates.VERSION));
         var jvm=new ArrayList<>(List.of("-Xmx"+LauncherSettings.memory(LauncherSettings.read())+"G","-Xms512M"));var args=new ArrayList<String>();
         for(var version:List.of(mc,neo)){var a=version.getAsJsonObject("arguments");arguments(jvm,a.getAsJsonArray("jvm"),vars);arguments(args,a.getAsJsonArray("game"),vars);}
-        if(local)args.add("--disableMultiplayer");
+        jvm.add("-Dcustomskinloader.ignorePatchFailure=true");
+        boolean test=AccountPanel.test();
+        String gameTicket=null, gameProfile=null;
+        if(!verifyOnly){
+            try{
+                var grant=AccountPanel.api(test,"/desktop/game-ticket",new JsonObject(),AccountPanel.token(test));
+                if(grant!=null){gameTicket=grant.get("ticket").getAsString();gameProfile=grant.get("profile").getAsString();}
+            }catch(Exception unavailable){log.accept("Сетевой вход WoidWatch пока недоступен");}
+        }
+        if(gameTicket==null)args.add("--disableMultiplayer");
+        else{
+            String endpoint=test?"http://127.0.0.1:18787":WoidAccount.ORIGIN;
+            jvm.add("-Dminecraft.api.session.host="+endpoint);
+            jvm.add("-Dminecraft.api.services.host="+endpoint);
+        }
         if(verifyOnly){jvm.set(1,"-Xms32M");jvm.add("--dry-run");}
         jvm.add(neo.get("mainClass").getAsString());
         Path argfile=Files.createTempFile(game.resolve(".frontier"),"jvm-",".args");
@@ -125,7 +139,7 @@ final class DirectGame {
                     Path tmp=Files.createTempFile(mods,"ww-",".tmp");
                     try{Files.copy(resource,tmp,StandardCopyOption.REPLACE_EXISTING);Pack.move(tmp,mods.resolve("woidwatch-wardrobe.jar"));}finally{Files.deleteIfExists(tmp);}
                 }
-                boolean test=AccountPanel.test();
+                if(gameTicket!=null){builder.environment().put("WW_GAME_TICKET",gameTicket);builder.environment().put("WW_GAME_PROFILE",gameProfile);}
                 try{var ticket=AccountPanel.api(test,"/desktop/wardrobe/ticket",new JsonObject(),AccountPanel.token(test));
                     if(ticket!=null){builder.environment().put("WW_COSMETICS",ticket.get("ticket").getAsString());builder.environment().put("WW_COSMETICS_MODE",test?"test":"production");}
                 }catch(Exception unavailable){log.accept("Сервис гардероба недоступен");}

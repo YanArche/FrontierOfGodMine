@@ -47,11 +47,23 @@ def main():
         if stub:
             ready.set();print("TEST accounts only: http://127.0.0.1:18787",flush=True)
             server.run();return 0
-        game=subprocess.Popen([str(args.java),"@user_jvm_args.txt","@libraries/net/neoforged/neoforge/21.1.267/win_args.txt","nogui"],
+        props=args.game/"server.properties"
+        settings=props.read_text(encoding="iso-8859-1").splitlines() if props.exists() else []
+        settings=[line for line in settings if not re.match(r"^\s*(online-mode|enforce-secure-profile)(?:\s|[:=]|$)",line)]
+        if any(line.rstrip().endswith(chr(92)) for line in settings):
+            raise SystemExit("Multiline server.properties is unsupported")
+        temp=props.with_suffix(".woidwatch.tmp")
+        temp.write_text("\n".join(settings+["online-mode=true","enforce-secure-profile=false",""]),encoding="iso-8859-1")
+        os.replace(temp,props)
+        verifier=secrets.token_urlsafe(32)
+        app.config["GAME_VERIFIER"]=verifier
+        game=subprocess.Popen([str(args.java),"@user_jvm_args.txt",
+                               "-Dminecraft.api.session.host=http://127.0.0.1:8787/verify/"+verifier,
+                               "-Dminecraft.api.services.host=http://127.0.0.1:8787","@libraries/net/neoforged/neoforge/21.1.267/win_args.txt","nogui"],
                               cwd=args.game,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,bufsize=0)
         threading.Thread(target=server.run,daemon=True).start()
         for line in game.stdout:
-            sys.stdout.buffer.write(line);sys.stdout.buffer.flush()
+            sys.stdout.buffer.write(line.replace(verifier.encode(),b"[redacted]"));sys.stdout.buffer.flush()
             if re.search(rb"\[Server thread/INFO\].*:\s*Done \([0-9.,]+s\)! ",line):ready.set()
             elif b"Stopping server" in line:ready.clear()
         return game.wait()

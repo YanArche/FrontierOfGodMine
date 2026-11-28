@@ -50,6 +50,10 @@ def digest(value):
 @app.before_request
 def protect():
     if request.path not in ("/health","/","/account.js") and not app.config.get("GAME_READY",lambda:False)():abort(503)
+    if request.path == "/session/minecraft/join":
+        if request.headers.get("Origin") or not request.is_json:
+            abort(403)
+        return
     if request.method == "POST" and not request.path.startswith("/desktop/"):
         if request.headers.get("Origin") != ORIGIN or not request.is_json:
             abort(403)
@@ -180,3 +184,6 @@ from passwords import install
 install(app,database,digest)
 from wardrobe import install as install_wardrobe
 install_wardrobe(app,database,digest)
+
+from game_login import install as install_game_login
+install_game_login(app,database,digest)

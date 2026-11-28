@@ -43,7 +43,7 @@ final class Library {
             JPanel nav=Look.clear(new BorderLayout(0,9));side.add(nav,BorderLayout.CENTER);
             nav.add(Look.label("МОИ СБОРКИ",11,Look.MUTED,true),BorderLayout.NORTH);JPanel items=Look.clear(new FlowLayout(FlowLayout.LEFT,0,0));nav.add(items);
             JButton pack=Look.button("Frontier of God",false);pack.setIcon(new ImageIcon(Look.ART.getScaledInstance(38,29,Image.SCALE_SMOOTH)));pack.setPreferredSize(new Dimension(186,50));pack.setFont(Look.font(13,true));pack.setBorder(Look.pad(7,6));pack.setForeground(Look.GOLD);items.add(pack);
-            JButton settings=Look.button("Настройки лаунчера",false);side.add(settings,BorderLayout.SOUTH);
+            JButton settings=Look.button("Настройки лаунчера",false);var footerActions=Look.clear(new GridLayout(0,1,0,5));var closet=Look.button("Гардероб",false);footerActions.add(closet);footerActions.add(settings);side.add(footerActions,BorderLayout.SOUTH);
             JPanel right=new JPanel(new BorderLayout(0,12));right.setBackground(new Color(19,29,35));right.setBorder(Look.pad(17,19));root.add(right);
             JPanel bar=Look.clear(new BorderLayout());bar.add(Look.label("Библиотека",19,Look.PAPER,true),BorderLayout.WEST);JLabel updates=Look.label("WoidWatch   /   "+LauncherUpdates.VERSION,12,Look.MUTED,false);bar.add(updates,BorderLayout.EAST);right.add(bar,BorderLayout.NORTH);
             CardLayout cards=new CardLayout();JPanel pages=new JPanel(cards);pages.setOpaque(false);right.add(pages);
@@ -72,6 +72,7 @@ final class Library {
             account.addActionListener(e->{try{AccountPanel.open(frame,status);user.run();}catch(Exception ex){status.setText(ex.getMessage());}});
             Runnable imp=()->{JFileChooser picker=new JFileChooser();picker.setDialogTitle("Папка Frontier of God");picker.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
                 if(picker.showOpenDialog(frame)==JFileChooser.APPROVE_OPTION)try{link(picker.getSelectedFile().toPath());refresh.run();user.run();status.setText("Папка сборки подключена.");}catch(Exception ex){JOptionPane.showMessageDialog(frame,ex.getMessage());}};
+            closet.addActionListener(e->new Wardrobe(frame,user));
             settings.addActionListener(e->{try{LauncherSettings.open(frame,avatar,player[0],imp);}catch(Exception ex){status.setText(ex.getMessage());}});
             pack.addActionListener(e->{if(!playing[0])cards.show(pages,"library");});
             Look.Scene loading=new Look.Scene();pages.add(loading,"loading");loading.setBorder(Look.pad(32,32));

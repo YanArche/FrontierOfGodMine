@@ -36,6 +36,9 @@ def upload(name):
     if r.status!=201 or a.get('digest')!=sha:raise RuntimeError((r.status,a.get('message'),f.name))
     print('Verified',f.name,flush=True)
 assets=['woidwatch.jar'] if app_only else (['woidwatch.jar','WoidWatch-Migration.zip','WoidWatch-Windows.zip','WoidWatch-macOS.zip'] if launcher else ['Frontier-Server.zip','WoidWatch-Windows.zip','WoidWatch-macOS.zip'])
+if '--wardrobe' in sys.argv:
+    assets.append('WoidWatch-Accounts.zip')
+    details['body']+=' Гардероб, свои скины, два комплекта, титулы и броши. Для обновления службы аккаунтов распакуйте WoidWatch-Accounts.zip в папку accounts и перезапустите службу.'
 if '--icons' in sys.argv:assets.append('WoidWatch-Icons.zip')
 if '--accounts' in sys.argv:assets.extend(['WoidWatch-Accounts.zip','Frontier-Server.zip'])
 with concurrent.futures.ThreadPoolExecutor(3) as pool:list(pool.map(upload,assets))

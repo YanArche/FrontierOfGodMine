@@ -24,22 +24,18 @@ final class Avatar extends JComponent {
     void load(Path game,String name){
         identity=name;
         new Thread(()->{BufferedImage texture=null;boolean thin=false;
-            try{if(name.matches("[A-Za-z0-9_]{1,24}")){
-                texture=read(custom(name));if(texture==null)texture=read(game.resolve("CustomSkinLoader/LocalSkin/skins/"+name+".png"));
-                String skinName=name;var local=game.resolve(".frontier/local-player.json");
-                if(Files.isRegularFile(local))skinName=Pack.read(local).get("name").getAsString();
-                Path dir=game.resolve("CustomSkinLoader/caches");
-                if(texture==null&&Files.isDirectory(dir))try(var entries=Files.newDirectoryStream(dir,"*.json")){
-                    for(Path meta:entries){try{String key=meta.getFileName().toString().replace(".json","");if(!key.matches("[0-9a-f]{40}"))continue;
-                        var profile=Pack.read(dir.resolve(key));if(!name.equalsIgnoreCase(profile.get("name").getAsString())&&!skinName.equalsIgnoreCase(profile.get("name").getAsString()))continue;
-                        for(var el:profile.getAsJsonArray("properties")){var prop=el.getAsJsonObject();if(!prop.get("name").getAsString().equals("textures"))continue;
-                            var info=JsonParser.parseString(new String(Base64.getDecoder().decode(prop.get("value").getAsString()),java.nio.charset.StandardCharsets.UTF_8)).getAsJsonObject().getAsJsonObject("textures").getAsJsonObject("SKIN");
-                            String url=info.get("url").getAsString(),hash=url.substring(url.lastIndexOf('/')+1);if(!hash.matches("[0-9a-f]{64}"))continue;
-                            texture=read(Frontier.mc().resolve("assets/skins/"+hash.substring(0,2)+"/"+hash));thin=info.has("metadata")&&info.getAsJsonObject("metadata").toString().contains("slim");}
-                        if(texture!=null)break;
-                    }catch(Exception ignored){}}
+            try(var jar=new java.util.zip.ZipFile(Frontier.mc().resolve("versions/1.21.1/1.21.1.jar").toFile())){
+                var entry=jar.getEntry("assets/minecraft/textures/entity/player/wide/steve.png");
+                if(entry!=null)try(var in=jar.getInputStream(entry)){texture=ImageIO.read(in);}
+            }catch(Exception ignored){}
+            try{
+                boolean test=AccountPanel.test();String token=AccountPanel.token(test);
+                if(token!=null&&name.matches("[A-Za-z0-9_]{1,24}")){
+                    var data=AccountPanel.api(test,"/wardrobe/player/"+name,null,token);
+                    if(data!=null&&data.has("skin")&&!data.get("skin").getAsString().isEmpty())
+                        texture=ImageIO.read(new java.io.ByteArrayInputStream(Base64.getDecoder().decode(data.get("skin").getAsString())));
                 }
-            }}catch(Exception ignored){}
+            }catch(Exception ignored){}
             final var image=texture;final boolean model=thin;SwingUtilities.invokeLater(()->{if(identity.equals(name)){skin=image;slim=model;repaint();}});
         },"WoidWatch skin").start();
     }

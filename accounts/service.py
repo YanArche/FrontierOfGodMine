@@ -178,3 +178,5 @@ def health():
 
 from passwords import install
 install(app,database,digest)
+from wardrobe import install as install_wardrobe
+install_wardrobe(app,database,digest)

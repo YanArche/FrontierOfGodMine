@@ -1,0 +1,10 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="woidwatch_wardrobe"
+version="1.0.0"
+displayName="WoidWatch · Гардероб"
+description="Скины и гардероб сообщества WoidWatch"
+[[mixins]]
+config="woidwatch.mixins.json"

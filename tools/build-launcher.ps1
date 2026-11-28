@@ -4,9 +4,9 @@ New-Item -Force -ItemType Directory dist | Out-Null
 $classes=Join-Path (Resolve-Path dist).Path ('classes-'+[guid]::NewGuid())
 New-Item -ItemType Directory $classes | Out-Null
 try{
- & javac --release 21 -encoding UTF-8 -cp lib/gson.jar -d $classes (Get-ChildItem src/*.java).FullName
+ & javac --release 21 -encoding UTF-8 -cp lib/gson.jar -d $classes wardrobe/ww/Choice.java (Get-ChildItem src/*.java).FullName
  if($LASTEXITCODE){throw 'javac failed'}
- & jar cf dist/woidwatch.jar -C $classes . -C launcher release.cer -C launcher art
+ & jar cf dist/woidwatch.jar -C $classes . -C launcher release.cer -C launcher art -C launcher woidwatch-wardrobe.jar
  if($LASTEXITCODE){throw 'jar failed'}
  Copy-Item dist/woidwatch.jar dist/frontier.jar -Force
 }finally{

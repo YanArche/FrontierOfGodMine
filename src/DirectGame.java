@@ -68,7 +68,7 @@ final class DirectGame {
             else if(!Files.isRegularFile(path)||art.has("url")&&!art.get("url").getAsString().isBlank())fetch(path,art);
             files.put(key,path.toString());
         }
-        var result=new ArrayList<>(files.values());result.add(base.resolve("versions/1.21.1/1.21.1.jar").toString());return result;
+        return new ArrayList<>(files.values());
     }
     static void run(Path game,MinecraftAccount.Identity identity,boolean local,Consumer<String> log)throws Exception{
         run(game,identity,local,log,false);
@@ -117,7 +117,20 @@ final class DirectGame {
             Files.write(argfile,jvm.stream().map(s->"\""+s.replace("\\","\\\\").replace("\"","\\\"")+"\"").toList());
             var cmd=new ArrayList<>(List.of(Frontier.java().toString(),"@"+argfile));cmd.addAll(args);
             log.accept("Запуск Java 21…");
-            var p=new ProcessBuilder(cmd).directory(game.toFile()).redirectErrorStream(true).start();
+            var builder=new ProcessBuilder(cmd).directory(game.toFile()).redirectErrorStream(true);
+            if(!verifyOnly){
+                try(var resource=DirectGame.class.getResourceAsStream("/woidwatch-wardrobe.jar")){
+                    if(resource==null)throw new IOException("Отсутствует мод гардероба.");
+                    Path mods=game.resolve("mods");Files.createDirectories(mods);
+                    Path tmp=Files.createTempFile(mods,"ww-",".tmp");
+                    try{Files.copy(resource,tmp,StandardCopyOption.REPLACE_EXISTING);Pack.move(tmp,mods.resolve("woidwatch-wardrobe.jar"));}finally{Files.deleteIfExists(tmp);}
+                }
+                boolean test=AccountPanel.test();
+                try{var ticket=AccountPanel.api(test,"/desktop/wardrobe/ticket",new JsonObject(),AccountPanel.token(test));
+                    if(ticket!=null){builder.environment().put("WW_COSMETICS",ticket.get("ticket").getAsString());builder.environment().put("WW_COSMETICS_MODE",test?"test":"production");}
+                }catch(Exception unavailable){log.accept("Сервис гардероба недоступен");}
+            }
+            var p=builder.start();
             try(var lines=p.inputReader()){
                 String line;
                 while((line=lines.readLine())!=null){

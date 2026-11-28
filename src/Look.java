@@ -16,9 +16,67 @@ final class Look {
     static JButton button(String text,boolean primary){
         JButton b=new JButton(text){
             protected void paintComponent(Graphics g){var a=(Graphics2D)g.create();a.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
-                Color bg=primary?MINT:PANEL;if(getModel().isRollover())bg=bg.brighter();a.setColor(bg);a.fillRoundRect(0,0,getWidth(),getHeight(),10,10);
-                a.setColor(hasFocus()?GOLD:primary?MINT:EDGE);a.drawRoundRect(0,0,getWidth()-1,getHeight()-1,10,10);a.dispose();super.paintComponent(g);}
-        };b.setOpaque(false);b.setContentAreaFilled(false);b.setBorder(pad(9,14));b.setFocusPainted(false);b.setForeground(primary?INK:PAPER);b.setFont(font(14,true));b.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));return b;
+                var model=getModel();
+                Color bg=!isEnabled()?new Color(35,46,50):primary?MINT:PANEL;
+                if(isEnabled()&&model.isPressed()&&model.isArmed())bg=bg.darker();
+                else if(isEnabled()&&model.isRollover())bg=primary?new Color(143,255,225):new Color(38,61,67);
+                a.setPaint(new GradientPaint(0,0,bg,0,Math.max(1,getHeight()),bg.darker()));
+                a.fillRoundRect(1,1,getWidth()-2,getHeight()-2,14,14);
+                a.setColor(hasFocus()?GOLD:primary&&isEnabled()?MINT:EDGE);
+                a.drawRoundRect(1,1,getWidth()-3,getHeight()-3,14,14);
+                if(hasFocus())a.drawRoundRect(3,3,getWidth()-7,getHeight()-7,11,11);
+                a.dispose();super.paintComponent(g);}
+        };b.setOpaque(false);b.setContentAreaFilled(false);b.setBorder(pad(11,16));b.setFocusPainted(false);
+        b.setForeground(primary?INK:PAPER);b.setFont(font(14,true));b.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));return b;
+    }
+    static JCheckBox toggle(String caption,boolean selected){
+        var control=new JCheckBox(caption,selected);
+        control.setOpaque(false);control.setForeground(PAPER);control.setFont(font(14,true));
+        control.setIconTextGap(12);control.setBorder(pad(8,2));
+        Icon knob=new Icon(){
+            public int getIconWidth(){return 36;}
+            public int getIconHeight(){return 22;}
+            public void paintIcon(Component c,Graphics graphics,int x,int y){
+                var g=(Graphics2D)graphics.create();
+                g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+                boolean on=control.isSelected();g.setColor(on&&control.isEnabled()?MINT:EDGE);
+                g.fillRoundRect(x,y,36,22,22,22);g.setColor(on?INK:PAPER);g.fillOval(x+(on?17:4),y+4,14,14);
+                if(control.hasFocus()){g.setColor(GOLD);g.drawRoundRect(x,y,35,21,22,22);}
+                g.dispose();
+            }
+        };
+        control.setIcon(knob);control.setSelectedIcon(knob);return control;
+    }
+    static JPanel field(String caption,JTextField input){
+        var row=clear(new BorderLayout(0,6));var label=Look.label(caption,12,MUTED,true);
+        label.setLabelFor(input);row.add(label,BorderLayout.NORTH);row.add(input);
+        input.setOpaque(true);input.setBackground(new Color(8,18,25));input.setForeground(PAPER);input.setCaretColor(MINT);input.setFont(font(15,false));
+        input.setBorder(new javax.swing.border.AbstractBorder(){
+            public Insets getBorderInsets(Component c,Insets inset){inset.set(10,12,10,12);return inset;}
+            public void paintBorder(Component c,Graphics graphics,int x,int y,int w,int h){
+                var g=(Graphics2D)graphics.create();g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+                g.setColor(input.hasFocus()?MINT:EDGE);g.drawRoundRect(x,y,w-1,h-1,12,12);g.dispose();
+            }
+        });
+        input.addFocusListener(new java.awt.event.FocusAdapter(){
+            public void focusGained(java.awt.event.FocusEvent e){input.repaint();}
+            public void focusLost(java.awt.event.FocusEvent e){input.repaint();}
+        });
+        return row;
+    }
+    static JPanel dialog(JDialog dialog,String title,String description){
+        var scene=new Scene();scene.setBorder(pad(22,22));dialog.setContentPane(scene);
+        var panel=Wardrobe.glass(new BorderLayout(0,14),235);scene.add(panel);
+        var header=clear(new GridLayout(0,1,0,5));header.add(label(title,28,PAPER,true));header.add(label(description,13,MUTED,false));
+        panel.add(header,BorderLayout.NORTH);var body=new JPanel(){
+            public Component add(Component component){
+                var constraints=new GridBagConstraints();
+                constraints.gridx=0;constraints.gridy=getComponentCount();constraints.weightx=1;
+                constraints.fill=GridBagConstraints.HORIZONTAL;constraints.insets=new Insets(0,0,9,0);
+                add(component,constraints);return component;
+            }
+        };
+        body.setLayout(new GridBagLayout());body.setOpaque(false);panel.add(body);return body;
     }
     static void cover(Graphics2D g,BufferedImage im,int w,int h){double s=Math.max(w/(double)im.getWidth(),h/(double)im.getHeight());int iw=(int)Math.ceil(im.getWidth()*s),ih=(int)Math.ceil(im.getHeight()*s);g.drawImage(im,(w-iw)/2,(h-ih)/2,iw,ih,null);}
     static class Scene extends JPanel{

@@ -53,30 +53,34 @@ final class AccountPanel {
         return new MinecraftAccount.Identity(name,UUID.fromString(Files.readString(file)).toString().replace("-",""),"0","");
     }
     static void open(JFrame parent,JLabel status)throws Exception{
-        JDialog d=new JDialog(parent,"Аккаунт WoidWatch",true);JPanel p=new JPanel(new GridLayout(0,1,4,4));
-        p.setBorder(BorderFactory.createEmptyBorder(14,20,14,20));
-        JCheckBox sandbox=new JCheckBox("Тестовый сервер на этом ПК",test());p.add(Look.label("Профиль WoidWatch",23,Look.PAPER,true));p.add(sandbox);
+        JDialog d=new JDialog(parent,"Аккаунт WoidWatch",true);
+        var p=Look.dialog(d,"Аккаунт","Войдите, чтобы играть и синхронизировать гардероб.");
+        var sandbox=Look.toggle("Тестовая служба на этом ПК",test());p.add(sandbox);
         JTextField name=new JTextField(22),invite=new JTextField();JPasswordField pass=new JPasswordField();
-        p.add(new JLabel("Ник (3–16 букв A–Z, цифры и _)"));p.add(name);p.add(new JLabel("Пароль"));p.add(pass);p.add(new JLabel("Приглашение для регистрации"));p.add(invite);
-        JLabel message=new JLabel(" ");p.add(message);JPanel buttons=new JPanel();
-        for(String action:new String[]{"Войти","Регистрация","Выйти"}){
-            JButton button=Look.button(action,action.equals("Войти"));buttons.add(button);button.addActionListener(e->{
-                boolean test=sandbox.isSelected();char[] pw=pass.getPassword();var body=new JsonObject();
+        p.add(Look.field("Ник · 3–16 символов A–Z, цифры и _",name));
+        p.add(Look.field("Пароль",pass));
+        var invitation=Look.field("Код приглашения",invite);invitation.setVisible(false);p.add(invitation);
+        var register=Look.toggle("Создать аккаунт по приглашению",false);p.add(register);
+        JLabel message=Look.label(" ",13,Look.GOLD,false);p.add(message);
+        JPanel buttons=Look.clear(new FlowLayout(FlowLayout.RIGHT,8,0));
+        for(String action:new String[]{"Войти","Выйти"}){
+            JButton button=Look.button(action,action.equals("Войти"));buttons.add(button);if(action.equals("Войти")){d.getRootPane().setDefaultButton(button);register.addActionListener(e->{invitation.setVisible(register.isSelected());button.setText(register.isSelected()?"Создать аккаунт":"Войти");d.pack();});}button.addActionListener(e->{
+                boolean test=sandbox.isSelected(), signup=register.isSelected();message.setText("Подключение…");char[] pw=pass.getPassword();var body=new JsonObject();
                 body.addProperty("name",name.getText().strip());body.addProperty("invite",invite.getText().strip());body.addProperty("password",new String(pw));Arrays.fill(pw,'\0');pass.setText("");
-                for(Component c:buttons.getComponents())c.setEnabled(false);sandbox.setEnabled(false);d.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+                for(Component c:buttons.getComponents())c.setEnabled(false);sandbox.setEnabled(false);register.setEnabled(false);d.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
                 new Thread(()->{try{
                     String note;
                     if(action.equals("Выйти")){String t=token(test);if(t!=null)api(test,"/desktop/logout",new JsonObject(),t);Files.deleteIfExists(cache(test));Pack.write(MODE,test?"test":"production");note="Вы вышли из аккаунта.";}
                     else{
-                        var user=api(test,action.equals("Войти")?"/desktop/login":"/desktop/register",body,null);if(user==null)throw new IOException("Неверный ник или пароль.");
+                        var user=api(test,signup?"/desktop/register":"/desktop/login",body,null);if(user==null)throw new IOException("Неверный ник или пароль.");
                         String t=user.get("token").getAsString();String sealed=WoidAccount.protect(t,true,slot(test));Pack.write(cache(test),Frontier.MAC?"keychain":sealed);
                         Pack.write(MODE,test?"test":"production");note=(test?"Тестовый аккаунт: ":"Аккаунт: ")+user.get("name").getAsString();
                     }
                     SwingUtilities.invokeLater(()->{status.setText(note);d.dispose();});
                 }catch(Exception ex){SwingUtilities.invokeLater(()->message.setText(ex.getMessage()));}
-                finally{SwingUtilities.invokeLater(()->{for(Component c:buttons.getComponents())c.setEnabled(true);sandbox.setEnabled(true);d.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);});}}).start();
+                finally{SwingUtilities.invokeLater(()->{for(Component c:buttons.getComponents())c.setEnabled(true);sandbox.setEnabled(true);register.setEnabled(true);d.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);});}}).start();
             });
         }
-        p.add(buttons);d.setContentPane(p);d.pack();d.setMinimumSize(new Dimension(440,d.getHeight()));d.setLocationRelativeTo(parent);d.setVisible(true);
+        p.add(buttons);d.pack();d.setMinimumSize(new Dimension(460,0));d.setLocationRelativeTo(parent);d.setVisible(true);
     }
 }

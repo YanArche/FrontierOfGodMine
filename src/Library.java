@@ -48,13 +48,13 @@ final class Library {
             JPanel bar=Look.clear(new BorderLayout());bar.add(Look.label("Библиотека",19,Look.PAPER,true),BorderLayout.WEST);JLabel updates=Look.label("WoidWatch   /   "+LauncherUpdates.VERSION,12,Look.MUTED,false);bar.add(updates,BorderLayout.EAST);right.add(bar,BorderLayout.NORTH);
             CardLayout cards=new CardLayout();JPanel pages=new JPanel(cards);pages.setOpaque(false);right.add(pages);
             Look.Scene scene=new Look.Scene();pages.add(scene,"library");scene.setBorder(Look.pad(28,34));
-            JPanel intro=Look.clear(new GridLayout(0,1,0,0));intro.add(Look.label("MINECRAFT  JAVA EDITION",12,Look.GOLD,true));
+            JPanel intro=Look.clear(new GridLayout(0,1,0,0));intro.add(Look.label("MINECRAFT JAVA EDITION",12,Look.GOLD,true));
             JLabel title=Look.label("Frontier of God",54,Look.PAPER,false);title.setFont(new Font("Georgia",Font.BOLD,54));intro.add(title);
-            intro.add(Look.label("Исследования, магия и механизмы Create",16,Look.PAPER,false));
+            intro.add(Look.label("За перевалом начинается неизведанное.",16,Look.PAPER,false));
             JButton play=Look.button("Играть",true);play.setPreferredSize(new Dimension(150,42));play.setIcon(new Icon(){public int getIconWidth(){return 18;}public int getIconHeight(){return 14;}public void paintIcon(Component c,Graphics g,int x,int y){g.setColor(Look.INK);g.fillPolygon(new int[]{x,x,x+10},new int[]{y,y+14,y+7},3);}});
-            JPanel caption=Look.clear(new BorderLayout(0,12));caption.add(intro);JPanel row=Look.clear(new FlowLayout(FlowLayout.LEFT,0,0));row.add(play);caption.add(row,BorderLayout.SOUTH);caption.setBorder(Look.pad(14,18));JPanel plate=new JPanel(new BorderLayout()){protected void paintComponent(Graphics gr){var g=(Graphics2D)gr.create();g.setColor(new Color(14,30,33,148));g.fillRoundRect(0,0,getWidth(),getHeight(),14,14);g.setColor(new Color(214,197,144,80));g.drawRoundRect(0,0,getWidth()-1,getHeight()-1,14,14);g.dispose();}};plate.setOpaque(false);plate.add(caption);JPanel dock=Look.clear(new BorderLayout());dock.add(plate,BorderLayout.WEST);scene.add(dock,BorderLayout.SOUTH);
+            JPanel caption=Look.clear(new BorderLayout(0,12));caption.add(intro);JPanel row=Look.clear(new FlowLayout(FlowLayout.LEFT,0,0));row.add(play);caption.add(row,BorderLayout.SOUTH);caption.setBorder(Look.pad(8,12));JPanel plate=Wardrobe.glass(new BorderLayout(),195);plate.add(caption);JPanel dock=Look.clear(new BorderLayout());dock.add(plate,BorderLayout.WEST);scene.add(dock,BorderLayout.SOUTH);
             JPanel footer=Look.clear(new BorderLayout(0,8));right.add(footer,BorderLayout.SOUTH);
-            JPanel spec=new JPanel(new GridLayout(1,3,12,0));spec.setBackground(Look.PANEL);spec.setBorder(Look.pad(10,15));
+            JPanel spec=Wardrobe.glass(new GridLayout(1,3,12,0),210);
             JLabel info=Look.label("—",15,Look.PAPER,true);
             String[] labels={"СБОРКА","MINECRAFT","ЗАГРУЗЧИК"};
             JLabel[] vals={info,Look.label("Java 1.21.1",15,Look.PAPER,true),Look.label("NeoForge 21.1.267",15,Look.PAPER,true)};

@@ -10,12 +10,16 @@ final class LauncherSettings {
     static boolean motion(JsonObject j){return !j.has("motion")||j.get("motion").getAsBoolean();}
     static void open(JFrame owner,Avatar avatar,String player,Runnable merge)throws Exception{
         var values=read();var d=new JDialog(owner,"Настройки WoidWatch",true);
-        var p=new JPanel(new GridLayout(0,1,0,8));p.setBackground(Look.INK);p.setBorder(Look.pad(20,24));
-        p.add(Look.label("Настройки",25,Look.PAPER,true));p.add(Look.label("Память для Minecraft, ГБ",14,Look.MUTED,false));
-        JSpinner ram=new JSpinner(new SpinnerNumberModel(memory(values),2,16,1));p.add(ram);
-        var animate=new JCheckBox("Персонаж следит за курсором",motion(values));p.add(animate);
+        var p=Look.dialog(d,"Настройки","Память Minecraft, анимация и папка сборки.");
+        var ram=new JSlider(2,16,memory(values));ram.setOpaque(false);
+        ram.setMajorTickSpacing(2);ram.setMinorTickSpacing(1);ram.setPaintTicks(true);ram.setSnapToTicks(true);
+        ram.getAccessibleContext().setAccessibleName("Память для Minecraft");
+        var amount=Look.label("Память для Minecraft · "+ram.getValue()+" ГБ",14,Look.PAPER,true);
+        ram.addChangeListener(e->amount.setText("Память для Minecraft · "+ram.getValue()+" ГБ"));
+        p.add(amount);p.add(ram);
+        var animate=Look.toggle("Персонаж следит за курсором",motion(values));p.add(animate);
         var imp=Look.button("Подключить папку сборки…",false);imp.addActionListener(e->merge.run());p.add(imp);
-        var save=Look.button("Сохранить",true);p.add(save);save.addActionListener(e->{try{values.addProperty("memory",(Integer)ram.getValue());values.addProperty("motion",animate.isSelected());Pack.write(file(),values.toString());avatar.follow=animate.isSelected();d.dispose();}catch(Exception ex){JOptionPane.showMessageDialog(d,ex.getMessage());}});
-        d.add(p);d.pack();d.setLocationRelativeTo(owner);d.setVisible(true);
+        var save=Look.button("Сохранить",true);p.add(save);save.addActionListener(e->{try{values.addProperty("memory",ram.getValue());values.addProperty("motion",animate.isSelected());Pack.write(file(),values.toString());avatar.follow=animate.isSelected();d.dispose();}catch(Exception ex){JOptionPane.showMessageDialog(d,ex.getMessage());}});
+        d.getRootPane().setDefaultButton(save);d.pack();d.setLocationRelativeTo(owner);d.setVisible(true);
     }
 }

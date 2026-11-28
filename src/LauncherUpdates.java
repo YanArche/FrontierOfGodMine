@@ -9,8 +9,8 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.JOptionPane;
 
 final class LauncherUpdates {
-    static final int BUILD = 8;
-    static final String VERSION = "1.7.0";
+    static final int BUILD = 9;
+    static final String VERSION = "1.8.0";
     static final String CHANNEL = "https://raw.githubusercontent.com/"+Pack.PROJECT+"/main/launcher/stable.json";
     static Path home(){return Frontier.game().getParent().resolve("woidwatch");}
     record Release(int build,String version,String hash,long bytes) {}

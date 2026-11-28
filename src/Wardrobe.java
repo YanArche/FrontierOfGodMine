@@ -143,7 +143,7 @@ final class Wardrobe extends JDialog {
 
     void tile(String id,boolean sample){
         var row=glass(new BorderLayout(8,0),160);rows.add(row);
-        var item=new JCheckBox(name(id),selected(category).equals(id));item.setOpaque(false);item.setForeground(Look.PAPER);item.setFont(Look.font(13,true));row.add(item);
+        var item=Look.toggle(name(id),selected(category).equals(id));item.setOpaque(false);item.setForeground(Look.PAPER);item.setFont(Look.font(13,true));row.add(item);
         item.addActionListener(e->select(item.isSelected()?id:""));
         if(sample){
             var icon=artwork.get(id);int scale=Math.max(icon.getWidth(),icon.getHeight());
